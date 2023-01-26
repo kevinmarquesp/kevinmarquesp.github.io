@@ -1,6 +1,6 @@
 baseURL = "https://kevinmarquesp.github.io/blog"
 languageCode = "pt-br"
-title = "Kevin Marques"
+title = "Kevin Marques's blog"
 
 
 [[module.imports]]
@@ -18,11 +18,11 @@ title = "Kevin Marques"
 
 
 [params]
-    rssFullContent = true
+    favicon = "favicon.svg"
 
 [params.sidebar]
     emoji = "🚀"
-    subtitle = "Um desenvolvedor web júnior que é apaixonado por necnologia e aprender coisas novas, bem vindo ao meu diário de bordo!"
+    subtitle = "Um desenvolvedor web júnior que é apaixonado por tecnologia e aprender coisas novas, bem vindo ao meu diário de bordo!"
 
 [params.article]
     math = true
