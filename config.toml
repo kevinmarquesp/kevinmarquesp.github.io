@@ -1,0 +1,92 @@
+baseURL = "https://kevinmarquesp.github.io/blog"
+languageCode = "pt-br"
+title = "Kevin Marques"
+
+
+[[module.imports]]
+    path = "github.com/CaiJimmy/hugo-theme-stack/v3"
+
+
+[main]
+    [[menu.main]]
+        name = "Home"
+        url = "/"
+        identifier = "home"
+
+        [menu.main.params]
+            icon = "home"
+
+
+[params]
+    rssFullContent = true
+
+[params.sidebar]
+    emoji = "🚀"
+    subtitle = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+
+[params.article]
+    math = true
+    toc = true
+    readingTime = true
+
+# [params.comments]
+#     enable = true
+#     provider = "disqus"
+
+[params.footer]
+    since = 2023
+    customText = "Obrigado por ter parado pra visitar meu blog, espero que aproveite bem os meus artigos!<br>"
+
+[params.colorScheme]
+    default = "dark"
+
+[params.widgets]
+    [[params.widgets.homepage]]
+        type = "search"
+
+    [[params.widgets.homepage]]
+        type = "categories"
+
+        [params.widgets.homepage.params]
+            limit = 5
+
+    [[params.widgets.homepage]]
+        type = "tag-cloud"
+
+        [params.widgets.homepage.params]
+            limit = 0
+
+    [[params.widgets.page]]
+        type = "toc"
+
+[param.article]
+    math = true
+    toc = true
+    readingTime = true
+
+
+[menu]
+    [[menu.social]]
+        identifier = "github"
+        name = "Github"
+        url = "https://github.com/kevinmarquesp"
+
+        [menu.social.params]
+            icon = "brand-github"
+
+    [[menu.social]]
+        identifier = "linkedin"
+        name = "linkedin"
+        url = "https://github.com/kevinmarquesp"
+
+        [menu.social.params]
+            icon = "brand-linkedin"
+
+    [[menu.social]]
+        identifier = "portifolio"
+        name = "portifolio"
+        url = "https://kevinmarquesp.github.io"
+
+        [menu.social.params]
+            icon = "browser"
+

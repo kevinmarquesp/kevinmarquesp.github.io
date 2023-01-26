@@ -1,0 +1,59 @@
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+
+    &:hover {
+        color: var(--accent-color-darker);
+    }
+
+    &.link {
+        box-shadow: 0px -2px 0px rgba(var(--link-background-color), var(--link-background-opacity)) inset;
+        transition: all 0.3s ease;
+
+        &:hover {
+            box-shadow: 0px calc(-1rem * var(--article-line-height)) 0px rgba(var(--link-background-color), var(--link-background-opacity-hover)) inset;
+        }
+    }
+}
+
+.section-title {
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 10px;
+    display: block;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--body-text-color);
+
+    a {
+        color: var(--body-text-color);
+    }
+}
+
+/**
+ * custom hightlight block
+ */
+.highlight {
+    $bg-color:  hsl(213, 96%, 7%);
+    background-color: $bg-color !important;
+
+    pre {
+        background-color: $bg-color !important;
+    }
+}
+
+/**
+ * custom title color for the article pages
+ */
+:root[data-scheme="dark"] .main-article .article-content {
+    h1, h2, h3, h4, h5, h6 {
+        color: hsl(169, 61%, 46%);
+    }
+}
+
+/**
+ * fix toc padding
+ */
+#TableOfContents ul {
+    list-style: none;
+}
