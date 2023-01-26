@@ -22,7 +22,7 @@ title = "Kevin Marques"
 
 [params.sidebar]
     emoji = "🚀"
-    subtitle = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    subtitle = "Um desenvolvedor web júnior que é apaixonado por necnologia e aprender coisas novas, bem vindo ao meu diário de bordo!"
 
 [params.article]
     math = true
@@ -44,11 +44,11 @@ title = "Kevin Marques"
     [[params.widgets.homepage]]
         type = "search"
 
-    [[params.widgets.homepage]]
-        type = "categories"
+    # [[params.widgets.homepage]]
+    #     type = "categories"
 
-        [params.widgets.homepage.params]
-            limit = 5
+    #     [params.widgets.homepage.params]
+    #         limit = 5
 
     [[params.widgets.homepage]]
         type = "tag-cloud"
@@ -77,7 +77,7 @@ title = "Kevin Marques"
     [[menu.social]]
         identifier = "linkedin"
         name = "linkedin"
-        url = "https://github.com/kevinmarquesp"
+        url = "https://www.linkedin.com/in/kevin-marques-827299238/"
 
         [menu.social.params]
             icon = "brand-linkedin"

@@ -6,7 +6,7 @@ description: |
   linguagem de sua preferência) que "desenvolvi".
 draft: false
 
-tags: ["python", "ideia", "pessoal"]
+tags: ["python", "ideia", "pessoal", "programação"]
 ---
 
 
