@@ -1,5 +1,5 @@
 ---
-title: "Manipulacao de erros com Python"
+title: "Manipulação de erros com Python"
 date: "2023-01-26T17:05:27-03:00"
 description: |
   Tecnica inspirada em Go para manipular erros em Python (ou em qualquer outra
@@ -11,22 +11,22 @@ tags: ["python", "ideia", "pessoal", "programação"]
 
 
 Antes de mais nada, preciso deixar claro que sou apenas um hobbysta e tenho 0
-experiência proficional no mercado, portanto, não tenho certeza se isso é uma
+experiência profissional no mercado, portanto, não tenho certeza se isso é uma
 boa prática ou não, se vale a pena usar esse método ou não. Mas mesmo assim,
-achei essa ideia interessante e gostaria de compartilhá-la neste artigo, porquê
+achei essa ideia interessante e gostaria de compartilhá-la neste artigo, porque
 acredito que essa solução pra esse problema seja bem limpa e legível.
 
-Irei explicar em JavaScript, no geral, não vai fazer tanta diferença porquê as
+Irei explicar em JavaScript, no geral, não vai fazer tanta diferença porque as
 features do Python estão presentes em outras linguagens, mas tem um detalhe que
 gostaria de comentar no final a respeito dessa minha solução em Python.
 
 
 ## Introdução do meu problema
 
-Recentemente me deparei com o seguinte problema: minha fução não funciona as
+Recentemente me deparei com o seguinte problema: minha função não funciona as
 vezes. Lógico que não foi só isso, manipular erros é comum no universo de
 software. No entanto, eu fico um tanto incomodado com syntaxes similares à do
-`try` `catch` do Javascript. Na minha opinão, a parte do `catch` deveria ser
+`try` `catch` do Javascript. Na minha opinião, a parte do `catch` deveria ser
 abstraída em uma outra função, separada do código que tenta executar a função
 de caráter duvidoso, que pode dar erro a qualquer momento.
 
@@ -52,12 +52,11 @@ interessante. Mas não vejo necessidade disso em uma linguagem que tenha o `try`
 
 ## Exemplo de solução com Javascript
 
-Ok, agora vamos para o Javascript. E se na nessa função hipotética
-`Foo.connect()` podesse tratar do sucesso, mas dar a responsabilidade do erro
-para outra função? E que função? Acredito que o usuário -- que pra todos os
-efeitos e propósitos, também será um desenvolvedor -- queira fazer isso do jeito
-dele, portanto, a função que pode manipular o erro pode ser passada atravéz de
-um dos parâmetros.
+Ok, agora vamos para o Javascript. E se nessa função hipotética `Foo.connect()`
+pudesse tratar do sucesso, mas dar a responsabilidade do erro para outra função?
+E que função? Acredito que o usuário -- que pra todos os efeitos e propósitos,
+também será um desenvolvedor -- queira fazer isso do jeito dele, portanto, a
+função que pode manipular o erro pode ser passada através de um dos parâmetros.
 
 Antes disso, um conceito muito importante que fez diferença nesse assunto: todas
 as funções em Javascript retornam o tipo `undefined` por padrão (e no caso do
@@ -114,8 +113,8 @@ Foo.connect("id");
 
 Vamos tentar brincar um pouquinho com isso, e se eu quiser que uma função, que
 possa dar errado e foi construída com essa estrutura do `try` `catch`, persista
-em ficar executando ela denovo e denovo, até finalmente ela funcionar? *I don't
-know man, let's try it!*
+em ficar executando ela de novo e de novo, até finalmente ela funcionar?
+*I don't know man, let's try it!*
 
 ```javascript
 Handler = {
@@ -145,8 +144,8 @@ while (Foo.connect("id", Handler.fooCouldNotConnect)) {
 
 ### O que torna Python especial
 
-Isso pode ser facilmente adptado para funcionar em Python, já que ele têm uma
-syntaxe parecida. Mas uma feature legal que o Python têm é os *decorators*, e
+Isso pode ser facilmente adaptado para funcionar em Python, já que ele têm uma
+syntaxe parecida. Mas uma feature legal que o Python tem é os *decorators*, e
 é justamente essa feature que vou explorar pra tornar isso tudo mais legível.
 
 Em resumo, bem resumido, um decorator é só uma função que é executada antes da
@@ -188,7 +187,7 @@ Mas o importante é que esse horror tá separado do código principal, que seria
 as duas classes de baixo nesse exemplo.
 
 Vamos ver o nosso resultado com aquele exemplo da função persistente que mostrei
-com Javascript e comparar com essa minha soulão em Python fazendo o uso dos
+com Javascript e comparar com essa minha solução em Python fazendo o uso dos
 decorators:
 
 ```python
@@ -208,23 +207,23 @@ while Foo.connect("id"):
     pass
 ```
 
-Exelente! Agora se você quiser executar a função `Handler.foo_could_not_connect`
+Excelente! Agora se você quiser executar a função `Handler.foo_could_not_connect`
 caso a função `Foo.connect` não funcione, é questão de adicionar uma linha a
 mais, indicando qual função rodar se a outra falhar.
 
-Mas lógico, isso não é totalmente igual aos outros exemplos, porquê o usuário
+Mas lógico, isso não é totalmente igual aos outros exemplos, porque o usuário
 não terá a mesma liberdade de passar uma outra função como parâmetro, caso ele
 não tenha acesso ou definido a função `Foo.connect` ele mesmo. Mas mesmo assim,
-não deixa de ser uma solução elegante e eficiênte, talvez não tão perfomática do
-ponto de vista computacional, mas ainda assim, eficiênte.
+não deixa de ser uma solução elegante e eficiente, talvez não tão perfomática do
+ponto de vista computacional, mas ainda assim, eficiente.
 
 
 ## Conclusão
 
-Com essa brincadiera, percebi como Python é uma linguagem poderosa pro
+Com essa brincadeira, percebi como Python é uma linguagem poderosa pro
 desenvolvedor, não só por ser fácil de entender e a syntaxe ser simplificada,
 mas também por ter esse tipo de feature que permite ser "preguiçoso", no sentido
 de se esforçar agora pra depois ser mais produtivo no futuro. Apesar disso,
 Python tem seus defeitos (vários, cá entre nós), mas é inegável que ela foi
-desenhada pra tornar os desenvolvedores mais eficiêntes e ela faz isso muito
+desenhada pra tornar os desenvolvedores mais eficientes e ela faz isso muito
 bem.
