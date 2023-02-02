@@ -22,7 +22,8 @@ title = "Kevin Marques's blog"
 
 [params.sidebar]
     emoji = "🚀"
-    subtitle = "Um desenvolvedor web júnior que é apaixonado por tecnologia e aprender coisas novas, bem vindo ao meu diário de bordo!"
+    subtitle = """Um desenvolvedor web júnior que é apaixonado por tecnologia e
+               aprender coisas novas, bem vindo ao meu diário de bordo!"""
 
 [params.article]
     math = true
@@ -35,7 +36,10 @@ title = "Kevin Marques's blog"
 
 [params.footer]
     since = 2023
-    customText = "Obrigado por ter parado pra visitar meu blog, espero que aproveite bem os meus artigos!<br>"
+    customText = """Obrigado por ter parado pra visitar meu blog, espero que
+                 aproveite bem os meus artigos! Talvez você queira dar uma olhada
+                 no <a href="https://github.com/kevinmarquesp/blog" target="_blank">
+                 <strong>source code</strong></a> desse projeto<br>"""
 
 [params.colorScheme]
     default = "dark"
