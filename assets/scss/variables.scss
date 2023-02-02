@@ -1,5 +1,11 @@
-$defaultTagBackgrounds: hsl(169, 61%, 46%), #df7988, #0177b8, #ffb900, #6b69d6;
-$defaultTagColors: hsl(213, 96%, 11%), #fff, #fff, #fff, #fff;
+/** custom color pallert */
+$clr-green: hsl(169, 61%, 46%);
+$clr-bg-regular: hsl(213, 96%, 11%);
+$clr-bg-dark: hsl(213, 96%, 9.5%);
+$clr-bg-darker: hsl(213, 96%, 7%);
+
+$defaultTagBackgrounds: #{$clr-green}, #df7988, #0177b8, #ffb900, #6b69d6;
+$defaultTagColors: #{$clr-bg-regular}, #fff, #fff, #fff, #fff;
 
 /*
 *   Global style
@@ -28,14 +34,14 @@ $defaultTagColors: hsl(213, 96%, 11%), #fff, #fff, #fff, #fff;
 
     &[data-scheme="dark"] {
         // --body-background: #303030;
-        --body-background: hsl(213, 96%, 9.5%);
+        --body-background: #{$clr-bg-dark};
         // --accent-color: #ecf0f1;
-        --accent-color: hsl(169, 61%, 46%);
+        --accent-color: #{$clr-green};
         --accent-color-darker: #bdc3c7;
         --accent-color-text: #000;
         --body-text-color: rgba(255, 255, 255, 0.7);
         // --scrollbar-thumb: hsl(0, 0%, 40%);
-        --scrollbar-thumb: hsl(213, 96%, 7%);
+        --scrollbar-thumb: #{$clr-bg-darker};
         --scrollbar-track: var(--body-background);
     }
 }
@@ -83,7 +89,7 @@ $defaultTagColors: hsl(213, 96%, 11%), #fff, #fff, #fff, #fff;
 
     &[data-scheme="dark"] {
         // --card-background: #424242;
-        --card-background: hsl(213, 96%, 11%);
+        --card-background: #{$clr-bg-regular};
         --card-background-selected: rgba(255, 255, 255, 0.16);
         --card-text-color-main: rgba(255, 255, 255, 0.9);
         --card-text-color-secondary: rgba(255, 255, 255, 0.7);
@@ -130,14 +136,14 @@ $defaultTagColors: hsl(213, 96%, 11%), #fff, #fff, #fff, #fff;
 
     &[data-scheme="dark"] {
         // --code-background-color: #272822;
-        --code-background-color: hsl(213, 96%, 7%);
+        --code-background-color: #{$clr-bg-darker};
         --code-text-color: rgba(255, 255, 255, 0.9);
 
         --table-border-color: #717171;
         --tr-even-background-color: #545454;
 
         // --blockquote-background-color: rgb(75 75 75);
-        --blockquote-background-color: hsl(213, 96%, 7%);
+        --blockquote-background-color: #{$clr-bg-darker};
     }
 }
 

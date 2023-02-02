@@ -1,0 +1,22 @@
+@import "./variables.scss"; // using the `@import` keyword to import variables is not recomended
+
+// code blocks background color
+.highlight {
+    background-color: #{$clr-bg-darker} !important;
+
+    pre {
+        background-color: #{$clr-bg-darker} !important;
+    }
+}
+
+// article titles text color
+:root[data-scheme="dark"] .main-article .article-content {
+    h1, h2, h3, h4, h5, h6 {
+        color: #{$clr-green};
+    }
+}
+
+// refactoring the article table of contents
+#TableOfContents ul {
+    list-style: none;
+}
