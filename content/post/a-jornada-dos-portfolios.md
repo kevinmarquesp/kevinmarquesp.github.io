@@ -2,9 +2,9 @@
 title: "A jornada dos portfólios"
 date: "2023-01-28T12:51:47-03:00"
 description: |
-  Como eu me frustrei com front-end e porque desisti de ter uma página
-  customizada para usar de portfólio.
-tags: ["diário", "pessoal", "tentativa", "front-end"]
+             Como eu me frustrei com front-end e porque desisti de ter uma página
+             customizada para usar de portfólio.
+tags: ["diário", "tentativa", "front-end"]
 ---
 
 

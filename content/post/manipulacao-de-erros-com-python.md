@@ -2,8 +2,8 @@
 title: "Manipulação de erros com Python"
 date: "2023-01-26T17:05:27-03:00"
 description: |
-  Tecnica inspirada em Go para manipular erros em Python (ou em qualquer outra
-  linguagem de sua preferência) que "desenvolvi".
+             Tecnica inspirada em Go para manipular erros em Python (ou em
+             qualquer outra linguagem de sua preferência) que "desenvolvi".
 draft: false
 
 tags: ["python", "ideia", "pessoal", "programação"]
