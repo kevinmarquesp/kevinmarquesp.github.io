@@ -5,7 +5,7 @@ description: |
              Como é possível criar scripts com suporte à opções longas e
              abreviadas de forma fácil. Esse artigo representa uma parte pequena
              na minha jornada de "preguiçoso", ou seja, de automatizar tarefas
-             tediosas com scripts em shell ou bash.
+             tediosas com scripts em shell ou bash
 draft: false
 tags: ["programação", "sysadmin", "linux", "tutorial"]
 links:
@@ -13,15 +13,15 @@ links:
       website: "https://www.youtube.com/watch?v=ZHRJvNtEX7Y"
       description: |
                    Esse é o único vídeo que achei no YouTube de alguém falando
-                   sobre essa ferramenta, talvez ajudo um pouco a mudar a sua
+                   sobre essa ferramenta, talvez ajude um pouco a mudar a sua
                    perspectiva de como esse comando, e o bash como um todo,
-                   funcionam.
+                   funcionam
     - title: "Command Line Arguments with getopts Linux Shell Programming BASH Script Tutoria"
       website: "https://www.youtube.com/watch?v=5O4SLIDSMqg"
       description: |
                    Existe uma outra ferramenta mais antiga que faz algo
                    parecido, dê uma olhada para ver se isso se adéqua melhor às
-                   suas necessidades.
+                   suas necessidades
 ---
 
 Ganhei um notebook novo semana passada e, enquanto estava migrando meus *dotfiles* para esse PC novo, pensei que seria uma boa ideia rescrever alguns scripts pessoais que uso para fazer backup de alguns arquivos, montar o sub-volume que guardo os meus projetos do meu HDD externo, etc. Resolvi fazer isso agora por que (1) quero atualizar o meu setup de desenvolvimento e (2) aprendi algumas coisas novas nesse meio tempo que passei *offline* e gostaria de pôr o que aprendi em prática.
