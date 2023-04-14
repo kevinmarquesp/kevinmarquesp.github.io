@@ -1,6 +1,7 @@
 ---
 title: "Manipulando os argumentos posicionais com Bashscript"
 date: "2023-04-07T17:56:15-03:00"
+image: "thumb.png"
 description: |
              Como é possível criar scripts com suporte à opções longas e
              abreviadas de forma fácil. Esse artigo representa uma parte pequena
