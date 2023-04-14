@@ -1,10 +1,10 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: "{{ .Date }}"
-image: "thumb.png"
+# image: "thumb.png"
+# draft: true
 description: |
              ...
-draft: true
 tags: ["..."]
 links:
     - title: "..."
