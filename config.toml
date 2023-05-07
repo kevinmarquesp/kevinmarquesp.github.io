@@ -86,11 +86,11 @@ title = "Kevin Marques's blog"
         [menu.social.params]
             icon = "brand-linkedin"
 
-    [[menu.social]]
-        identifier = "portifolio"
-        name = "portifolio"
-        url = "https://kevinmarquesp.github.io"
+    # [[menu.social]]
+    #     identifier = "portifolio"
+    #     name = "portifolio"
+    #     url = "https://kevinmarquesp.github.io"
 
-        [menu.social.params]
-            icon = "browser"
+    #     [menu.social.params]
+    #         icon = "browser"
 
