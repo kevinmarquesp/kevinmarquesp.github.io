@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# reconfigured some env variables
+EDITOR="nvim"
+
 OPTIONS="n:"
 LONGOPTIONS="new-article:"
 ARGS=$(getopt --options "$OPTIONS" --longoptions "$LONGOPTIONS" --name "$0" -- "$@")
@@ -12,9 +15,13 @@ function new_article {
     ARTICLE_NAME="$1"
 
     CURRENT_DATE=$(date "+%y%m%d%H%M%S")
-    DIRECTORY_NAME="${CURRENT_DATE}_$(iconv -t ASCII//TRANSLIT <<< "$ARTICLE_NAME" |
-        tr "[:upper:]" "[:lower:]" |
-        tr " " "-")"
+    DIRECTORY_NAME="${CURRENT_DATE}_$(
+        iconv -t ASCII//TRANSLIT <<< "$ARTICLE_NAME" | # convert the non ASCII characters
+        tr "[:upper:]" "[:lower:]" |                   # convert all to lower case
+        tr "[:punct:]" " " |                           # replace all ponctuations to spaces
+        tr " " "-" |                                   # replace all spaces to dashes
+        tr -s "-" "-"                                  # remove the repeating dash sequences
+    )"
     unset CURRENT_DATE
 
     ARTICLE="content/post/$DIRECTORY_NAME/index.md"
