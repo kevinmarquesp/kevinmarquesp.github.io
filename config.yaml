@@ -2,10 +2,9 @@ baseurl: 'https://kevinmarquesp.github.io/blog'
 languageCode: 'pt-br'
 title: "Kevin Marques's blog"
 
+disqusShortname: 'kevinmarquesp-github-io-blog'
 theme: 'hugo-theme-stack'
 paginate: 10
-
-disqusShortname: 'kevin-marques-blog'
 
 
 menu:
