@@ -39,9 +39,6 @@ markup:
     renderer:
       unsafe: true
 
-  highlight:
-    lineNos: true
-
 
 params:
   favicon: 'favicon.svg'
