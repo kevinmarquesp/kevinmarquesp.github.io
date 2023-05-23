@@ -48,3 +48,9 @@ blockquote {
         margin-left: 5px !important;
     }
 }
+
+// fixing the category box color to match my colorscheme
+.article-category a {
+    background-color: $clr-green !important;
+    color: $clr-bg-darker !important;
+}
