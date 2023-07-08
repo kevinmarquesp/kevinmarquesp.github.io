@@ -1,5 +1,5 @@
 ---
-title: "O que é e como surgiuo o LaTeX"
+title: "O que é e como surgiu o LaTeX"
 date: "2023-07-07T14:16:44-03:00"
 image: "thumb.png"
 tags: ["note taking", "history", "LaTeX", "workflow"]
