@@ -1,0 +1,31 @@
+#note_literature 
+*2023-05-08 at 23:35*
+
+Interpretar um texto é diferente de compreender, ==interpretar é ir além das informações que o texto informa== fazendo conclusões por dedução.
+
+A dica costuma ser: Leia o texto duas vezes, prestando atenção em ==como as ideias se conectam== e depois destacando os seus ideais que podem levar a um novo conceito.
+
+Não reduza um texto a uma única ideia, não extrapole os ideais do texto mais do que deve nem crie contradições em sua argumentação — tanto no texto quanto em si mesmo. ==Todo texto foi escrito por alguém e para alguém==, eles sempre tem um propósito.
+
+```ad-important
+O tema **interpretação de texto** é muito fácil de entender o conceito. No entanto, <u>para</u> compreender de fato como um texto é estruturado é essencial entender as bases da lingua portuguesa, desde a ==classificação de palavras== até estruturas mais completas dentro de um parágrafo, ==saber como expressar suas ideias== e o que escrever ~~para isso~~. Como eu disse: *essência da linguagem*.
+```
+
+### Tópicos importantes para a *compreensão* do texto
++ **Classe de palavras**:
+	+ ==Substantivos==, verbos, ==conjunção==, adjetivo, ==advérbio==, preposição, pronome, ==interjeição==, ==numeral== e artigo
++ **Análise sintática**:
+	+ Sujeito, predicado, ==adjunto binomial==, adjunto adverbial, ==aposto==, ==vocativo==, ==predicativo do sujeito/objeto==, ==complemento nominal==, ==agente da passiva== e ==transitividade verbal==;
++ ==**Período composto**==:
+	+ Coordenação — aditiva, adversativa, alternativa, conclusiva e explicativa —, subordinação — substantiva, adjetiva e adverbial — mais as pontuações;
++ ==**Elementos anafóricos e catafóricos**==:
+	+ *São elementos que relacionados entre si antes ou depois um do outro dentro de uma sentença, respectivamente*;
+
+```ad-note
+`/ka - ta/` e `/a - na/` significam sim *"antes"* e *"depois"* --- assim como em *ânion* e *cátion*. Gosto de imaginar que o eletrodo negativo está na esquerda da sentença e os *ânions* se afastam (antes) e os *ccátions* se aproximam (depois). Pequena associação mental que fiz com o vocabulario grego de palavras que eu já conheço...
+```
+
+---
+
+### References and related
+- [[20230508__enem__interpretacao-de-texto]]

@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Kevin Marques's blog</title><link>https://kevinmarquesp.github.io/post/</link><description>Recent content in Posts on Kevin Marques's blog</description><generator>Hugo -- gohugo.io</generator><language>pt-br</language><lastBuildDate>Fri, 07 Jul 2023 14:16:44 -0300</lastBuildDate><atom:link href="https://kevinmarquesp.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>O que é e como surgiu o LaTeX</title><link>https://kevinmarquesp.github.io/post/230707141644_o-que-e-e-como-surgiu-o-latex/</link><pubDate>Fri, 07 Jul 2023 14:16:44 -0300</pubDate><guid>https://kevinmarquesp.github.io/post/230707141644_o-que-e-e-como-surgiu-o-latex/</guid><description>&lt;img src="https://kevinmarquesp.github.io/post/230707141644_o-que-e-e-como-surgiu-o-latex/thumb.png" alt="Featured image of post O que é e como surgiu o LaTeX" />&lt;p>Eu sei, passei mais de um mês sem postar nada e, realmente, estava procrastinando, não venho me sentindo muito motivado, desculpa. Mas enfim, conversa vem, conversa vai entre amigos, o assunto $\LaTeX$ acabou surgindo, o que me pôs pra pensar um pouco. $\LaTeX$ é o tipo de ferramente que que você usa quase todo dia, dependendo do que você está estudando, e eu sabia como usar… Mas não sabia de onde surgiu esse ferramenta direito, ao menos não até agora. Fiz algumas pesquisas sobre o assunto, não só pra colecionar conhecimento mas também pra tentar entender como esse sistema funciona através de uma outra perspectiva — e também, pra ser honesto, aproveitar e me motivar a escrever artigos novos (tenho muito o que dizer, só ainda não sei exatamente como por em palavras).&lt;/p>
+&lt;p>Neste artigo eu pretendo resumir um pouco a história do sistema $\TeX$, como a partir dela o $\LaTeX$ surgiu, um mini tutorial de como escrever um documento em $\LaTeX$ juntamente com recomendações de software para praticar, uma breve filosofada em qual tipo de &lt;em>workflow&lt;/em> é o melhor (“&lt;em>What you see is what you &lt;strong>get&lt;/strong>&lt;/em>” ou “&lt;em>What you see is what you &lt;strong>mean&lt;/strong>&lt;/em>”) e um breve comentário de como eu uso $\LaTeX$ no meu dia a dia e como pretendo melhorar minha estratégia com essa ferramenta. Espero que consiga aprender algo novo nesse post ou aprimorar suas ideias já existentes, me avise se encontrar algum erro de qualquer natureza e não deixe de compartilhar suas métricas de estudo, com ou sem o uso de $\LaTeX$ ou similares, nos comentários (eu ainda sou um estudante, afinal de contas). Sem mais delongas, &lt;em>let’s go&lt;/em>!&lt;/p>
+&lt;h2 id="como-o-tex-e-o-latex-surgiram">Como o TeX e o LaTeX surgiram&lt;/h2>
+&lt;p>Durante a primeira edição do livro “&lt;em>The Art of Computer Programming&lt;/em>”, publicada em 1968, os livros de &lt;a class="link" href="https://en.wikipedia.org/wiki/Donald_Knuth" target="_blank" rel="noopener"
+>Donald Knuth&lt;/a> eram impressos usando a técnica de &lt;a class="link" href="https://en.wikipedia.org/wiki/Hot_metal_typesetting" target="_blank" rel="noopener"
+>&lt;em>Hot Metal Typesetting&lt;/em>&lt;/a>, no qual os &lt;em>tipos&lt;/em> (os “carimbos” de chumbo com o formato das letras) eram soldados um no outro para formar palavras, frases, parágrafos e uma página inteira, daí uma camada de tinta era adicionada à essa placa pra depois pressionarem uma folha sobre ela, formando assim uma página do livro. As editoras que usavam essa técnica costumavam usar um conjunto característico de &lt;em>tipos&lt;/em>, uma &lt;em>família de fontes&lt;/em> característica, que o Donald Knuth apreciava e achava confortável de ler artigos científicos com notação matemática densa que usavam esse &lt;em>typesetting&lt;/em> (ou &lt;em>estilo&lt;/em>, &lt;em>layout&lt;/em>, &lt;em>design&lt;/em>, como preferir).&lt;/p>
+&lt;p>Em 30 de Março de 1977, quando Knuth recebeu as &lt;em>proofs&lt;/em> (uma cópia de um livro para o autor revisar antes de publicá-lo) da segunda edição do seu livro, ele decepcionou-se ao folear essas cópias. Por volta dos anos 70, as editoras da época adotaram a técnica de &lt;a class="link" href="https://en.wikipedia.org/wiki/Phototypesetting" target="_blank" rel="noopener"
+>&lt;em>Photo Typesetting&lt;/em>&lt;/a> para a construção das páginas, essa técnica usava um métodos parecido com o usado para revelar uma imagem tirada por uma camera fotográfica, a página era cuidadosamente construída num papel foto sensível negativo, depois várias folhas passavam por um processo químico com esse papel para “revelar” diferentes páginas. Durante esse processo todo, o comum acabou se tornando usar um &lt;em>typesetting&lt;/em> diferente da técnica de &lt;em>Hot Metal Typesetting&lt;/em>.&lt;/p>
+&lt;p>Revoltado com a mudança, Knuth trabalhou, no que era pra ser um projeto simples e pessoal, por mais de 10 anos no mundo da &lt;strong>&lt;a class="link" href="https://en.wikipedia.org/wiki/Typography" target="_blank" rel="noopener"
+>tipografia&lt;/a>&lt;/strong> e na criação da sua própria linha de estilo e sistema para gerar documentos técnicos e científicos, o &lt;a class="link" href="https://en.wikipedia.org/wiki/TeX" target="_blank" rel="noopener"
+>&lt;strong>TeX&lt;/strong>&lt;/a> — esse conjunto de letras &lt;strong>gregas&lt;/strong> (&lt;em>Tau&lt;/em>, &lt;em>Epslon&lt;/em> e &lt;em>Chi&lt;/em>) são a abreviação para a palavra &lt;em>techne&lt;/em>, que pode significar tanto “arte” como “criação”, sendo a origem de palavras como “tecnologia” ou “técnica”. O objetivo de Knuth era tornar o processo de gerar documentos técnicos visualmente atraentes e com suporte a desenhar inúmeros símbolos e diagramas uma coisa fácil e acessível a todos os computadores da época.&lt;/p>
+&lt;p>Em apoio com o Departamento de Artes de Stanford, Knuth desenvolveu a linguagem de programação &lt;a class="link" href="https://en.wikipedia.org/wiki/Metafont" target="_blank" rel="noopener"
+>&lt;strong>Metafont&lt;/strong>&lt;/a>, focada na criação de fontes de computadores. Juntamente com esse sistema, Knuth desenvolveu a família de fontes &lt;a class="link" href="https://en.wikipedia.org/wiki/Computer_Modern" target="_blank" rel="noopener"
+>&lt;strong>Computer Modern&lt;/strong>&lt;/a>, onde ele traz de volta a família de fontes dos livros antigos dos anos 70 que ele tanto apreciava. Com isso, ele fez com que o &lt;em>typesetting&lt;/em> que o $\TeX$ gerasse fosse com essa família de fontes.&lt;/p>
+&lt;p>O $\TeX$ é um sistema &lt;strong>WYSIWYM&lt;/strong> (&lt;em>What you see is what you mean&lt;/em>), ou seja, um sistema onde você escreve um &lt;strong>texto&lt;/strong> com uma determinada sintaxe e um compilador, no caso do $\TeX$, o $\TeX\ I/O$ (&lt;em>input/output&lt;/em>), desenha e renderiza o conteúdo que você descreveu no arquivo de texto.&lt;/p>
+&lt;p>O $\TeX\ I/O$ foi escrito por &lt;a class="link" href="https://en.wikipedia.org/wiki/Guy_L._Steele_Jr." target="_blank" rel="noopener"
+>Guy Steele&lt;/a> no MIT, logo depois que voltou de Stanford na época em que Knuth estava escrevendo a primeira versão do $\TeX$. O compilador foi feito na linguagem &lt;a class="link" href="https://en.wikipedia.org/wiki/SAIL_%28programming_language%29" target="_blank" rel="noopener"
+>SAIL&lt;/a> para o sistema operacional &lt;a class="link" href="https://en.wikipedia.org/wiki/Incompatible_Timesharing_System" target="_blank" rel="noopener"
+>&lt;em>Incompatible Timesharing System&lt;/em>&lt;/a> da época que rodava em um &lt;a class="link" href="https://en.wikipedia.org/wiki/PDP-10" target="_blank" rel="noopener"
+>PDP-10&lt;/a>.&lt;/p>
+&lt;p>E mais pro futuro, Knuth veio a inventar o conceito de &lt;a class="link" href="https://en.wikipedia.org/wiki/Literate_programming" target="_blank" rel="noopener"
+>programação literal&lt;/a>, onde você pode escrever um documento, por exemplo, em $\TeX$, com vários blocos de códigos e suas explicações e ainda assim conseguir compilar esse documento/código para ter um projeto funcionando — Haskell é um exemplo de linguagem que têm suporte nativo a isso.&lt;/p>
+&lt;p>Honestamente, eu acho que &lt;a class="link" href="https://www.saildart.org/TEXDR.AFT[1,DEK]1" target="_blank" rel="noopener"
+>esse memorando&lt;/a> do &lt;a class="link" href="https://en.wikipedia.org/wiki/Stanford_University_centers_and_institutes#Stanford_Artificial_Intelligence_Laboratory" target="_blank" rel="noopener"
+>SAIL&lt;/a> (&lt;em>Stanford Artificial Intelligence Laboratory&lt;/em>, ou “Laboratório de Inteligência Artificial da Stanford”) — que o Donald Knuth escreveu para explicar como a ferramenta que ele criou funciona, o compilador e a linguagem $\TeX$, tanto no baixo nível, para os próprios desenvolvedores da época estudarem melhor o código e evoluírem ele mais ainda com suas próprias ideias, como à alto nível, justamente para o usuário final não se preocupar muito em como o código foi feito e mais em como usá-lo para escrever documentos técnicos visualmente atraentes e confortáveis de ler — é a prova viva de como uma documentação bem escrita, mesmo que em um arquivo de texto com pouca ou nenhuma formatação/sintaxe, consegue sobreviver por tanto tempo e continuar sendo útil para as gerações futuras, além de destacar mais ainda a paixão que Knuth estava tendo pelo seu trabalho e os ideais que ele valorizou, como deixar o código fonte público para quem quiser estudar ou escrever o projeto todo de um modo que cada usuário pode escrever macros customizadas para o seu tipo específico de workflow ou documento, e acabou beneficiando praticamente todo tipo de pessoa ou universidade que queira publicar um artigo técnico.&lt;/p>
+&lt;p>Agora o &lt;strong>&lt;a class="link" href="https://en.wikipedia.org/wiki/LaTeX" target="_blank" rel="noopener"
+>LaTeX&lt;/a>&lt;/strong>, por sua vez, criado por &lt;a class="link" href="https://en.wikipedia.org/wiki/Leslie_Lamport" target="_blank" rel="noopener"
+>Leslie Lamport&lt;/a>, é um pacote de &lt;em>macros&lt;/em> — ou &lt;em>funções&lt;/em> se você preferir — do sistema $\TeX$, estendendo assim as funcionalidades do $\TeX$ puro com novas palavras chaves para desenhar símbolos diferentes, o que o torna uma linguagem de mais alto nível e fácil uso. Hoje o $\LaTeX$ é usado principalmente no contexto acadêmico para construir relatórios de pesquisas ou artigos científicos que dependem de expressões com notação matemática ou caracteres não-latinos de um modo geral (como o alfabeto grego ou caracteres arábicos), se tornando assim &lt;em>de facto&lt;/em> a ferramenta padrão para esse tipo coisa.&lt;/p>
+&lt;p>&lt;img src="https://kevinmarquesp.github.io/post/230707141644_o-que-e-e-como-surgiu-o-latex/latex-page-example.png"
+width="1275"
+height="1650"
+srcset="https://kevinmarquesp.github.io/post/230707141644_o-que-e-e-como-surgiu-o-latex/latex-page-example_hu1a57e705ac0294a85b66ce5e2bb8d4e1_136681_480x0_resize_box_3.png 480w, https://kevinmarquesp.github.io/post/230707141644_o-que-e-e-como-surgiu-o-latex/latex-page-example_hu1a57e705ac0294a85b66ce5e2bb8d4e1_136681_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Exemplo de uma página com o typesetting do LaTeX"
+class="gallery-image"
+data-flex-grow="77"
+data-flex-basis="185px"
+> &lt;!-- IMAGE -->&lt;/p>
+&lt;h2 id="qual-é-o-melhor-wysiwyg-ou-wysiwym">Qual é o melhor? WYSIWYG ou WYSIWYM?&lt;/h2>
+&lt;p>O paradigma de edição &lt;a class="link" href="https://en.wikipedia.org/wiki/WYSIWYM" target="_blank" rel="noopener"
+>&lt;strong>WYSIWYM&lt;/strong>&lt;/a> (&lt;em>What you see is what you &lt;strong>mean&lt;/strong>&lt;/em>) é aquele onde o escritor escreve o documento com uma determinada sintaxe, ou estrutura, que vai dar forma à versão formatada, o escritor em si não têm acesso ao resultado final de imediato sem antes passar por um processo de compilação — &lt;a class="link" href="https://en.wikipedia.org/wiki/Markdown" target="_blank" rel="noopener"
+>Markdown&lt;/a>, $\LaTeX$ e &lt;a class="link" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener"
+>HTML&lt;/a> são exemplos de tecnologias que seguem esse paradigma de separar o layout e estilizações do código fonte que o computador vai ler para renderizar esses elementos na tela ou em um documento. Já o paradigma &lt;a class="link" href="https://en.wikipedia.org/wiki/WYSIWYG" target="_blank" rel="noopener"
+>&lt;strong>WYSIWYG&lt;/strong>&lt;/a> (&lt;em>What you see is what you &lt;strong>get&lt;/strong>&lt;/em>) é o oposto, nesse paradigma, a versão formatada do documento já é apresentada ao usuário pelo próprio editor enquanto ele edita — acho que esse paradigma é mais familiar à todos nós; &lt;a class="link" href="https://en.wikipedia.org/wiki/Microsoft_Word" target="_blank" rel="noopener"
+>Microsoft Word&lt;/a>, &lt;a class="link" href="https://en.wikipedia.org/wiki/Microsoft_PowerPoint" target="_blank" rel="noopener"
+>Power Point&lt;/a> e &lt;a class="link" href="https://en.wikipedia.org/wiki/Google_Docs" target="_blank" rel="noopener"
+>Google Docs&lt;/a> são exemplos de ferramentas que vão formatar um documento do jeito que você o vê no editor.&lt;/p>
+&lt;p>É importante lembrar que o paradigma WYSIWYM foi o primeiro a surgir, ao menos no mundo do software, pois os computadores da época não tinham suporte à mouse ou a uma interface gráfica direito, então o pessoal desse tempo não tinha muita escolha. No entanto, com a modernização e popularização do computador pessoal, podemos aplicar o paradigma WYSIWYG no nosso &lt;em>workflow&lt;/em> de hoje. Apesar dessa facilidade de escrever documentos agora, muitos ainda preferem adotar um WYSIWYM para algumas coisas, se não pra tudo. Pessoalmente, gosto do método em que eu foco 100% no conteúdo e o computador formata tudo pra mim depois, isso facilita quando estou escrevendo um documento longo ou um artigo para o meu blog, mas não posso negar que, as vezes, é muito mais prático simplesmente abrir um &lt;a class="link" href="https://en.wikipedia.org/wiki/OnlyOffice" target="_blank" rel="noopener"
+>OnlyOffice Docs&lt;/a> da vida e começar a escrever um trabalho de escola simples e ter um resultado final razoavelmente atraente. No final do dia, cada paradigma vai trazer vantagens e desvantagens pra cada situação.&lt;/p>
+&lt;h2 id="estrutura-básica-de-um-documento-escrito-em-latex">Estrutura básica de um documento escrito em LaTeX&lt;/h2>
+&lt;p>Assim como um bom site escrito em HTML, um documento em $\LaTeX$ precisa ser bem organizado semanticamente, com sessões e sub-sessões que façam a leitura fazer sentido. Assim como a linguagem $\TeX$ em si, estruturar um documento é o tipo de tarefa que só se aprende praticando na vida real. Mas acredito que seja possível aprender isso enquanto se estuda escrevendo um documento em $\LaTeX$. Enfim, como eu disse, assim como no HTML, você vai ter jeitos de definir um título — que no contexto do $\LaTeX$, chamamos de &lt;strong>sessões&lt;/strong> —, um parágrafo, texto em negrito ou itálico e assim vai. Mas acho que é bom começarmos com a estrutura mais básica de um documento, como é formada uma página em branco, já existem tutoriais que irão explicar essas coisas melhor do que eu. Dê uma olhada nesse exemplo:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-tex" data-lang="tex">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">% Essa linha faz o compilador saber que ele deve compilar para um artigo,
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">% isso porque tem como compilar para uma apresentação de slides ou outros
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">% tipos de documentos.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">\documentclass&lt;/span>{article}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">% Aqui eu costumo listar os pacotes que vou precisar para renderizar
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">% algumas coisas, esses daqui, por exemplo, são os pacotes para a notação
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">% matemática e para escrever blocos de código, respectivamente.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">\usepackage&lt;/span>{amsmath}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">\usepackage&lt;/span>{minted}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">% Metada simples do seu documento, título, autor e data de criaçao. Essas
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">% informações vão aparecer no header (na parte de cima) da página.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">\title&lt;/span>{Meu primeiro documento em &lt;span style="color:#66d9ef">\LaTeX&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">\author&lt;/span>{Eu mesmo!}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">\date&lt;/span>{Dis 6 de Julho, 2023}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">% E aqui você vai adicionar o conteúdo do seu documento normalmente. Assi
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">% como no Markdown, os parágrafos são formados por uma, ou mais, linhas
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">% de texto entre duas linhas em branco.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">\begin&lt;/span>{document}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">\maketitle&lt;/span> &lt;span style="color:#75715e">% essa macro desenha a metadata do arquivo essa página, só isso.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Olá, mundo! Eu sou o primeiro parágrafo.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">\end&lt;/span>{document}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Se você realmente está interessado(a) em aprender essa linguagem, fica aqui algumas recomendações rápidas:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.overleaf.com/" target="_blank" rel="noopener"
+>&lt;strong>Overleaf&lt;/strong>&lt;/a>: Parecido com o Google Drive, ele é um serviço que permite você escrever seus projetos, guardá-los em cloud e ainda contribuir com o projeto de seus amigos.&lt;/li>
+&lt;li>&lt;a class="link" href="https://latex2image.joeraut.com/" target="_blank" rel="noopener"
+>&lt;strong>LaTeX2Image&lt;/strong>&lt;/a>: Esse é legal se você só tiver interessado em praticar a notação matemática ou gerar uma imagem para pôr na apresentação em PowerPoint que seus colegas já fizeram.&lt;/li>
+&lt;/ul>
+&lt;p>Além disso, existem inúmeros aplicativos, ferramentas e plugins pra VS Code que permitem você escrever um documento em LaTeX e visualizar em uma outra aba/janela o resultado do que você está escrevendo. Sem falar dos que te permitem mesclar Markdown+$\LaTeX$ no mesmo documento, como o &lt;a class="link" href="https://obsidian.md/" target="_blank" rel="noopener"
+>Obsidian&lt;/a> ou &lt;a class="link" href="https://pandoc.org/" target="_blank" rel="noopener"
+>Pandoc&lt;/a> — meu posts são escritos usando essa mesma estratégia.&lt;/p>
+&lt;p>&lt;img src="https://kevinmarquesp.github.io/post/230707141644_o-que-e-e-como-surgiu-o-latex/overleaf-screenshot.png"
+width="1920"
+height="1050"
+srcset="https://kevinmarquesp.github.io/post/230707141644_o-que-e-e-como-surgiu-o-latex/overleaf-screenshot_hu2bf825eaf0167e21bce533ca1327f8ce_303746_480x0_resize_box_3.png 480w, https://kevinmarquesp.github.io/post/230707141644_o-que-e-e-como-surgiu-o-latex/overleaf-screenshot_hu2bf825eaf0167e21bce533ca1327f8ce_303746_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Demonstração da interface do Overleaf"
+class="gallery-image"
+data-flex-grow="182"
+data-flex-basis="438px"
+> &lt;!-- IMAGE -->&lt;/p>
+&lt;h2 id="porque-eu-ainda-prefiro-markdown">Porque eu ainda prefiro Markdown&lt;/h2>
+&lt;p>Apesar das facilidades que $\LaTeX$ traz, fora dessa situação de escrever um artigo com inúmeras páginas e capítulos, $\LaTeX$ acaba sendo meio inútil no meu dia a dia, o que nunca foi um problema. Por eu usar o Obsidian, se eu precisar de $\LaTeX$ pra escrever algo em específico, o próprio app permite que eu use essa sintaxe mesclada com Markdown, o que turbina o meu &lt;em>workflow&lt;/em>, já que eu to aproveitando o melhor dos dois mundos. Mas depois dessa micro pesquisa, acho que vou começar a escrever documentos inteiros baseados em $\LaTeX$ a partir de agora, ao menos trabalhos de escola ou qualquer documento que eu queira que tenha um &lt;em>look&lt;/em> mais profissional. Nas minhas anotações, vou continuar valorizando mais a praticidade e legibilidade do que a quantidade massiva de opções e glifos que o $\LaTeX$ me traz.&lt;/p>
+&lt;p>É isso, obrigado por ter dedicado um tempinho pra ler esse post! Compartilhe com o seus amigos se você o achou útil e me diga nos comentários como você usa $\LaTeX$ no seu dia a dia ou como você costuma escrever suas anotações. Até o meu próximo artigo!&lt;/p></description></item><item><title>Anotações do Enem +SIMULADO | Estudando Interpretação de Texto e Língua Portuguesa</title><link>https://kevinmarquesp.github.io/post/230522225512_anotacoes-do-enem-simulado-estudando-interpretacao-de-texto-e-lingua-portuguesa/</link><pubDate>Mon, 22 May 2023 22:55:12 -0300</pubDate><guid>https://kevinmarquesp.github.io/post/230522225512_anotacoes-do-enem-simulado-estudando-interpretacao-de-texto-e-lingua-portuguesa/</guid><description>&lt;img src="https://kevinmarquesp.github.io/default-thumb.png" alt="Featured image of post Anotações do Enem +SIMULADO | Estudando Interpretação de Texto e Língua Portuguesa" />&lt;p>Mais um tópico iniciado e não finalizado, semana passada meu cérebro percebeu a quantidade de coisas que preciso estudar e simplesmente arregou, parece que não consegui suportar o fato de ter sido produtivo uma semana e que à próxima só seria bem sucedida se eu tivesse sorte. Enfim, no meio tempo da semana passada eu decidi estuar Interpretação de Texto — especificamente — para tentar dar um passo pequeno na área de Linguagens, apesar de não gostar do assunto mesmo entendo sua relevância para o desenvolvimento de uma sociedade (é chato, só isso que queria dizer).&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">meta&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">topico&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Linguagens e suas tecnologias | Interpretação de Texto&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">simulado&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">prova&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Enem 2022, prova Amarela (primeiro dia) - Linguagens&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">nota&lt;/span>: [&lt;span style="color:#ae81ff">31&lt;/span>, &lt;span style="color:#ae81ff">0.68&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">desempenho&lt;/span>: &lt;span style="color:#ae81ff">.35&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="introdução-à-interpretação-de-texto">Introdução à Interpretação de Texto&lt;/h2>
+&lt;p>Interpretar um texto é ir além do que está escrito e concluir ideias novas baseadas nas informações apresentadas no texto (ponto). Todo texto foi escrito com um propósito e por alguém, sem exceção, todo &lt;strong>enunciador&lt;/strong> (escritor) quer passar compartilhar uma ideia para o &lt;strong>interlocutor&lt;/strong> (leitor) sobre determinado assunto. Interpretar um texto é, literalmente, cumprir o seu papel de interlocutor e fazer parte desse processo comunicativo com quem escreveu o texto — acredito que isso vá desde de slogan de marca até questões chatas e sem sentido de provas de Física.&lt;/p>
+&lt;p>Para interpretar um texto, parece que todos os sites/professores concluem que, é necessário ler o mesmo texto duas vezes: uma vez para ter uma ideia geral do texto e a outra para destacar os pontos chaves do texto e chegar em ideias novas. Fazendo isso com o seguinte método em mente: *&lt;em>entender → compreender → inferir&lt;/em>.&lt;/p>
+&lt;h3 id="classe-de-palavras--morfologia">Classe de palavras / morfologia&lt;/h3>
+&lt;p>A palavra grega &lt;strong>&amp;ldquo;morfé&amp;rdquo;&lt;/strong> (&lt;em>μορφή&lt;/em>) significa &amp;ldquo;forma&amp;rdquo; ou &amp;ldquo;estrutura&amp;rdquo; e &lt;strong>&amp;ldquo;logos&amp;rdquo;&lt;/strong> (&lt;em>λόγος&lt;/em>)… Essa todo mundo sabe… OU SEJA, no ramo da linguística, &lt;em>morfologia&lt;/em> é o estudo dedicado a compreender o jeito que usamos as palavras, e elementos que formam um texto de forma geral, para transmitir uma ideia, um significado — em resumo: é muito tedioso e repleto de regras pra decorar.&lt;/p>
+&lt;h4 id="substantivos">Substantivos&lt;/h4>
+&lt;p>São as palavras que usamos para nomear as coisas que exitem no mundo, é o tipo de palavra surgiu com alguém fazendo um &amp;ldquo;barulho&amp;rdquo; com a boca olhando pra alguma coisa e esse &amp;ldquo;barulho&amp;rdquo; passou a ser usado para saber que uma pessoa está falando sobre um tigre, por exemplo.&lt;/p>
+&lt;p>Essa palavra veio do Latim (&lt;em>substantivum&lt;/em>) e significa &amp;ldquo;substância&amp;rdquo;, &amp;ldquo;essência&amp;rdquo;, &amp;ldquo;substancial&amp;rdquo;. Porque, historicamente, acreditava-se que algumas palavras traziam a essência das coisas as quais elas se referem.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Podem ser SIMPLES ou COMPOSTOS&lt;/strong>
+&lt;ul>
+&lt;li>&lt;strong>Simples&lt;/strong>: possuem apenas um radical (uma palavra só), como em &amp;ldquo;sol&amp;rdquo; ou &amp;ldquo;chuva&amp;rdquo;;&lt;/li>
+&lt;li>&lt;strong>Composto&lt;/strong>: possuem mais de um radical na composição, como em &amp;ldquo;girassol&amp;rdquo; e &amp;ldquo;guarda-chuva&amp;rdquo;;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Podem ser COMUNS ou PRÓPRIOS&lt;/strong>
+&lt;ul>
+&lt;li>&lt;strong>Comum&lt;/strong>: é um objeto, uma palavrinha qualquer;&lt;/li>
+&lt;li>&lt;strong>Próprio&lt;/strong>: é uma palavra especial que dá nome a algo ou alguém, como &amp;ldquo;Josefina&amp;rdquo; ou &amp;ldquo;Amapá&amp;rdquo;;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Podem ser CONCRETOS ou ABSTRATOS&lt;/strong>
+&lt;ul>
+&lt;li>&lt;strong>Concreto&lt;/strong>: só existe (acho que é meio autoexplicatório);&lt;/li>
+&lt;li>&lt;strong>Abstrato&lt;/strong>: é tudo que não é concreto, como sentimentos e verbos&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Podem ser PRIMITIVOS ou DERIVADOS&lt;/strong>
+&lt;ul>
+&lt;li>&lt;strong>Primitivo&lt;/strong>: significa que são palavras simples que você não consegue tirar outras palavras de dentro dela, como em &amp;ldquo;dente&amp;rdquo;;&lt;/li>
+&lt;li>&lt;strong>Derivado&lt;/strong>: é o oposto, esses substantivos são derivados por outras palavras na composição, como em &amp;ldquo;dentadura&amp;rdquo;;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;ul>
+&lt;li>&lt;strong>Os gêneros de um substantivo podem ser BIFORME ou UNIFORME&lt;/strong>
+&lt;ul>
+&lt;li>&lt;strong>Biforme&lt;/strong>: é quando um substantivo têm uma palavra diferente pra cada gênero, como &amp;ldquo;gato&amp;rdquo; e &amp;ldquo;gata&amp;rdquo;, &amp;ldquo;menino&amp;rdquo; ou &amp;ldquo;menina&amp;rdquo;, &amp;ldquo;cavalo&amp;rdquo; e &amp;ldquo;égua&amp;rdquo;, etc…;&lt;/li>
+&lt;li>&lt;strong>Uniforme&lt;/strong>: esse é &lt;em>punk&lt;/em>, é dividido em COMUM DE DOIS GÊNEROS, SOBRECOMUM &amp;amp; EPICENOS&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>:
+&lt;ul>
+&lt;li>&lt;strong>Comum de dois gêneros&lt;/strong>: é uma palavra que não muda o gênero, outra palavra faz isso (normalmente é um artigo) como em &amp;ldquo;&lt;strong>o/a&lt;/strong> estudante&amp;rdquo;;&lt;/li>
+&lt;li>&lt;strong>Sobrecomuns&lt;/strong>: é quando um substantivo funciona para os dois sexos sem alteração, como &amp;ldquo;a criança&amp;rdquo;;&lt;/li>
+&lt;li>&lt;strong>Epiceno&lt;/strong>: é uma outra palavra (geralmente &amp;ldquo;fêmea&amp;rdquo; ou &amp;ldquo;macho&amp;rdquo;) que determina o gênero de uma espécie, como &amp;ldquo;a borboleta [macho]&amp;rdquo; ou &amp;ldquo;o crocodilo [fêmea]&amp;rdquo;;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="adjetivos">Adjetivos&lt;/h3>
+&lt;p>Também é autoexplicatória, literalmente &lt;strong>adiciona&lt;/strong> uma característica a um &lt;strong>substantivo&lt;/strong>. Por exemplo: &amp;ldquo;os carros &lt;em>velozes&lt;/em> …&amp;rdquo;, &amp;ldquo;João é &lt;em>alto&lt;/em>&amp;rdquo;, &amp;ldquo;as alunas são &lt;em>baixas&lt;/em>&amp;rdquo;, etc.. Perceba como o adjetivo precisa concordar com a quantidade do substantivo e com o gênero dele.&lt;/p>
+&lt;p>A única coisa a se comentar é o fato de as palavras terminadas com o prefixo &amp;ldquo;-mente&amp;rdquo; costumam ser adjetivos, que um adjetivo sozinho pode mudar de classe gramatical e que a ordem em que ele aparece na oração pode mudar o significado dela. Mas isso é o tipo de coisa que, se já não for natural, se percebe lendo.&lt;/p>
+&lt;h3 id="numeral">Numeral&lt;/h3>
+&lt;p>O mais simples de entender o conceito básico, as exceções das regras que o tornam difícil. Mas nem vale a pena memorizar esse tipo de regra porque, primeiro, isso não cai no enem e, segundo, só saber que essas regras existem já é o bastante, porque se você precisar escrever um artigo caia nessa situação, você pesquisa no Google e pronto. Antes, vamos às classificações:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Cardinal&lt;/strong>: refere-se à quantidade, &amp;ldquo;um&amp;rdquo;, &amp;ldquo;dois&amp;rdquo;, &amp;ldquo;três&amp;rdquo;, etc…;&lt;/li>
+&lt;li>&lt;strong>Ordinal&lt;/strong>: é usado para representar uma ordem de itens ou eventos, &amp;ldquo;primeiro&amp;rdquo;, &amp;ldquo;segundo&amp;rdquo;, &amp;ldquo;primeiramente&amp;rdquo;, etc.;&lt;/li>
+&lt;li>&lt;strong>Multiplicativo&lt;/strong>: &amp;ldquo;dobro&amp;rdquo;, &amp;ldquo;triplo&amp;rdquo;, &amp;ldquo;quadruplo&amp;rdquo;;&lt;/li>
+&lt;li>&lt;strong>Fracionário&lt;/strong>: &amp;ldquo;metade&amp;rdquo;, &amp;ldquo;meio&amp;rdquo;;&lt;/li>
+&lt;/ul>
+&lt;p>As regras que disse ali em cima são sobre o jeito que se deve ler (ou escrever, dependendo da situação) os números romanos em nomes e em leis, parece que depois do 10 você não fala &amp;ldquo;décimo-primeiro&amp;rdquo;, você fala &amp;ldquo;onze&amp;rdquo;, mas não lembro exatamente como é a regra — como eu disse, irrelevante.&lt;/p>
+&lt;p>&lt;em>[…exite mais tópicos além desses três, mas não estudei a fundo o restante ainda…]&lt;/em>&lt;/p>
+&lt;h2 id="simulado-questões-de-linguagens">Simulado, questões de Linguagens&lt;/h2>
+&lt;p>&lt;img src="https://kevinmarquesp.github.io/post/230522225512_anotacoes-do-enem-simulado-estudando-interpretacao-de-texto-e-lingua-portuguesa/gabarito.png"
+width="869"
+height="1300"
+srcset="https://kevinmarquesp.github.io/post/230522225512_anotacoes-do-enem-simulado-estudando-interpretacao-de-texto-e-lingua-portuguesa/gabarito_hu262afbab85823bd6d42291a2d0061afe_940921_480x0_resize_box_3.png 480w, https://kevinmarquesp.github.io/post/230522225512_anotacoes-do-enem-simulado-estudando-interpretacao-de-texto-e-lingua-portuguesa/gabarito_hu262afbab85823bd6d42291a2d0061afe_940921_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Enem 2022, prova Amarela (primeiro dia) - Linguagens [gabarito]"
+class="gallery-image"
+data-flex-grow="66"
+data-flex-basis="160px"
+>&lt;/p>
+&lt;h3 id="observações-e-dúvidas-verificadas-pelo-chat-gpt">Observações e dúvidas (verificadas pelo Chat GPT)&lt;/h3>
+&lt;ul>
+&lt;li>Observação: guias, ou manuais, propõem um conjunto de ações específicas para cada etapa de uma tarefa.&lt;/li>
+&lt;li>Dúvida: o que é a obra/movimento &lt;em>maneirista&lt;/em> do século XVII.
+&lt;ul>
+&lt;li>Informação adicional: esse movimento foi criado após o Renascimento, e é caracterizado por possuir formas mais longas e exageradas, desafiando o equilíbrio clássico das obras do Renascimento. Também é conhecido por sua ênfase na expressão emocional e na distorção da figura humana.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Dúvida: o que foi o movimento &lt;em>minimalista&lt;/em> e o que compõe esse tipo de obra.
+&lt;ul>
+&lt;li>Informação adicional: é um movimento que surgiu nas décadas de 1950 e 1960 que busca reduzir uma obra de arte aos seus elementos essenciais, descartando as decorações e expressões &amp;ldquo;desnecessárias&amp;rdquo;. São caracterizadas por linhas simples, formas geométricas, cores sólidas e repetição de padrões nas obras.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Dúvida: palavra que não conheço, usadas para descrever as características de um personagem:
+&lt;ul>
+&lt;li>&lt;em>Arioso&lt;/em> é um estilo de música melódico fora da estrutura formal de canto, mas pode ser uma pessoa harmoniosa ou fluente;&lt;/li>
+&lt;li>&lt;em>Enxovalhada&lt;/em> é uma palavra mais ofensiva pra &amp;ldquo;desarrumado&amp;rdquo; ou &amp;ldquo;sujo&amp;rdquo;, desordem no geral;&lt;/li>
+&lt;li>&lt;em>Solideu&lt;/em> é um chapéu usado pelos membros do clero em algumas denominações religiosas; e&lt;/li>
+&lt;li>&lt;em>Borla&lt;/em> é um enfeite para chapéus ou casacos, como se fosse um colar brilhoso no chapéu ou uma corrente na cintura de uma calça;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Observação: as notícias de aprovação de leis parecem apoiar a lei;&lt;/li>
+&lt;li>Observação: a análise crítica de uma obra de arte pode acontecer na terceira pessoa;&lt;/li>
+&lt;li>Observação: os poemas são expressados através de metáforas muitas vezes;&lt;/li>
+&lt;li>Dúvida: &amp;ldquo;Justaposição de sequências verbais e nominais&amp;rdquo; &lt;em>(???)&lt;/em>
+&lt;ul>
+&lt;li>Informação adicional: é a colocação próxima, ou lado a lado, de orações ou expressões, sendo uma técnica para criar efeitos estilísticos, contrastes ou associação de significado entre essas elas.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="conclusão">Conclusão&lt;/h2>
+&lt;p>Semana passada manejei mal o meu tempo, resultando nesse caos que está agora a minha rotina de estudos. Estudar o significado das palavras é cansativo e massante, mas vale a pena no final do dia. Acho que o meu maior erro nesse tema, em específico, foi começar pelo lugar errado — quando eu vi que eu precisava estudar analise sintática pra interpretar melhor, não achei que seria necessário estudar as Classes de Palavras antes (tanto é que nem coloquei nesse artigo o que estudei sobre analise sintática). Isso tudo gastou tempo e acabei nem estudando TODAS as classes de palavras que preciso saber que existem.&lt;/p>
+&lt;p>Simulado, descobri que o Chat GPT ajuda muito mesmo na questão de dizer se minha suposição está certa ou não. Sei resumi a resposta dele nas anotações, mas ainda não confio com 100% de certeza no que ele disse, além do que, são tópicos que vou estudar depois, então esses resumos se tornarão obsoletos com o passar do tempo. Apesar de ter tirado uma nota boa até, percebi que as minhas maiores dificuldades são a História da Arte e a interpretação de algumas situações mais abstratas, mais que sentimentos ou emoções, o que é um tema complexo de se interpretar numa narrativa.&lt;/p>
+&lt;p>Acabei procrastinando uma semana inteira por motivos pessoais e já comecei a lidar com isso de novo (não vale apena discutir isso aqui), &amp;ldquo;só&amp;rdquo; preciso de mais concentração. Fora isso, é bom lembrar lembrar de tentar ser eficiente, na questão de pedir pra um professor corrigir minhas redações e devolver logo depois de ter lido. Apesar de que realmente não é uma má ideia deixar as minhas redações em arquivos separados nesse blog. Com certeza preciso ler mais, dá até vergonha não saber o significado de algumas daquelas palavrinhas e preciso dar um tempo em linguagens — &lt;em>also&lt;/em>, preciso me organizar pra não me perder no futuro, quando voltar a estudar esse mesmo tema de onde parei.&lt;/p>
+&lt;p>Resumindo em pouquíssimas palavras: preciso ter mais paciência e ser um pouco mais metódico, sem me prender no loop eterno de planejamento.&lt;/p>
+&lt;h3 id="fontes-e-links-externos-para-aprofundamento">Fontes e links externos para aprofundamento&lt;/h3>
+&lt;h4 id="fontes-de-pesquisa">Fontes de pesquisa&lt;/h4>
+&lt;ul>
+&lt;li>QueroBolsa | Interpretação de Texto (com questões práticas): &lt;a class="link" href="https://querobolsa.com.br/enem/portugues/interpretacao-de-texto" target="_blank" rel="noopener"
+>https://querobolsa.com.br/enem/portugues/interpretacao-de-texto&lt;/a>&lt;/li>
+&lt;li>Compreensão e Interpretação de Texto – Revisão Enem com Prof. Noslen: &lt;a class="link" href="https://www.youtube.com/watch?v=XsN0e_xPyNI" target="_blank" rel="noopener"
+>https://www.youtube.com/watch?v=XsN0e_xPyNI&lt;/a>&lt;/li>
+&lt;li>Análise sintática com o Prof. Noslen (playlist): &lt;a class="link" href="https://www.youtube.com/playlist?list=PLVyIxkvuIqxrbG7evU6XiKoHdlz-NhaAI" target="_blank" rel="noopener"
+>https://www.youtube.com/playlist?list=PLVyIxkvuIqxrbG7evU6XiKoHdlz-NhaAI&lt;/a>&lt;/li>
+&lt;li>Classe de palavras com o Prof. Noslen (playlist): &lt;a class="link" href="https://www.youtube.com/playlist?list=PLVyIxkvuIqxp1vpXrdsOzpL25V5srrynk" target="_blank" rel="noopener"
+>https://www.youtube.com/playlist?list=PLVyIxkvuIqxp1vpXrdsOzpL25V5srrynk&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="arquivos-originais">Arquivos originais&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a class="link" href="./20230508__enem__linguagens__introducao-a-interpretacao.txt" >20230508__enem__linguagens__introducao-a-interpretacao.md&lt;/a>
+&lt;ul>
+&lt;li>&lt;a class="link" href="./20230508__enem__topicos-da-analise-sintatica.txt" >20230508__enem__topicos-da-analise-sintatica.md&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a class="link" href="./20230518__enem__lingua-portuguesa__classe-de-palavras.txt" >20230518__enem__lingua-portuguesa__classe-de-palavras.md&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="./20230508__enem__interpretacao-de-texto.txt" >20230508__enem__interpretacao-de-texto.md&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>Alguns verbos podem se tornar abstratos quando esse verbo é representado com uma palavra que pode apontar uma característica ou costume de algo ou alguém. Por exemplo: o verbo &amp;ldquo;beber&amp;rdquo; pode virar o substantivo abstrato &amp;ldquo;bebedeira&amp;rdquo;, ou &amp;ldquo;ler&amp;rdquo; pode se tornar &amp;ldquo;leitura&amp;rdquo;.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:2">
+&lt;p>&lt;em>Here we go again…&lt;/em> Essa palavra também veio do Grego, &amp;ldquo;epi-&amp;rdquo; (&lt;em>επί&lt;/em>) e &amp;ldquo;-gonos&amp;rdquo; (&lt;em>γένος&lt;/em>), significam, respectivamente, &amp;ldquo;em relação a&amp;rdquo; e &amp;ldquo;geração&amp;rdquo; ou &amp;ldquo;espécie&amp;rdquo;. É só um jeito de se referir ao gênero de uma espécie que normalmente dá a entender que é macho ou fêmea, como &amp;ldquo;morcego&amp;rdquo; que é macho e &amp;ldquo;morcego fêmea&amp;rdquo; que só agora é fêmea.&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>Primeiras impressões com o PowerShell</title><link>https://kevinmarquesp.github.io/post/230514211802_primeiras-impressoes-com-o-powershell/</link><pubDate>Sun, 14 May 2023 21:18:02 -0300</pubDate><guid>https://kevinmarquesp.github.io/post/230514211802_primeiras-impressoes-com-o-powershell/</guid><description>&lt;img src="https://kevinmarquesp.github.io/post/230514211802_primeiras-impressoes-com-o-powershell/thumb.png" alt="Featured image of post Primeiras impressões com o PowerShell" />&lt;p>Pois é, sucumbi ao desejo de experimentar um ferramental da Microsoft e acabai estudando um pouco o PowerShell, sei que é um ato de blasfêmia perante a comunidade que prega a liberdade e o coletivismo, mas &lt;em>meh&lt;/em>. Brincadeiras a parte, eu tenho escutado muito que o “PowerShell é o &lt;em>shell&lt;/em> para o desenvolvedor moderno” e que “[…] é fácil de aprender e prático de usar”, então decidi ver se é isso tudo mesmo, aproveitando que o Windows aqui está mais mofando enquanto não jogo Celeste.&lt;/p>
+&lt;p>Apesar de agora eu já ter uma base boa até, eu não comecei a estudar só por pura curiosidade, acredito que por vivermos em um mundo controlado por essas &lt;em>mega corps&lt;/em>, aprender PowerShell não seja um investimento de tempo tão ruim. Tanto é que ele já foi útil no meu dia a dia, enquanto eu estava na escola, dei uma ajudinha para um amigo fazer o cálculo da distribuição gaussiana num dos PC’s da escola. Todo conhecimento é um investimento com saldo positivo na minha opinião, e eu precisava mudar um pouco de ar e sair do Linux para espiar o OS dos meus amigos e professores.&lt;/p>
+&lt;p>Enfim, tentarei não ser muito técnico e abordar os detalhes da linguagem nesse post, afinal, se você quer aprender, você pode fazer isso sozinho sem problema nenhum — a documentação é muito boa e têm vários tutorias/cursos por ai, mas mesmo assim listarei algumas das fontes que usei para pesquisar sobre a linguagem, talvez seja útil para você. Essas últimas semanas tem sido difíceis (sim, eu odeio estudar para o ENEM), portanto, tentarei ser o mais claro e objetivo nesse artigo.&lt;/p>
+&lt;h2 id="explorando-a-linguagem">Explorando a linguagem&lt;/h2>
+&lt;p>Ok, antes de falar do óbvio, acho que é legal lembrar o porquê do PowerShell existir. Acho que muitos de nós [desenvolvedores] sempre enxergou o &lt;em>Command Prompt&lt;/em> do Windows como o Bash deles, e, eu sei que tem toda a história
+por trás do Bash, mas mesmo assim, a experiência de usar o CMD não é a mesma coisa. Dá pra fazer coisas muito básicas, como gerenciar processos e lidar com o &lt;em>file system&lt;/em>, mas que é complicado de usar é, até pra editar um texto pelo terminal não rola (problemas assim só são preocupantes quando o teu OS não está &lt;em>bootando&lt;/em>).&lt;/p>
+&lt;p>Como a Microsoft, com sua sabedoria infinita, não gosta de jogar projeto fora, o CMD ainda permanece e irá permanecer conosco por muito tempo. Mas a produtividade dos desenvolvedores que usam Windows precisava evoluir logo. Daí surgiu a idea do PowerShell — o projeto tinha um outro nome no início e até acho que era &lt;em>open-source&lt;/em>, mas não lembro —, um shell moderno e linguagem de script de uso prático para as mais diversas atividades, desde lidar com sessões de conexões remotas até o script de backup de arquivos mais ordinário.&lt;/p>
+&lt;p>Antes que fique muito propaganda, esse “moderno” só significa que o PowerShell foi criado pensando na produtividade do desenvolvedor sem se preocupar com coisas do tipo “esse comando precisa se chamar &lt;code>cd&lt;/code> por que &lt;code>cahnge-dir&lt;/code> ocupa 10 bytes na memória e é &lt;em>bLoAt&lt;/em>”. Lógico que isso era uma preocupação séria no século passado, mas hoje não têm muito problema criar convenções de nome que facilitam o uso dos comandos.&lt;/p>
+&lt;h3 id="orientação-a-objetos-e-frescuras">Orientação a objetos e frescuras&lt;/h3>
+&lt;p>Pois é, todo &lt;em>Cmdlet&lt;/em> (já já eu explico) não só retorna um objeto na &lt;em>Pipeline&lt;/em> para o próximo comando usar. De fato, o PowerShell foi construído em cima do .NET core e quase tudo nele é um objeto .NET, tanto é que todo objeto que você encontrar vai ter sempre o método &lt;code>.GetType()&lt;/code> nele, por exemplo. Essa feature faz dele um shell &lt;em>cross-platform&lt;/em>, dá pra usar ele no Linux se você quiser, sei lá porque.&lt;/p>
+&lt;p>Esses &lt;em>Cmdlets&lt;/em> é o jeito do PowerShell de dizer “comando”. Mas dá pra definir melhor esses termos:&lt;/p>
+&lt;ul>
+&lt;li>&lt;em>Cmdlet&lt;/em>: É um comando, por baixo ele é um objeto .NET que foi compilado para um binário executável. Eles podem ou não retornar um objeto para o próximo &lt;em>Cmdlet&lt;/em>, ou &lt;em>Function&lt;/em>, usar na &lt;em>Pipeline&lt;/em>;&lt;/li>
+&lt;li>&lt;em>Pipeline&lt;/em>: É literalmente o operador de pipe (&lt;code>|&lt;/code>) é igual Bash mesmo, mas aqui essa &lt;em>Pipeline&lt;/em> só pode trafegar objetos .NET;&lt;/li>
+&lt;li>&lt;em>Function&lt;/em>: É uma função normal, também parecido com Bash, o diferencial é que scripts inteiros podem ser uma &lt;em>Function&lt;/em>. Eu gosto de enxergá-las como &lt;em>Cmdlets&lt;/em> que são mais lentos de executar, mas mais fáceis de escrever e criar uma;&lt;/li>
+&lt;li>&lt;em>ScriptBlock&lt;/em>: É como uma função anônima de JavaScript, mas é um pouco mais complicado de passar parâmetros para ela. Só lembrando que elas também podem receber valores da &lt;em>Pipeline&lt;/em> em alguns casos, então, são pelo menos dois tipos de input que esses &lt;em>ScriptBlocks&lt;/em> podem receber;&lt;/li>
+&lt;/ul>
+&lt;p>Um detalhe legal, o PowerShell tem a sua própria convenção de nomes para &lt;em>Functions&lt;/em> e &lt;em>Cmdlets&lt;/em>, e outras coisas. Os comandos sempre seguem o padrão de &lt;code>Verb-Noun&lt;/code>, também reparei que os argumentos também são escritos em Camel Case, mas os operadores — agora não tem como defender, por algum motivo eles são parecidos com opções, como o &lt;code>-eq&lt;/code> que é um &lt;code>==&lt;/code>, apesar de que o Bash também é assim — são escritos em minúsculos, o tempo todo.&lt;/p>
+&lt;p>E maioria desses comandos também tem a opção &lt;code>-WhatIf&lt;/code>, que só mostra o output do comando na tela, sem executar nada por baixo. É interessante, mas nunca me vi na necessidade de usar essa opção até agora.&lt;/p>
+&lt;h3 id="falando-sobre-funções-e-variáveis">Falando sobre funções e variáveis&lt;/h3>
+&lt;p>Aqui que as coisas começaram a ficar meio estranhas para mim. Parece que tudo gira em torno de &lt;em>ScriptBlocks&lt;/em>, então o &lt;code>while (...) {...}&lt;/code>, &lt;code>foreach (...) {...}&lt;/code> e até a &lt;code>function ... {...}&lt;/code> são abstrações para lidar com esses blocos de scripts entre chaves. Digo isso porque os &lt;em>ScriptBlocks&lt;/em> podem fazer o uso de algumas variáveis automáticas que te ajudam a lidar com o que o usuário está passando para essa função.&lt;/p>
+&lt;p>Além disso, é possível definir uma função de, pelo menos, três jeitos diferentes. E elas podem ter três blocos dentre delas, que é o &lt;code>begin {...}&lt;/code>, &lt;code>process {...}&lt;/code> e o &lt;code>end {...}&lt;/code>, que só são blocos que são executados no começo, meio e fim respectivamente.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> Weird-Function1 {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $args &lt;span style="color:#75715e"># Uma lista com os argumentos&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $input &lt;span style="color:#75715e"># Objeto que o usuário vai passar pela Pipeline&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> Weird-Function2([VarType] $MyOption, [Parameter(&lt;span style="color:#a6e22e">ValueFromPipeline&lt;/span>)] [&lt;span style="color:#66d9ef">VarType&lt;/span>] $MyObj) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> Weird-Function3 {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">param&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#66d9ef">VarType&lt;/span>] $MyOption,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [Parameter(&lt;span style="color:#a6e22e">ValueFromPipeline&lt;/span>)] [&lt;span style="color:#66d9ef">VarType&lt;/span>] $MyObj
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">begin&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;# Bloco da função que será executado no começo,
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> normalmente vejo o pessoal colocar aqui a parte
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> do código que trata os dados antes de partir para
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> a execução direto #&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">process&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;# Parte principal da função que vai fazer o que
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> ela precisa fazer logo, sem enrolação. Só lembrando
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> que o escopo das variáveis é compartilhado por
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> esses três blocos. #&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">end&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;# E finalmente, aqui o pessoal limpa da memória
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> os objetos que foram usados e retorna para o usuário
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> o que deve ser retornado. #&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Existe muita coisa que pode ser dita só sobre esse tópico — funções, variáveis, escopo, etc. — que abordar isso aqui é fugir totalmente do escopo do artigo. Mas vale pesquisar, mesmo se você não pretende trabalhar com Windows o tempo todo, é legal saber para não se perder na hora de ver o código de um colega de trabalho/escola.&lt;/p>
+&lt;h3 id="documentação">Documentação&lt;/h3>
+&lt;p>Eu precisava falar disso separadamente. É extraordinária, muito bem construída e o conceito de guardar um manual para tudo da linguagem em arquivos de texto é questionável, considerando que pode ter jeitos melhores de documentar um &lt;em>Cmdlet&lt;/em>.&lt;/p>
+&lt;p>Parece que o PowerShell segue essa filosofia de o desenvolvedor não depender de conexão com a internet para saber como os conceitos, funções e comandos da linguagem funcionam. E tá, sei que você está pensando: “Mas isso é normal, existe o &lt;code>man&lt;/code>, sabia?”. Mas o ponto é que as documentações são repletas de exemplos e são &lt;strong>fáceis&lt;/strong> de entender. Quando você está com dúvida em algo, um &lt;code>Get-Help&lt;/code> aqui, um &lt;code>.GetType()&lt;/code> ali e um &lt;code>Get-Member&lt;/code> acolá resolve.&lt;/p>
+&lt;h2 id="exemplo-de-código">Exemplo de código&lt;/h2>
+&lt;p>A um tempo atrás eu fiz um script em Batch para selecionar alguns tipos específicos de arquivos e copiar para uma pasta. Eu tinha visto um vídeo do canal &lt;a class="link" href="https://www.youtube.com/channel/UCGObNjkNjo1OUPLlm8BTb3A" target="_blank" rel="noopener"
+>Fábrica de Noobs&lt;/a> que vi quando era criança. Se me lembro bem, ele só mostrou por 5 segundos um script que copiava arquivos, ai eu pensei em fazer igual. Agora vou tentar convertê-lo para uma ferramenta usando o PowerShell.&lt;/p>
+&lt;p>Ok, esse primeiro trecho vai ditar quais elementos serão necessários para o script funcionar. Veja que só o &lt;code>-SelectFiles&lt;/code> é obrigatório, vou explicar o porquê mais adiante:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>[CmdletBinding()] &lt;span style="color:#75715e"># Isso serve para o script se comportar como um Cmdlet (pesquise, to com preguiça...)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">param&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#66d9ef">String&lt;/span>] $FromDir,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#66d9ef">String&lt;/span>] $DestDir,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [Parameter(&lt;span style="color:#a6e22e">Mandatory&lt;/span>)] [&lt;span style="color:#66d9ef">String&lt;/span>] $SelectFiles = &lt;span style="color:#e6db74">&amp;#34;*&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Mas eu vou precisar do &lt;code>-FromDir&lt;/code> e do &lt;code>-DestDir&lt;/code> de qualquer forma, só que eu quero que apareça uma janela para o próprio usuário especificar essas pastas com os arquivos que ele quer copiar. Tá meio complicado agora, mas tente se esforçar para entender, eu criei uma função — &lt;code>Validate-DirectoryPathOptions&lt;/code> — que muda o valor de determinada opção, e também pede um texto para mostrar na janela de seleção de arquivo.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>$FromDir = Validate-DirectoryPathOptions `
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -Option $FromDir `
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -Description &lt;span style="color:#e6db74">&amp;#34;Selecione o diretório ORIGEM com os arquivos para serem copiados&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$DestDir = Validate-DirectoryPathOptions `
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -Option $DestDir `
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -Description &lt;span style="color:#e6db74">&amp;#34;Selecione o DESTINO para onde os arquivos devem ser copiados&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>A função em si não é muito complicada, ela chama outras funções que só conferem se o usuário escolheu mesmo uma pasta, caso contrário, mostra uma janela de erro e para de executar o código. O detalhe é ver como o PowerShell permite usar classes e métodos de classes estáticas do .NET Core para desenhar essas janelas.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> Display-ErrorMessage([String] $Message) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#66d9ef">System.Windows.Forms.MessageBox&lt;/span>]::Show(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $Message,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;Ocorreu um erro inesperado&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#66d9ef">System.Windows.Forms.MessageBoxButtons&lt;/span>]::OK,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#66d9ef">System.Windows.Forms.MessageBoxIcon&lt;/span>]::Error
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ) &amp;gt; $null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> Select-Directory([String] $Description) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $OpenFileDialog = New-Object System.Windows.Forms.FolderBrowserDialog
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $OpenFileDialog.Description = $Description
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $status = $OpenFileDialog.ShowDialog()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> ($status &lt;span style="color:#f92672">-eq&lt;/span> &lt;span style="color:#e6db74">&amp;#34;OK&amp;#34;&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $OpenFileDialog.SelectedPath
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">throw&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Empty selection&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> Validate-DirectoryPathOptions([String] $Option, [&lt;span style="color:#66d9ef">String&lt;/span>] $Description) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> ($Option &lt;span style="color:#f92672">-ne&lt;/span> &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> $Option
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">try&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Select-Directory ` -Description $Description
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">catch&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Display-ErrorMessage -Message &lt;span style="color:#e6db74">&amp;#34;Nenhuma pasta foi selecionada...&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> exit &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Agora, eu quero adicionar a feature de selecionar certos tipos de arquivos com aliasses, como &lt;code>:images:&lt;/code> para selecionar &lt;code>*.png&lt;/code>, &lt;code>*.jpg&lt;/code>, &lt;code>*.gif&lt;/code>, etc. Essa string com o tipo dos arquivos será escrita no comando com a opção &lt;code>-SelectFiles&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> Validate-SelectionString([String] $Option) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $SelectionAliasses = @(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @(&lt;span style="color:#e6db74">&amp;#34;:images:&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;*.png *.jpg *.jpeg *.gif *.ico *.svg *.bmp&amp;#34;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @(&lt;span style="color:#e6db74">&amp;#34;:videos:&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;*.mp4 *.avi *.mkv *.vmv *.vma *.mpg *.mpeg *.asf&amp;#34;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @(&lt;span style="color:#e6db74">&amp;#34;:music:&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;*.mp3 *.wav *.flaac *.acc *.m4a&amp;#34;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @(&lt;span style="color:#e6db74">&amp;#34;:text:&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;*.txt *.md *.docx *.pdf *.doc *.docm&amp;#34;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @(&lt;span style="color:#e6db74">&amp;#34;:office:&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;*.doc *.docx *.docm *.xlsx *.xlsm *.xltx *.pptx *.pppsx *.potx *.accdb *.mdb&amp;#34;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @(&lt;span style="color:#e6db74">&amp;#34;:word:&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;*.doc *.docs *.docx *.docm&amp;#34;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @(&lt;span style="color:#e6db74">&amp;#34;:excel:&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;*.xlsx *.xlsm *.xltl&amp;#34;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @(&lt;span style="color:#e6db74">&amp;#34;:powerpoint:&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;*.pptx *.ppsx *.potx&amp;#34;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @(&lt;span style="color:#e6db74">&amp;#34;:acess:&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;*.accdb *.mdb&amp;#34;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @(&lt;span style="color:#e6db74">&amp;#34;:web:&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;*.html *.htm *.php *.js *.aspx *.css *.cpp *.py *.json&amp;#34;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @(&lt;span style="color:#e6db74">&amp;#34;:design:&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;*.psd *.indd *.pdf *.svg *.cdr *.ai *.aep *.aepx *.ppj&amp;#34;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @(&lt;span style="color:#e6db74">&amp;#34;:system:&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;*.dll *.reg *.jar *.bat *.vbs *.ps1&amp;#34;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @(&lt;span style="color:#e6db74">&amp;#34;:compressed:&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;*.zip *.rar *.tar *.7z&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">foreach&lt;/span> ($alias &lt;span style="color:#66d9ef">in&lt;/span> $SelectionAliasses) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $Option = $Option &lt;span style="color:#f92672">-replace&lt;/span> $alias
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> $Option
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$SelectFiles = Validate-SelectionString -Option $SelectFiles
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Só preciso finalizar com o &lt;code>ROBOCOPY&lt;/code> agora, poderia ter usado um &lt;em>Cmdlet&lt;/em> do PowerShell mesmo, mas vou aproveitar dessa compatibilidade com alguns binários do CMD.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>ROBOCOPY $FromDir $DestDir $SelectFiles /s
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="conclusão">Conclusão&lt;/h2>
+&lt;p>Se me perguntarem se eu gosto de PowerShell, vou responder: “Yeah…”. Consigo ver que ele realmente modernizou algumas coisas, a ideia de ter uma convenção de nomes que deve ser respeitada é interessante. Mas ainda sinto que têm muita coisa que não há necessidade de ter 3 ou 4 soluções diferentes, além de ser meio lenta, coisa que eu nunca entendi o porquê. A linguagem é sim boa, é fácil e prática, mas dá pra fazer tanta coisa que deixa de ser uma linguagem de script e passa a ser quase uma linguagem de programação.&lt;/p>
+&lt;p>Eu queria que tivesse arrays em Bash, queria que todos os comandos seguissem o pattern de &lt;code>Verb-Noun&lt;/code>, mas não é necessário, ainda mais a essa altura que todo desenvolvedor já está acostumado com a sintaxe. Acredito que o PowerShell é o ideal se você precisa fazer tasks repetitivas muito complicadas no Windows, se não forem complicadas, eu usaria Batch mesmo, já que a maioria está costumado.&lt;/p>
+&lt;p>Outra coisa legal da linguagem, é que ela é fácil de começar, no sentido do Windows já ter uma IDE para programar scripts em PowerShell. Existe vários aliasses que ajudam a migração do usuário de Bash/Batch se adaptar, como a presença do &lt;code>dir&lt;/code> e do &lt;code>ls&lt;/code> (ambos são o &lt;code>Get-ChildItem&lt;/code>). A própria sintaxe dele se assemelha, em alguns pontos, ao Bash Script mesmo.&lt;/p>
+&lt;p>Sobre ser cross-platform, só vejo utilidade para quem cresceu usando o PowerShell e não consegue mudar de &lt;em>workflow&lt;/em> de jeito nenhum, fora isso, é só uma consequência do .NET.&lt;/p>
+&lt;p>É uma linguagem que vale a pena explorar, mas não dedicaria minha vida só nela. Eu aprendi muito sobre a importância desses patterns de nome e como escrever documentações melhores, como me adaptar um ambiente [muito] estranho e como sobreviver num Windows, caso precise. Se quiser uma dica para começar com o PowerShell, apenas domine o &lt;code>Select-Object&lt;/code>, &lt;code>ForEach-Object&lt;/code> e &lt;em>ScriptBlocks&lt;/em> que é sucesso.&lt;/p>
+&lt;hr>
+&lt;p>Artigos externos que usei durante os meus estudos:&lt;/p>
+&lt;ul>
+&lt;li>Artigo: &lt;a class="link" href="https://learn.microsoft.com/en-us/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7.3" target="_blank" rel="noopener"
+>https://learn.microsoft.com/en-us/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7.3&lt;/a>&lt;/li>
+&lt;li>Guide lines: &lt;a class="link" href="https://learn.microsoft.com/en-us/powershell/scripting/developer/cmdlet/strongly-encouraged-development-guidelines?view=powershell-7.3" target="_blank" rel="noopener"
+>https://learn.microsoft.com/en-us/powershell/scripting/developer/cmdlet/strongly-encouraged-development-guidelines?view=powershell-7.3&lt;/a>&lt;/li>
+&lt;li>Para customizar o prompt: &lt;a class="link" href="https://ohmyposh.dev/docs/" target="_blank" rel="noopener"
+>https://ohmyposh.dev/docs/&lt;/a>&lt;/li>
+&lt;li>Gerenciando as features opcionais do Windows: &lt;a class="link" href="https://social.technet.microsoft.com/wiki/contents/articles/39386.windows-10-managing-optional-features-with-powershell.aspx" target="_blank" rel="noopener"
+>https://social.technet.microsoft.com/wiki/contents/articles/39386.windows-10-managing-optional-features-with-powershell.aspx&lt;/a>&lt;/li>
+&lt;li>Membros do &lt;em>namespace&lt;/em> &lt;code>System&lt;/code> do .NET: &lt;a class="link" href="https://learn.microsoft.com/en-us/dotnet/api/system?view=net-8.0" target="_blank" rel="noopener"
+>https://learn.microsoft.com/en-us/dotnet/api/system?view=net-8.0&lt;/a>&lt;/li>
+&lt;li>Prova de que o &lt;code>Out-Null&lt;/code> é mais lento que o &lt;code>$null&lt;/code>: &lt;a class="link" href="https://powerwisescripting.blog/2020/04/15/powershell-null-vs-out-null/" target="_blank" rel="noopener"
+>https://powerwisescripting.blog/2020/04/15/powershell-null-vs-out-null/&lt;/a>&lt;/li>
+&lt;li>Diferenças entre o &lt;code>foreach&lt;/code> e o &lt;code>ForEach-Object&lt;/code>: &lt;a class="link" href="https://devblogs.microsoft.com/scripting/getting-to-know-foreach-and-foreach-object/" target="_blank" rel="noopener"
+>https://devblogs.microsoft.com/scripting/getting-to-know-foreach-and-foreach-object/&lt;/a>&lt;/li>
+&lt;li>Opções para usar com o tipo &lt;code>[Parameter(...)]&lt;/code>: &lt;a class="link" href="https://learn.microsoft.com/en-us/powershell/scripting/developer/cmdlet/parameter-attribute-declaration?view=powershell-7.3" target="_blank" rel="noopener"
+>https://learn.microsoft.com/en-us/powershell/scripting/developer/cmdlet/parameter-attribute-declaration?view=powershell-7.3&lt;/a>&lt;/li>
+&lt;li>Web server IIS da Microsoft: &lt;a class="link" href="https://www.techtarget.com/searchwindowsserver/definition/IIS" target="_blank" rel="noopener"
+>https://www.techtarget.com/searchwindowsserver/definition/IIS&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Talvez você queira rodar essas linhas para tirar algumas dúvidas:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>Get-Help about_Variables
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Get-Help about_Profiles
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Get-Help about_Execution_Polices
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Get-Help about_Preference_Variables
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Get-Help -Examples Get-WindowsOptionalFeature
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Get-Help about_Using
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Get-Help about_Regular_Expressions
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>New-Object System.Security.Cryptography.SHA1Managed | Get-Member
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>New-Object System.Text.StringBuilder | Get-Member
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Enem: Biologia - Ciclos biogeoquímicos, Adenosina trifosfato</title><link>https://kevinmarquesp.github.io/post/230507031416_enem-biologia-ciclos-biogeoquimicos-adenosina-trifosfato/</link><pubDate>Sun, 07 May 2023 03:14:42 -0300</pubDate><guid>https://kevinmarquesp.github.io/post/230507031416_enem-biologia-ciclos-biogeoquimicos-adenosina-trifosfato/</guid><description>&lt;img src="https://kevinmarquesp.github.io/default-thumb.png" alt="Featured image of post Enem: Biologia - Ciclos biogeoquímicos, Adenosina trifosfato" />&lt;h2 id="teoria--prática">Teoria &amp;amp; prática&lt;/h2>
+&lt;h3 id="ciclos-biogeoquímicos">Ciclos biogeoquímicos&lt;/h3>
+&lt;p>Os &lt;strong>ciclos biogeoquímicos&lt;/strong> são os ciclos percorridos por determinados elementos durante a troca de matéria da natureza. Dentre esses ciclos, os mais fáceis de entender são o ciclo da água, do oxigênio e do carbono — darei mais atenção ao ciclo do &lt;strong>nitrogênio&lt;/strong>.&lt;/p>
+&lt;h4 id="ciclo-da-água">Ciclo da água&lt;/h4>
+&lt;p>O único detalhe do ciclo da água é que ele pode ser &lt;em>curto&lt;/em> ou &lt;em>longo&lt;/em>, ou seja, com ou sem a presença de seres vivos nesse ciclo.&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Condensação&lt;/strong>: O condensado de gás $H_2O$ junta as moléculas e as torna mais pesadas e densas (formação de nuvens);&lt;/li>
+&lt;li>&lt;strong>Precipitação&lt;/strong>: As moléculas de $H_2O$ ganham massa o suficiente para descer para o solo (chuva, neve e granizo);&lt;/li>
+&lt;li>&lt;strong>Infiltração&lt;/strong>: As gotas de água se juntam nos lagos, lençóis freáticos, mares, etc.;&lt;/li>
+&lt;li>&lt;strong>Evapotranspiração&lt;/strong> &lt;em>(presente no ciclo longo)&lt;/em>: Os organismos vivos consomem a água para o seu metabolismo e libera parte dela no processo de &lt;em>transpiração&lt;/em> ou excreção; e&lt;/li>
+&lt;li>&lt;strong>Evaporização&lt;/strong>: As moléculas de água voltam para a atmosfera na forma de gás.&lt;/li>
+&lt;/ol>
+&lt;h4 id="ciclo-do-oxigênio-e-do-carbono">Ciclo do oxigênio e do carbono&lt;/h4>
+&lt;p>Só duas coisas importantes. Depois de muito tempo morto, os restos orgânicos de um organismo podem formar os &lt;strong>combustíveis fosseis&lt;/strong> que, quando usados, liberam $CO_2$ na atmosfera. E o carbono pode ser usado pelas plantas para formar a &lt;strong>glicose&lt;/strong>, que também pode ser metabolizada por outros seres vivos que se alimentam dessas plantas.&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Fotossíntese&lt;/strong>: Os organismos fotossintéticos absorvem o $CO_2$ da atmosfera e libera o $O_2$; e&lt;/li>
+&lt;li>&lt;strong>Respiração&lt;/strong>: Os outros organismos absorvem o $O_2$ e liberam o $CO_2$ na atmosfera.&lt;/li>
+&lt;/ol>
+&lt;h4 id="ciclo-do-nitrogênio">Ciclo do nitrogênio&lt;/h4>
+&lt;p>Esse é um tanto mais complicado de entender, porque o nitrogênio é o átomo mais abundante no universo e todo ser vivo depende de nitrogênio para continuar a produzir as fitas de RNA e DNA — dentre outras proteínas —, mas não parece ter nenhum pulmão capaz de metabolizar o $N_2$ presente na atmosfera. Então a natureza encontrou um jeito de usar vários organismos diferentes para transportar esse nitrogênio para os animais.&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Fixação do nitrogênio&lt;/strong>: As bactérias do gênero &lt;em>Rhizobium&lt;/em> — que vivem numa relação simbiótica mutualista com as plantas da família &lt;em>Fabaceae&lt;/em>&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> — consomem o $N_2$ da atmosfera e o metaboliza, formando assim a amônia, $NH_3$;&lt;/li>
+&lt;li>&lt;strong>Nitrificação da amônia&lt;/strong>: A amônia é metabolizada num processo que forma o nutriente &lt;strong>nitrato&lt;/strong>, principal forma de produção de energia das plantas;
+&lt;ol>
+&lt;li>&lt;strong>Nitrosação&lt;/strong>: A amônia é oxidada por um outro grupo de bactérias para formação de $NO_2^-$ (nitrito) — que é toxico para o consumo das plantas;&lt;/li>
+&lt;li>&lt;strong>Nitratação&lt;/strong>: Daí um terceiro grupo de bactérias metabolizam o $NO_2^-$ para liberar o nitrato no solo, composto por $NO_3$;&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>&lt;strong>Desnitrificação do nitrato&lt;/strong>: Outro grupo de bactérias consomem o nitrato para metabolizar e formar $N_2$, que é liberado de volta para a atmosfera.&lt;/li>
+&lt;/ol>
+&lt;p>Os seres vivos consomem o nitrogênio através da cadeia alimentar, porque vai ter os animais que irão se alimentar dessas plantas ricas em nitrogênio depois do processo de &lt;strong>nitrificação&lt;/strong>. Esses organismos podem devolver o nitrogênio de volta para o solo através das excretas nitrogenadas (como a urina), que serão consumidas pelas bactérias no solo, e o ciclo se repete novamente.&lt;/p>
+&lt;h3 id="adenosina-trifosfato">Adenosina trifosfato&lt;/h3>
+&lt;p>É um nucleotídio que é formado por uma pentose (açúcar com 5 átomos de carbono em sua composição), &lt;strong>adenina&lt;/strong> (a mesma base nitrogenada que faz parte do DNA) e um grupo de três fosfatos ionizados&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup> (onde a energia é armazenada). O ATP costuma ser usado quase na mesma hora que é formado.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Nota&lt;/strong>: O conceito de energia na biologia significa &lt;em>“capacidade de fazer trabalho”&lt;/em>, e o ATP “carrega” energia porque ele carrega essa capacidade de reagir com determinadas organelas que resulta em algum &lt;em>trabalho&lt;/em>. Tudo não passa de várias reações químicas, o ATP não é exatamente &lt;strong>a&lt;/strong> energia, ele seria mais como uma bateria que é carregada e descarregada.&lt;/p>
+&lt;/blockquote>
+&lt;p>A energia do ATP é consumido na reação de hidrólise e pode ser representada por $\text{ATP} + H_2O \leftrightarrow P_i + \text{ADP} + \text{Energia}$. Esse &lt;strong>ADP&lt;/strong> (adenosina difosfato) também pode ser consumida pelas organelas em alguns casos, liberando &lt;strong>AMP&lt;/strong> (adenosina monofosfato), e ambas podem ser recicladas para a síntese de ATP novamente.&lt;/p>
+&lt;p>O ATP pode ser sintetizado no processo de respiração celular na mitocôndria com o uso de oxigênio, por quimiossintetizantes oxidando moléculas orgânicas, pela fotossíntese no fotossistema do organismo e por fermentação, que á oxidação incompleta da glicose sem o uso de oxigênio. De qualquer forma, o gasto e consumo de ATP é mensurável, na fermentação, por exemplo, é gasto $-2 \text{ATP}$ para produzir $+4 \text{ATP}$.&lt;/p>
+&lt;h2 id="prática-disciplinada">Prática disciplinada&lt;/h2>
+&lt;h3 id="ciências-da-natureza--2º-dia-prova-amarela-de-2022">Ciências da Natureza — 2º dia, prova amarela de 2022&lt;/h3>
+&lt;p>15 respostas certas de 45 questões, um desempenho de &lt;strong>33%&lt;/strong>, maioria dos acertos foram questões envolvendo biologia e química.&lt;/p>
+&lt;p>&lt;img src="https://kevinmarquesp.github.io/post/230507031416_enem-biologia-ciclos-biogeoquimicos-adenosina-trifosfato/gabarito.jpg"
+width="891"
+height="1329"
+srcset="https://kevinmarquesp.github.io/post/230507031416_enem-biologia-ciclos-biogeoquimicos-adenosina-trifosfato/gabarito_huef74256e3e65223076624301e954edd3_197320_480x0_resize_q75_box.jpg 480w, https://kevinmarquesp.github.io/post/230507031416_enem-biologia-ciclos-biogeoquimicos-adenosina-trifosfato/gabarito_huef74256e3e65223076624301e954edd3_197320_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="Gabarito das questões de Ciências da Natureza da prova amarela de 2022 (segundo dia)"
+class="gallery-image"
+data-flex-grow="67"
+data-flex-basis="160px"
+>&lt;/p>
+&lt;p>Lista de tópicos que eu não compreendi enquanto estava fazendo a prova:&lt;/p>
+&lt;ul>
+&lt;li>Eritropoiese → rins&lt;/li>
+&lt;li>pH e reações com íons → penicilamina (importante)&lt;/li>
+&lt;li>Antígenos → sistema imunológico&lt;/li>
+&lt;li>Acústica e cálculo dessas ondas → pra chegar na velocidade&lt;/li>
+&lt;li>O processo de filtragem da água&lt;/li>
+&lt;li>Oxidação piruvato → na mitocôndria (importante)&lt;/li>
+&lt;li>O que é Joule e D.D.P. (diferença de potencial) → cálculo na eletrônica (importante)&lt;/li>
+&lt;li>Trajetória gravitacional da queda de objetos&lt;/li>
+&lt;li>O que é $1mg L^-1$ → como calcular&lt;/li>
+&lt;li>Processos para a identificação de vírus&lt;/li>
+&lt;li>Cálculo com voltagem → eletrônica&lt;/li>
+&lt;li>Reações com ácidos que liberam gases&lt;/li>
+&lt;li>Reprodução → citologia e genética&lt;/li>
+&lt;li>Corrente eletromagnética&lt;/li>
+&lt;li>Processo de centrifugação com urânio → elementos radioativos&lt;/li>
+&lt;li>Notação para entender os processos de oxirredução&lt;/li>
+&lt;li>População de vetores — &lt;em>esse eu nem lembro o que é&lt;/em>&lt;/li>
+&lt;li>O que é $GWh$ → como calcular&lt;/li>
+&lt;/ul>
+&lt;h3 id="redação-dissertativa-argumentativa">Redação dissertativa argumentativa&lt;/h3>
+&lt;p>&lt;strong>Tema&lt;/strong>: Desafios enfrentados pelas escolas brasileiras para a inclusão de alunos com transtornos de aprendizagem&lt;/p>
+&lt;p>&lt;img src="https://kevinmarquesp.github.io/post/230507031416_enem-biologia-ciclos-biogeoquimicos-adenosina-trifosfato/redacao.jpg"
+width="1034"
+height="1350"
+srcset="https://kevinmarquesp.github.io/post/230507031416_enem-biologia-ciclos-biogeoquimicos-adenosina-trifosfato/redacao_hub90a4a896fa2a260e774d07e5982d732_310256_480x0_resize_q75_box.jpg 480w, https://kevinmarquesp.github.io/post/230507031416_enem-biologia-ciclos-biogeoquimicos-adenosina-trifosfato/redacao_hub90a4a896fa2a260e774d07e5982d732_310256_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="Redação - Desafios enfrentados pelas escolas brasileiras para a inclusão de alunos com transtornos de aprendizagem"
+class="gallery-image"
+data-flex-grow="76"
+data-flex-basis="183px"
+>&lt;/p>
+&lt;p>&lt;em>“Percebe-se que no contexto atual, a estratégia tomada pelo Sistema de Ensino Brasileiro não têm apresentado resultados positivos na vida dos estudantes. Não só isso, mas os próprios estudantes aparentam passar por dificuldades no momento de estudo, causadas tanto pelos professores e seus métodos quanto pela reforma da grade de conteúdos das aulas do ensino médio e ensino fundamental. A consequência dessa situação se mostra na forma de desrespeito pelos professores e desvalorização das escolas, não só por parte dos alunos, mas também por parte dos responsáveis dos estudantes. Partindo desse problema, torna-se óbvia a necessidade de todos — professores, alunos,responsáveis e Estado — tomarem uma provdência urgentemente.&lt;/em>&lt;/p>
+&lt;p>&lt;em>Em suas pesquisas descritas no livro “Garra, o poder da paixão e perseverança”, a psicóloga Angela Duckworth apresenta diversos casos de pessoas bem sucedidas que, na juventude dedicaram tempo e esforço à prática deliberada para ir bem na escola e desenvolver suas habilidades No entanto, essas &lt;del>pesquisam&lt;/del> pesquisas destacam bem a difículdade e o tempo investido para cada &lt;del>indivído&lt;/del> indivíduo desenvolver essas habilidades de forma individual. Não se pode negar a realidade em que o jovem brasileiro priorize socializar-se nas redes sociais ou prefira ajudar ajudar sua família financeiramente logo cedo.&lt;/em>&lt;/p>
+&lt;p>&lt;em>Observando a educação em outros países, a Coréia e a Austrália se destacam de forma excepcional em relação com o resto do mundo, este por ter uma cultura onde os alunos têm a obrigação cumprir uma carga horária extensa e aquele por ter uma cultura mais liberal e por focar mais em seus estudantes individualmente. Em ambos os países, os estudantes cresceram numa cultura onde os professores se preocupam com o aprendizado de seus alunos e pedem ajuda de outros profissionais para educar individualmente alguns alunos caso precise, e por isso devem ser respeitados.&lt;/em>&lt;/p>
+&lt;p>&lt;em>Com isso em mente, o Estado deve pôr de volta à grade de matérias aulas que insentive o pensamento independente e a convivência em sociedade, não só isso, mas também priorizar a criação de bases sólidas para o estudante com Geografia, Latim, Calculo, etc. Ainda nessa ótica, as escolas devem &lt;del>dire&lt;/del> dirigir campanhas de concientização sobre o papel dos professores e alunos na sociedade brasileira e devem investir em profissionais da educação que buscam seguir protocolos de ensino que valorizem o aprendizado dos seus alunos individualmente, com ou sem a ajuda de um outro professor de suporte.&amp;quot;&lt;/em>&lt;/p>
+&lt;h2 id="conclusão">Conclusão&lt;/h2>
+&lt;p>Eu podia ter feito anotações melhores, enquanto estava revisando, eu não entendi algumas coisas que eu mesmo tinha escrito. Nas próximas vezes preciso ter isso em mente enquanto escrevo, o &lt;em>eu&lt;/em> do futuro vai depender dessas anotações. Mas de um modo geral, fui relativamente bem, eu estou conseguido lembrar uns 70% de tudo que estudei sobre biologia, e foi uma ótima escolha gastar um tempo para estudar o significado de algumas palavras em Latim ou Grego, finalmente consigo diferenciar &lt;em>ânion&lt;/em> de &lt;em>cátion&lt;/em>.&lt;/p>
+&lt;p>Apesar disso, eu ainda preciso treinar melhor essa técnica de &lt;em>Zettelkasten&lt;/em> e &lt;em>Kan ban&lt;/em>, aconteceu algumas coisas pessoais e acabei empurrando o simulado e a redação pro final da semana, acho que não escrevi direito os cards do meu &lt;em>backlog&lt;/em> de estudos e não organizei os links de &lt;em>resource&lt;/em> corretamente — sério, têm notas de literatura que têm mais referência que algumas &lt;em>fleeting notes&lt;/em>.&lt;/p>
+&lt;p>O simulado da prova foi deprimente, ainda bem que acertei um terço da prova 5 meses antes e não no dia da prova. Tive mais dificuldades com as questões de física e algumas de química, parece que mesmo estudando muito ainda vai ter alguns buracos de conhecimento grandes em Ciências da Natureza por conta de ser um assunto extenso. O próximo passo é começar a estudar sobre &lt;strong>pH e suas reações&lt;/strong>, também sobre a reação de &lt;strong>oxirredução e eletrólise&lt;/strong>, só depois que voltaria para a biologia para estudar sobre &lt;strong>células e sobre o sistema imunológico&lt;/strong>. Esses são os assuntos que eu considero os mais críticos que não estudei muito (sobre biologia, ainda tem as outras matérias).&lt;/p>
+&lt;p>E sobre a redação, meu professor de português apontou alguns erros de gramática e minha professora de filosofia — que é perita no assunto aliás — me deu 8,0 de nota por eu ter sido consistente no texto. O erro que eu preciso resolver logo é &lt;strong>decorar algumas citações&lt;/strong> e dados para pôr nos 4 parágrafos. Além desse, também percebi que ando comendo algumas letras e palavras enquanto escrevo, isso aconteceu porque não houve rascunho, escrevi o texto de primeira, para economizar tempo. Tô precisando resolver as citações, escrever melhor e &lt;strong>me expressar de forma mais clara&lt;/strong> no texto.&lt;/p>
+&lt;p>Outra coisa importante, minha letra de forma é a minha única caligrafia que é legível, preciso praticar escrever com a letra cursiva. Aparentemente o ENEM está cobrando que os textos sejam escritos desse modo agora.&lt;/p>
+&lt;hr>
+&lt;ul>
+&lt;li>&lt;strong>Ciclos biogeoquímicos e ciclo do hidrogênio&lt;/strong>
+&lt;ul>
+&lt;li>Vídeo do YouTube: &lt;a class="link" href="https://www.youtube.com/watch?v=GkAdsxETLUs" target="_blank" rel="noopener"
+>CICLOS BIOGEOQUÍMICOS | Quer Que Desenhe | Descomplica&lt;/a>&lt;/li>
+&lt;li>Definição: &lt;a class="link" href="https://pt.wikipedia.org/wiki/Fabaceae" target="_blank" rel="noopener"
+>Família de plantas &lt;em>Fabaceae&lt;/em>&lt;/a>&lt;/li>
+&lt;li>Artigo: &lt;a class="link" href="https://sperohope.com/leguminosas" target="_blank" rel="noopener"
+>Características gerais das leguminosas&lt;/a>&lt;/li>
+&lt;li>Definição: &lt;a class="link" href="https://dicas.vestibulares.com.br/amonia/" target="_blank" rel="noopener"
+>Vestibular — resumo sobre amônia&lt;/a>&lt;/li>
+&lt;li>Artigo: &lt;a class="link" href="https://cursinhoparamedicina.com.br/blog/biologia/o-que-sao-excretas-nitrogenadas/" target="_blank" rel="noopener"
+>O que são excretas nitrogenadas&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Adenosina trifosfato&lt;/strong>
+&lt;ul>
+&lt;li>Vídeo do YouTube: &lt;a class="link" href="https://youtu.be/-5VRWcGXlmA" target="_blank" rel="noopener"
+>ATP - ADENOSINA TRIFOSFATO - ESTRUTURA E FUNÇÃO&lt;/a>&lt;/li>
+&lt;li>Artigo: &lt;a class="link" href="https://www.sobiologia.com.br/conteudos/bioquimica/bioquimica2_2.php" target="_blank" rel="noopener"
+>Energia sob a forma de ATP&lt;/a>&lt;/li>
+&lt;li>☆ Artigo: &lt;a class="link" href="https://pt.khanacademy.org/science/biology/energy-and-enzymes/atp-reaction-coupling/a/atp-and-reaction-coupling" target="_blank" rel="noopener"
+>ATP e acoplamento de reações&lt;/a>&lt;/li>
+&lt;li>Vídeo do YouTube: &lt;a class="link" href="https://www.youtube.com/watch?v=kXpzp4RDGJI" target="_blank" rel="noopener"
+>ATP synthase in action&lt;/a>&lt;/li>
+&lt;li>Vídeo do YouTube: &lt;a class="link" href="https://www.youtube.com/watch?v=vUC5njkOq7o" target="_blank" rel="noopener"
+>ATP in Use | HHMI BioInteractive Video&lt;/a>&lt;/li>
+&lt;li>Vídeo do YouTube: &lt;a class="link" href="https://www.youtube.com/watch?v=OT5AXGS1aL8" target="_blank" rel="noopener"
+>Synthesis of ATP (2018) Drew Berry and Franc Tétaz&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>&lt;em>“Faba”&lt;/em>, em latim, significa “sementes”, e o sufixo &lt;em>“-ceae”&lt;/em> é uma convenção usada entre os botânicos para nomear uma família de plantas. Essas plantas são conhecidas como leguminosas e possuem flores com cores vivas e podem ter vagens repletas de sementes, também são utilizadas para restaurar solos degradados quimicamente através dessas bactérias que vivem em suas raízes.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:2">
+&lt;p>Só pra deixar claro, &lt;strong>íon&lt;/strong> (do grego &lt;em>”ιων”&lt;/em> significa &lt;em>“carregar”&lt;/em>, &lt;em>“levar”&lt;/em> ou &lt;em>“ir”&lt;/em>) são todos os átomos que são eletricamente desbalanceados. Se chamam assim porque esses átomos tem a capacidade de levar &lt;strong>energia&lt;/strong> — só por curiosidade, &lt;strong>cátion&lt;/strong> (“kata” ou &lt;em>“κατά”&lt;/em>) significa &lt;em>“descer”&lt;/em> ou &lt;em>“percorrer”&lt;/em>, isso porque ele vai em na direção do &lt;strong>eletrodo negativo&lt;/strong>, por isso ele é o íon &lt;strong>positivo&lt;/strong>; e &lt;strong>ânion&lt;/strong> (“ana” ou “&lt;em>ανά&lt;/em>”) significa &lt;em>“separar”&lt;/em> ou &lt;em>“subir”&lt;/em>, porque ele se afasta do eletrodo negativo, o que torna ele o íon &lt;strong>negativo&lt;/strong>.&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>Manipulando os argumentos posicionais com Bashscript</title><link>https://kevinmarquesp.github.io/post/230407175615_manipulando-os-argumentos-posicionais-com-bashscript/</link><pubDate>Fri, 07 Apr 2023 17:56:15 -0300</pubDate><guid>https://kevinmarquesp.github.io/post/230407175615_manipulando-os-argumentos-posicionais-com-bashscript/</guid><description>&lt;img src="https://kevinmarquesp.github.io/post/230407175615_manipulando-os-argumentos-posicionais-com-bashscript/thumb.png" alt="Featured image of post Manipulando os argumentos posicionais com Bashscript" />&lt;p>Ganhei um notebook novo semana passada e, enquanto estava migrando meus &lt;em>dotfiles&lt;/em> para esse PC novo, pensei que seria uma boa ideia rescrever alguns scripts pessoais que uso para fazer backup de alguns arquivos, montar o sub-volume que guardo os meus projetos do meu HDD externo, etc. Resolvi fazer isso agora por que (1) quero atualizar o meu setup de desenvolvimento e (2) aprendi algumas coisas novas nesse meio tempo que passei &lt;em>offline&lt;/em> e gostaria de pôr o que aprendi em prática.&lt;/p>
+&lt;p>Enfim, hoje eu quero compartilhar algumas técnicas que aprendi recentemente que alguns &lt;em>sysadmins&lt;/em> usam para manipular argumentos que o usuário passa quando executa algum script no terminal. Eu estou falando da ferramenta &lt;strong>&lt;code>getopt&lt;/code>&lt;/strong> do &lt;strong>bash&lt;/strong> — em negrito porque é mais usado com bash do que com shell —, e ela até que é bem simples de usar: Você passa uma string com os argumentos que você quer &lt;em>parsear&lt;/em> e ela devolve um outra string, mas com os argumentos já organizados para você mexer do jeito que achar mais conveniente.&lt;/p>
+&lt;p>Apesar da simplicidade, espero trazer alguns conceitos e técnicas interessantes que aprendi enquanto pesquisava por esse assunto. E, aliás, eu escrevi este artigo considerando que você já tenha uma certa familiaridade com bash ou shellscript, se você quer um tutorial mais básico, o YouTube e o Google estão ai pra isso. Sem mais delongas, vamos começar e ver se eu cometo menos erros que no último post.&lt;/p>
+&lt;h2 id="explorando-um-pouco-a-ferramenta">Explorando um pouco a ferramenta&lt;/h2>
+&lt;p>Antes que as coisas fiquem confusas, acho que vale explicar a diferença entre “opção”, “parâmetro” e ”argumento” pra este artigo ficar mais claro e fácil de ler. Com &lt;strong>argumento&lt;/strong>, eu me refiro a duas coias, ou eu estou me referindo ao que você escreve do lado do nome do script como um todo, ou estou me referindo à aquela parte da string que está isolada das opções. As &lt;strong>opções&lt;/strong> são aqueles trechos de string que começam com &lt;code>-...&lt;/code> ou &lt;code>--...&lt;/code>, como &lt;code>-h&lt;/code> ou &lt;code>--help&lt;/code>. E algumas opções podem vir acompanhadas de &lt;strong>parâmetros&lt;/strong>, como &lt;code>--install neovim&lt;/code>, onde &lt;code>--install&lt;/code> é uma opção e &lt;code>neovim&lt;/code> é o parâmetro da opção.&lt;/p>
+&lt;p>Ok, com isso dito, se eu fosse dissecar a lógica para usar o &lt;code>getopt&lt;/code>, eu tentaria enxergar essa ferramenta do seguinte modo:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>getopt &lt;span style="color:#f92672">[&lt;/span>OPÇÕES DO GETOPT&lt;span style="color:#f92672">]&lt;/span> -- &lt;span style="color:#e6db74">&amp;#34;[STRING DE OPÇÕES DO USUÁRIO]&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>&lt;strong>Nota:&lt;/strong> Perceba que esse &lt;code>--&lt;/code> no meio do comando separa o que é as opções do comando das opções que você quer &lt;em>parsear&lt;/em>, isso é uma convenção que a maioria dos ferramentais de Unix/Linux seguem quando precisam lidar com strings que tenham &lt;code>-&lt;/code>, &lt;code>+&lt;/code> ou &lt;code>--&lt;/code> no começo delas.&lt;/p>
+&lt;/blockquote>
+&lt;p>Nas &lt;code>[OPÇÕES DO GETOPT]&lt;/code> você vai configurar quais opções e argumentos que o seu script recebe e em &lt;code>[STRING DE OPÇÕES DO USUÁRIO]&lt;/code> é o que ele vai digitar do lado do nome do script — onde você provavelmente vai substituir por &lt;code>&amp;quot;$@&amp;quot;&lt;/code>. E, no final, isso deve cuspir uma string organizada com os argumentos &lt;em>parseados&lt;/em>, e esperamos que dê erro caso apareça algum argumento inesperado. Você pode testar isso no seu shell agora mesmo, não precisa criar um script pra ver como isso funciona.&lt;/p>
+&lt;p>Por exemplo, vamos supor que o usuário digitou &lt;code>meu_script.bash -i neovim&lt;/code>, como iriamos tratar isso com o &lt;code>getopt&lt;/code>? Primeiro, você deve passar quais são as opções válidas com &lt;code>--options [STRING COM AS OPÇÕES]&lt;/code>, veja que no exemplo abaixo eu usei um &lt;code>:&lt;/code> do lado do &lt;code>i&lt;/code>, isso significa que essa opção &lt;code>-i&lt;/code> precisa de um parâmetro. Se você precisar de mais opções, é só colocar do lado (por exemplo: &lt;code>&amp;quot;hi:s:&amp;quot;&lt;/code>, onde &lt;code>h&lt;/code>, &lt;code>i:&lt;/code> e &lt;code>s:&lt;/code> são opções diferentes). E calma que já já eu explico o que é esse &lt;code>eval&lt;/code> e esse &lt;code>set&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>eval set -- &lt;span style="color:#e6db74">&amp;#34;-i neovim&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>getopt --options &lt;span style="color:#e6db74">&amp;#34;i:&amp;#34;&lt;/span> -- &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$@&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># output: -i &amp;#39;neovim&amp;#39; --&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>eval set -- &lt;span style="color:#e6db74">&amp;#34;-i neovim -s neofetch -h&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>getopt --options &lt;span style="color:#e6db74">&amp;#34;hi:s:&amp;#34;&lt;/span> -- &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$@&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># output: -i &amp;#39;neovim&amp;#39; -s &amp;#39;neofetch&amp;#39; -h --&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>eval set -- &lt;span style="color:#e6db74">&amp;#34;-i neovim -s neofetch -h &amp;#39;bla bla bla&amp;#39; &amp;#39;hello world&amp;#39;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>getopt --options &lt;span style="color:#e6db74">&amp;#34;hi:s:&amp;#34;&lt;/span> -- &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$@&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># output: -i &amp;#39;neovim&amp;#39; -s &amp;#39;neofetch&amp;#39; -h -- &amp;#39;bla bla bla&amp;#39; &amp;#39;hello world&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>&lt;strong>Nota:&lt;/strong> Como pode ver, a ordem em que o usuário passa as opções/argumentos não importa. Além disso, o &lt;code>--&lt;/code> no &lt;em>output&lt;/em> é usado com um propósito parecido com o mencionado anteriormente, aqui ele está separando as opções (com ou sem parâmetros) dos argumentos isolados que falei.&lt;/p>
+&lt;/blockquote>
+&lt;p>E caso precise lidar com opções de nome longo, você pode usar a opção &lt;code>--longoptions &amp;quot;[OPÇÕES LONGAS]&amp;quot;&lt;/code>. Na string de configuração, você vai precisar separar cada opção com uma &lt;code>,&lt;/code> por não ser fácil de identificar onde uma termina e onde a outra começa, e a regra do &lt;code>:&lt;/code> no final para as opções ainda está valendo.&lt;/p>
+&lt;h3 id="como-o-eval-e-o-set-podem-ajudar">Como o &lt;code>eval&lt;/code> e o &lt;code>set&lt;/code> podem ajudar&lt;/h3>
+&lt;p>Os três exemplos anteriores começam com uma linha bem confusa até, mas prometo que ela faz sentido. Basicamente, em shellscript, ou bashscript e similares, é comum pôr as variáveis e algumas outras coisas dentro de strings, para evitar bugs com os espaços em branco dentro delas. Só que, ironicamente, fazer isso com o comando &lt;code>set&lt;/code> causa exatamente esse tipo de bug.&lt;/p>
+&lt;p>O comando &lt;code>set&lt;/code> permite escrever na variável &lt;code>$@&lt;/code> da sessão do shell, no caso de um script, essa variável já vem preenchida com os argumentos que o usuário passou, mas num terminal ela vem vazia, o que faz sentido.&lt;/p>
+&lt;p>Ai pra não sacrificar a legibilidade do programa, é comum que os programadores coloquem um &lt;code>eval&lt;/code> no começa da linha. Esse comando só &lt;strong>expande&lt;/strong> todas as strings e variáveis que está na frente dele e meio que “cola” essa linha que ele expandiu no seu código e executa ela. Essa técnica vai ser importante mais tarde, mas em resumo:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># jeito errado&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>set -- --install neovim
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>getopt --longoptions &lt;span style="color:#e6db74">&amp;#34;install:&amp;#34;&lt;/span> -- &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$@&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># jeito &amp;#34;certo&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>eval set -- &lt;span style="color:#e6db74">&amp;#34;--install neovim&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>getopt --longoptions &lt;span style="color:#e6db74">&amp;#34;install:&amp;#34;&lt;/span> -- &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$@&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>&lt;strong>Nota:&lt;/strong> Essa coisa de tratar tudo como uma string é questionável na minha opinião, mas é por essa mesma razão que o pessoal costuma escrever &lt;code>&amp;quot;$@&amp;quot;&lt;/code>, entre aspas, ao invés de simplesmente &lt;code>$@&lt;/code> em alguns casos.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="aplicando-isso-num-script-de-verdade">Aplicando isso num script de verdade&lt;/h2>
+&lt;p>Por essa ferramenta ser muito simples, no sentido de você passar uma string e ela devolver outra, você consegue implementar a verificação do jeito que você julgar melhor, então aqui eu só vou mostrar um exemplo de implementação. Essa implementação não é como eu faria, porque, querendo ou não, vai depender da complexidade de cada projeto. Mas de qualquer forma, é só um exemplo, o importante é que o código no final seja claro, fácil de entender e fácil de dar manutenção.&lt;/p>
+&lt;p>O primeiro passo, seria você guardar o &lt;em>output&lt;/em> desse comando para usar depois. Normalmente eu separo também as opções longas e curtas em variáveis para facilitar um pouquinho a leitura. Vale ressaltar que as opções curtas e longas são totalmente independentes entre si, nada te impede de ter como opções curtas &lt;code>i:s:&lt;/code> e como opções longas &lt;code>install:,search:,clean&lt;/code>, não enxergue como se uma fosse a abreviação da outra necessariamente.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>OPTIONS&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;n:b&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>LONGOPTIONS&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;name:,bye&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>PARSED&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">$(&lt;/span>getopt --options &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$OPTIONS&lt;span style="color:#e6db74">&amp;#34;&lt;/span> --longoptions &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$LONGOPTIONS&lt;span style="color:#e6db74">&amp;#34;&lt;/span> --name &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$0&lt;span style="color:#e6db74">&amp;#34;&lt;/span> -- &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$@&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#66d9ef">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>&lt;strong>Nota:&lt;/strong> Esse &lt;code>--name&lt;/code>, que no exemplo de cima está acompanhada com o parâmetro &lt;code>$0&lt;/code> — que é o nome do arquivo —, é opcional. Mas ele vai ser útil, porque se o usuário digitar algo errado nos parâmetros e o &lt;code>getopt&lt;/code>der erro, ele vai mostrar o nome do script na mensagem de erro.&lt;/p>
+&lt;/blockquote>
+&lt;p>Uma vez feito isso, agora é garantir que esse comando não retornou nenhum código de erro e substituir os argumentos posicionais do script, &lt;em>a.k.a.&lt;/em> &lt;code>$@&lt;/code>, por essa string de argumentos que já foi organizada. Depois, é legal deletar essas variáveis que não vamos usar mais no restante do programa.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span> $? -ne &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> exit &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>eval set -- &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$PARSED&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>unset OPTIONS LONGOPTIONS PARSED
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>E pronto, agora os argumentos dentro de &lt;code>$@&lt;/code> estão organizados, você pode usar isso do jeito que quiser. Mas a maioria dos exemplos de código que vi usam uma estratégia parecida. A ideia é criar um loop infinito e analisar sempre o primeiro elemento (&lt;code>$1&lt;/code>), ou o segundo (&lt;code>$2&lt;/code>) se a opção tiver um parâmetro, e ver se ela corresponde com os casos que você quer tratar. Meio complicado de explicar, mas faz mais sentido quando você vê um exemplo na prática:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">while&lt;/span> true; &lt;span style="color:#66d9ef">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> $1 in
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -n | --name&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> printf &lt;span style="color:#e6db74">&amp;#34;%s: &amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$2&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> shift &lt;span style="color:#ae81ff">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -b | --bye&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> printf &lt;span style="color:#e6db74">&amp;#34;Good bye!\n&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> shift; break
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> *&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> printf &lt;span style="color:#e6db74">&amp;#34;Hello world!\n&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> shift; break
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">esac&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">done&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>&lt;strong>Nota:&lt;/strong> Só pra deixar claro, esse &lt;code>break&lt;/code> não está quebrando a execução do &lt;code>case&lt;/code> e sim todo o bloco do &lt;code>while&lt;/code>. Então, se o interpretador do bash cair nessa linha, ele sai imediatamente do &lt;code>while&lt;/code> e o programa continua.&lt;/p>
+&lt;/blockquote>
+&lt;p>O &lt;code>shift&lt;/code> so tira os primeiros elementos de &lt;code>$@&lt;/code>, no primeiro caso ali em cima, o &lt;code>shift&lt;/code> tira os dois primeiros elementos dos argumentos &lt;em>parseados&lt;/em> e o restante dos casos tira somente o primeiro. Essa manipulação de string com essas condicionais torna ele bem mais complicado de usar para alguns usuários porque ele exige que você saiba como a linguagem funciona e do que a sintaxe é capaz, mas vale a pena pela liberdade que isso te dá.&lt;/p>
+&lt;h3 id="algumas-dicas-de-truques-adicionais">Algumas dicas de truques adicionais&lt;/h3>
+&lt;p>Nessa parte que você precisar rodar pela string &lt;em>parseada&lt;/em> afim de executar determinado bloco caso tal elemento corresponda com tal opção, recomendo que você domine os comandos &lt;code>shift&lt;/code>, &lt;code>continue&lt;/code> e &lt;code>break&lt;/code> para controlar o fluxo de execução do programa.&lt;/p>
+&lt;p>Caso esse blog post não tenha ajudado muito, dá uma lida na documentação oficial com &lt;code>man getopt&lt;/code>, até que é bem explicadinha. E se precisa de um exemplo mais prático, talvez na sua distro exista um arquivo em &lt;code>/usr/share/doc/util-linux/getopt-example.bash&lt;/code> que pode te ajudar. Além disso, da uma olhada nos links anexos a este post.&lt;/p>
+&lt;p>Na minha opinião, acho ele mais prático e completo que o &lt;code>getopts&lt;/code> que eu costumava usar para esse tipo de coisa, mas ele exige um pouco mais de conhecimento da tecnologia em que você está trabalhando, então não é qualquer um que vai conseguir construir aplicações complexas somente com shellscript. Mas vale a pena se esforçar um pouco para automatizar essas tarefas chatas e repetitivas de baixar coisa da internet, fazer backup e etc. Espero que tenha aprendido uma coisa ou outra com esse artigo — com certeza eu aprendi escrevendo —, e obrigado por ler!&lt;/p></description></item></channel></rss>

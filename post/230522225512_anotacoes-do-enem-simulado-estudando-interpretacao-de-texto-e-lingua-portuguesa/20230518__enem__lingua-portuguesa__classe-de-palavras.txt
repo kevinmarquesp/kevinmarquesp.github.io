@@ -1,0 +1,80 @@
+#NOT_COMPLETED #note_fleeting 
+*20230518 at 204325*
+
+## What are you doing this time?
+Estudando as classes de palavras para continuar com a análise sintática de orações.
+
+## References and related
+- Classe de Palavras \[Prof Noslen]: https://www.youtube.com/playlist?list=PLVyIxkvuIqxp1vpXrdsOzpL25V5srrynk
+	- *introdução*: https://www.youtube.com/watch?v=s8a6eXncWY8
+	- Substantivo: https://www.youtube.com/watch?v=8iXiBgCnGv4
+	- Adjetivo: https://www.youtube.com/watch?v=2d6PW3xp2pA
+	- Advérbio: https://www.youtube.com/watch?v=eoZ0aEJQACg
+	- Numerai - artigo: https://www.youtube.com/watch?v=lkxc-hStcuE
+
+%%` As aulas de pronome devem estar em uma anotação separada nesse caso `%%
+
+***
+
+## Topic: Classe de Palavras \[Professor Noslen]
++ ==Morfologia== => Classe de palavras;
++ O objetivo é organizar as palavras com base na função delas;
+	+ ==**\[10]**== Como verbo, substantivo, adjetivo, pronome, adverbio, preposição, conjunção, artigo, numeral e interjeição;
++ Algumas são ==variáveis== (singular e plural e/ou masculino e feminino), e invariável, que não vai ter gênero e nem plural;
+	+ **Variáveis**: Substantivos, artigo, adjetivo, verbo (só singular/plural), pronome e numeral;
+
+%%` todo: pesquisar o significado de "morfologia"; note esse último tópico se refere às plavras de um modo geral, não um sub-tópico específico `%%
+
+### Substantivo
++ É responsável por ==nomear as coisas== que existem e não existem;
++ **Coletivo**: ==coisas iguais==, coletivos → E.g. "*molho* de chaves", "*matilha* de lobos", etc.
++ Simples ou composto:
+	+ **Simples**: apenas uma palavra (radical) → E.g. "sol"
+	+ **Composto**: duas ou mais palavras (radicais) → E.g. "girassol" ou "guarda-chuva"
++ Divido entre comum e próprio:
+	+ **Comum**: é uma coisa qualquer, objeto;
+	+ **Próprio**: ==nomes, nomeia algo específico==;
++ Características:
+	+ **Concreto**: ==existem==, por definição → E.g. "garrafa"
+	+ **Abstrato**: ==sentimentos== e coisas assim → E.g."bebedeira" (verbo *beber*); "leitura" (verbo *ler*)
+
+%%` Alguns verbos conseguer se "transofrmar" em um substantivo abstrato, representando a ação do verbo como uma característica ou costume. `%%
+
++ Primitivo e derivado:
+	+ **Primitivo**: ==origina== outras palavras → E.g. "dente"
+	+ **Derivado**: ==vem de uma== outra palavra → E.g. "dentadura"
++ Gêneros em um substantivo:
+	+ **Biforme**: existe uma palavra para cada gênero → E.g. "gato" e "gata"
+	+ Tipos de gêneros uniforme
+		+ **Comum de dois gêneros**: ==uma palavra que não muda==, mas outra muda o gênero → E.g. "*a/o* **estudante**"
+		+ **Sobrecomuns**: a palavra ==funciona para os dois== sexos → E.g. → "a **criança**"
+		+ **Epicenos**: uma ==outra palavra específica determina== o gênero → E.g. "macho" ou "fêmea"
+
+%%` todo: pesquisar o significado de "epicenos". `%%
+
+### Adjetivo (*é mais complicado que parece*)
++ Ele ==caracterizar um substantivo==, ele nunca está sozinho
+	+ *Ele pode mudar de classe se estiver sozinho*
+	+ E.g. "o homem **simples** (ou 'simples homem') sempre ajuda", "os meninos **arteiros** quebraram o vazo"
+		+ Perceba que a posição pode mudar o sentido do termo
++ É possível pegar outras palavras e transformar em adjetivo (==adjetivação==)
+	+ E.g. "meu amigo é um **==urso==**"
+
+### Advérbio
++ Ele ==trás uma circunstancia== ao verbo (tempo, modo, lugar, intensidade)
+	+ Normalmente são advérbios as palavras que terminam com o prefixo ==*"-mente"*==
+	+ E.g. "**ontem** (*locução de tempo*) fui **à casa** (*locução de lugar*) do pedro"
++  Ou também pode estar atrelado a um substantivo → E.g. "o moleque é **muito** bonito"
+
+### Numeral - Artigo
++ Classificações
+	+ **==Cardinal==**: refere-se à quantidade → E.g. "um", "dois", "três", etc.
+	+ **Ordinal**: refere-se a ordem → E.g. "primeiro", "segundo"
+	+ **Multiplicativo**: a multiplicação → E.g. "dobro", "triplo"
+	+ **Fracionário**: divisão → E.g. "metade", "meio"
++ Nomes com "II", e similares, só são ordinais até o 10
+	+ Exceto para artigos e leis, não apontam para um substantivo
++ O numeral romando antes de substantivo vira ordinal, e depois vira cardinal
++ O artigo "um" pode ser um numeral, depende do contexto
+
+%%` essas ecessões das regras são um saco de memorizar, que bom que não é necessário lembrar disso para tirar uma boa nota no enem `%%
