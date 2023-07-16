@@ -1,56 +1,80 @@
 @import "./variables.scss"; // using the `@import` keyword to import variables is not recomended
 
-// code blocks background color
-.highlight {
-    background-color: #{$clr-bg-darker} !important;
-
-    pre {
-        background-color: #{$clr-bg-darker} !important;
+    // refactoring the article table of contents
+    #TableOfContents ul {
+        list-style: none;
     }
-}
 
-// article titles text color
-:root[data-scheme="dark"] .main-article .article-content {
-    h1, h2, h3, h4, h5, h6 {
-        color: $clr-green;
-        border: none;
+    // border radius images in the links pages
+    .article-image img {
+        border-radius: 8px;
+    }
 
-        * {
-            color: inherit;
+:root[data-scheme="dark"] {
+    // code blocks background color
+    .highlight {
+        background-color: #{$clr-bg-darker} !important;
+
+        pre {
+            background-color: #{$clr-bg-darker} !important;
         }
     }
-}
 
-// refactoring the article table of contents
-#TableOfContents ul {
-    list-style: none;
-}
+    // article titles text color
+    .main-article .article-content {
+        h1, h2, h3, h4, h5, h6 {
+            color: $clr-green;
+            border: none;
 
-// border radius images in the links pages
-.article-image img {
-    border-radius: 8px;
-}
+            * {
+                color: inherit;
+            }
+        }
+    }
+    // coloring the post title
+    .article-title a {
+        color: $clr-green !important;
+    }
 
-// coloring the post title
-.article-title a {
-    color: $clr-green !important;
-}
+    // fixing the color of the <blockquote> tag
+    blockquote {
+        border-inline-start: var(--blockquote-border-size) solid $clr-green !important;
+    }
 
-// fixing the color of the <blockquote> tag
-blockquote {
-    border-inline-start: var(--blockquote-border-size) solid $clr-green !important;
-}
+    // fixing the toc element at the right
+    .widget--toc #TableOfContents li {
+        margin: 15px 0 15px 0px;
+        & ol, .widget--toc #TableOfContents li > ul {
+            margin-left: 5px !important;
+        }
+    }
 
-// fixing the toc element at the right
-.widget--toc #TableOfContents li {
-    margin: 15px 0 15px 0px;
-    & ol, .widget--toc #TableOfContents li > ul {
-        margin-left: 5px !important;
+    // fixing the category box color to match my colorscheme
+    .article-category a {
+        background-color: $clr-green !important;
+        color: $clr-bg-darker !important;
     }
 }
 
-// fixing the category box color to match my colorscheme
-.article-category a {
-    background-color: $clr-green !important;
-    color: $clr-bg-darker !important;
+// light color scheme customizations
+:root[data-scheme="light"] {
+    .article-title a {
+        color: var(--accent-color) !important;
+    }
+
+    .main-article .article-content {
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--accent-color);
+            border: none;
+
+            * {
+                color: inherit;
+            }
+        }
+    }
+
+    .article-category a {
+        background-color: var(--accent-color) !important;
+        color: var(--card-background) !important;
+    }
 }
