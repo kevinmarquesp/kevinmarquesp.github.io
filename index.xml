@@ -642,6 +642,119 @@ data-flex-basis="183px"
 &lt;p>Nessa parte que você precisar rodar pela string &lt;em>parseada&lt;/em> afim de executar determinado bloco caso tal elemento corresponda com tal opção, recomendo que você domine os comandos &lt;code>shift&lt;/code>, &lt;code>continue&lt;/code> e &lt;code>break&lt;/code> para controlar o fluxo de execução do programa.&lt;/p>
 &lt;p>Caso esse blog post não tenha ajudado muito, dá uma lida na documentação oficial com &lt;code>man getopt&lt;/code>, até que é bem explicadinha. E se precisa de um exemplo mais prático, talvez na sua distro exista um arquivo em &lt;code>/usr/share/doc/util-linux/getopt-example.bash&lt;/code> que pode te ajudar. Além disso, da uma olhada nos links anexos a este post.&lt;/p>
 &lt;p>Na minha opinião, acho ele mais prático e completo que o &lt;code>getopts&lt;/code> que eu costumava usar para esse tipo de coisa, mas ele exige um pouco mais de conhecimento da tecnologia em que você está trabalhando, então não é qualquer um que vai conseguir construir aplicações complexas somente com shellscript. Mas vale a pena se esforçar um pouco para automatizar essas tarefas chatas e repetitivas de baixar coisa da internet, fazer backup e etc. Espero que tenha aprendido uma coisa ou outra com esse artigo — com certeza eu aprendi escrevendo —, e obrigado por ler!&lt;/p></description></item><item><title>Sobre mim</title><link>https://kevinmarquesp.github.io/portfolio/</link><pubDate>Tue, 24 Jan 2023 16:07:02 -0300</pubDate><guid>https://kevinmarquesp.github.io/portfolio/</guid><description>&lt;hr>
+&lt;div id="logo-container">
+&lt;svg
+width="311.56601"
+height="162"
+viewBox="0 0 311.56601 162"
+version="1.1"
+id="logo">
+&lt;sodipodi:namedview
+id="namedview7"
+pagecolor="#1f252c"
+bordercolor="#557d8f"
+borderopacity="1"
+showgrid="false"
+showguides="true" />
+&lt;defs
+id="defs2">
+&lt;linearGradient
+id="linearGradient963">
+&lt;stop
+style="stop-color:#0336dc;stop-opacity:1;"
+offset="0"
+id="stop959" />
+&lt;stop
+style="stop-color:#00e69e;stop-opacity:1;"
+offset="1"
+id="stop961" />
+&lt;/linearGradient>
+&lt;linearGradient
+id="linearGradient1421">
+&lt;stop
+style="stop-color:#0336dc;stop-opacity:1;"
+offset="0"
+id="stop1417" />
+&lt;stop
+style="stop-color:#00e69e;stop-opacity:1;"
+offset="1"
+id="stop1419" />
+&lt;/linearGradient>
+&lt;linearGradient
+xlink:href="#linearGradient1421"
+id="linearGradient1423"
+x1="1124.6427"
+y1="681.58313"
+x2="931.4397"
+y2="551.61566"
+gradientUnits="userSpaceOnUse" />
+&lt;linearGradient
+xlink:href="#linearGradient1421"
+id="linearGradient1451"
+gradientUnits="userSpaceOnUse"
+x1="1124.6427"
+y1="681.58313"
+x2="931.4397"
+y2="551.61566" />
+&lt;linearGradient
+xlink:href="#linearGradient1421"
+id="linearGradient1453"
+gradientUnits="userSpaceOnUse"
+x1="1124.6427"
+y1="681.58313"
+x2="931.4397"
+y2="551.61566" />
+&lt;linearGradient
+xlink:href="#linearGradient1421"
+id="linearGradient1455"
+gradientUnits="userSpaceOnUse"
+x1="1124.6427"
+y1="681.58313"
+x2="931.4397"
+y2="551.61566" />
+&lt;linearGradient
+xlink:href="#linearGradient1421"
+id="linearGradient1457"
+gradientUnits="userSpaceOnUse"
+x1="1124.6427"
+y1="681.58313"
+x2="931.4397"
+y2="551.61566" />
+&lt;linearGradient
+xlink:href="#linearGradient963"
+id="linearGradient965"
+x1="1124.6427"
+y1="681.58313"
+x2="931.4397"
+y2="551.61566"
+gradientUnits="userSpaceOnUse" />
+&lt;/defs>
+&lt;g
+id="layer1">
+&lt;g
+id="g1415"
+style="stroke:url(#linearGradient1423);fill:url(#linearGradient965);fill-opacity:1"
+transform="translate(-849.28203,-542.03979)">
+&lt;path
+id="k_letter"
+d="m 931.43971,548.03979 v 3.57585 c -37.44723,0.8415 -1.26387,42.07596 -1.26387,42.07596 l 29.03308,35.13323 c 0,0 -9.04587,11.99102 -21.24777,29.24201 -22.08966,31.9774 -27.13995,38.07882 -49.43998,38.07882 h -33.23914 v -3.57581 c 5.6802,0 19.35479,-2.7e-4 29.6633,-13.67481 0,0 2.10398,-2.73479 51.33237,-68.58301 -45.44158,-58.27465 -60.16828,-58.69639 -74.26359,-58.69639 v -3.57585 z"
+style="fill:url(#linearGradient965);fill-opacity:1;stroke:url(#linearGradient1451);stroke-width:12;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" />
+&lt;path
+id="m_left-leg"
+d="m 984.44102,642.92095 c 0,0 10e-4,49.64893 -31.55568,49.64893 v 3.57582 h 63.74336 v -3.57582 c -29.03217,0 -28.61012,-49.64893 -28.61012,-49.64893 z"
+style="fill:url(#linearGradient965);fill-opacity:1;stroke:url(#linearGradient1453);stroke-width:12;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" />
+&lt;path
+id="m_middle-leg"
+d="m 960.66875,548.03979 v 3.57539 c 5.25944,0.42075 15.77831,0.42307 23.77265,14.51836 l 62.4821,131.90625 h 3.5765 l 15.7793,-39.34102 -52.5949,-110.65898 z"
+style="fill:url(#linearGradient965);fill-opacity:1;stroke:url(#linearGradient1455);stroke-width:12;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" />
+&lt;path
+id="m_right-leg"
+d="m 1106.4618,548.03979 v 122.65078 c 0,14.3057 -6.3118,21.87891 -15.1477,21.87891 v 3.57656 h 63.5344 v -3.57656 c -9.0463,0 -18.0938,-7.57321 -18.0938,-21.87891 V 570.12963 c 0,-12.83304 7.1526,-18.51445 16.1989,-18.51445 v -3.57539 z"
+style="fill:url(#linearGradient965);fill-opacity:1;stroke:url(#linearGradient1457);stroke-width:12;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" />
+&lt;/g>
+&lt;/g>
+&lt;/svg>
+&lt;/div>
 &lt;p>Eu comecei na área desde cedo, já com 12 anos o canal &lt;a class="link" href="https://youtu.be/EZcKciPATQw" target="_blank" rel="noopener"
 >Fábrica de Noobs&lt;/a>
 despertou a minha curiosidade em computadores de forma geral e comecei a estudar
@@ -712,8 +825,5 @@ minha escola.&lt;/li>
 &lt;li>Sempre que posso eu instalo e configuro sistemas operacionais para as pessoas,
 tentando salvar um notebook antigo com Linux ou ajudando um amigo a configurar
 o Windows para jogos.&lt;/li>
-&lt;li>Quando era mais novo, entre os 11 e os 15 anos, eu ajudava o meu pai no seu
-serviço de eletricista &amp;mdash; comprei o celular que uso hoje com o que ganhei
-desse tempo.&lt;/li>
 &lt;/ul>
 &lt;hr></description></item><item><title>Search</title><link>https://kevinmarquesp.github.io/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kevinmarquesp.github.io/search/</guid><description/></item></channel></rss>
