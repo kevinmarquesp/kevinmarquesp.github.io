@@ -1,6 +1,6 @@
 baseurl: 'https://kevinmarquesp.github.io'
 languageCode: 'pt-br'
-title: "Kevin Marques's blog"
+title: "Kevin Marques"
 
 disqusShortname: 'kevinmarquesp-github-io-blog'
 theme: 'hugo-theme-stack'
@@ -9,9 +9,9 @@ paginate: 10
 
 menu:
   main:
-    - name: 'Home'
+    - name: 'Blog'
       url: '/'
-      identifier: 'home'
+      identifier: 'blog'
       params:
         icon: 'home'
     # note: the 'Archives' and 'Search' options is already there because it has
@@ -53,8 +53,8 @@ params:
 
   sidebar:
     emoji: '🚀'
-    subtitle: 'Um desenvolvedor web júnior que é apaixonado por tecnologia e
-              aprender coisas novas, bem vindo ao meu diário de bordo!'
+    subtitle: 'Olá, sou um desenvolvedor web júnior apaixonado por tecnologia e
+              por aprender coisas novas. Seja bem vindo ao meu diário de bordo!'
 
   footer:
     since: 2023
@@ -79,6 +79,3 @@ params:
   comments:
     enabled: true
     provider: 'disqus'
-
-    disqusjs:
-      shortname: "Kevin Marques's blog"
