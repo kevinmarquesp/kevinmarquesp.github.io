@@ -77,6 +77,14 @@
         background-color: var(--accent-color) !important;
         color: var(--card-background) !important;
     }
+    
+    .highlight {
+        background-color: #272822 !important;
+
+        pre {
+            background-color: #272822 !important;
+        }
+    }
 }
 
 #logo-container {
