@@ -78,3 +78,23 @@
         color: var(--card-background) !important;
     }
 }
+
+#logo-container {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 5rem 0;
+
+  #logo {
+    animation: floating 3.4s ease-in-out infinite;
+    overflow: visible;
+
+    * { filter: drop-shadow( 8px 8px 2px rgba(0, 0, 0, .2)); }
+  }
+
+  @keyframes floating {
+    0% { transform: translateY(-10px); }
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(-10px); }   
+  }
+}
