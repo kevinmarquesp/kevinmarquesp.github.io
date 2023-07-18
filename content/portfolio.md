@@ -32,6 +32,8 @@ menu:
 
 ***
 
+{{< animated-logo >}}
+
 Eu comecei na área desde cedo, já com 12 anos o canal [Fábrica de Noobs](https://youtu.be/EZcKciPATQw)
 despertou a minha curiosidade em computadores de forma geral e comecei a estudar
 Batch Script na época --- lógico que eu não só brincava com o Windows, mas também
@@ -92,8 +94,5 @@ ajudar, e não deixe de conferir os meus outros posts. 😉
 + Sempre que posso eu instalo e configuro sistemas operacionais para as pessoas,
   tentando salvar um notebook antigo com Linux ou ajudando um amigo a configurar
   o Windows para jogos.
-+ Quando era mais novo, entre os 11 e os 15 anos, eu ajudava o meu pai no seu
-  serviço de eletricista --- comprei o celular que uso hoje com o que ganhei
-  desse tempo.
 
 ***
