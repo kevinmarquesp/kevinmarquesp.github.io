@@ -18,14 +18,20 @@ menu:
     # the pages created
 
   social:
+    - identifier: 'rss'
+      name: '[0] RSS Feed'
+      url: 'https://kevinmarquesp.github.io/index.xml'
+      params:
+        icon: 'rss'
+
     - identifier: 'github'
-      name: 'GitHub'
+      name: '[1] GitHub'
       url: 'https://github.com/kevinmarquesp'
       params:
         icon: 'brand-github'
 
     - identifier: 'linkedin'
-      name: 'Linkedin'
+      name: '[2] Linkedin'
       url: 'https://www.linkedin.com/in/kevin-marques-827299238/'
       params:
         icon: 'brand-linkedin'
@@ -42,6 +48,7 @@ markup:
 
 params:
   favicon: 'favicon.svg'
+  rssFullContent: true
 
   colorscheme:
     default: 'dark'
