@@ -15,7 +15,7 @@ description: "Me chamo Kevin Marques, tenho 18 anos e atualmente finalizando o
              posso te ajudar?"
 
 links:
-  - title: Dê uma olhada no meu certificado da Alura!
+  - title: Dê uma olhada no meu perfil da Alura!
     website: https://cursos.alura.com.br/user/kevinmarqueskmp
   - title: Conheça os meus outros projetos
     website: https://github.com/kevinmarquesp
