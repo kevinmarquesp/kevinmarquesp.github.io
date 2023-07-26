@@ -9,7 +9,7 @@ description: |
              moderno. Aqui eu discuto algumas diferenças entre a syntax da linguagem
              e comparo com o Bash, no final concluo qual deles é melhor para cada
              situação e por que.
-tags: ["windows", "programação", "sysadmin"]
+tags: ["Windows", "Programming", "Sysadm"]
 ---
 
 Pois é, sucumbi ao desejo de experimentar um ferramental da Microsoft e acabai estudando um pouco o PowerShell, sei que é um ato de blasfêmia perante a comunidade que prega a liberdade e o coletivismo, mas *meh*. Brincadeiras a parte, eu tenho escutado muito que o “PowerShell é o *shell* para o desenvolvedor moderno” e que “\[…\] é fácil de aprender e prático de usar”, então decidi ver se é isso tudo mesmo, aproveitando que o Windows aqui está mais mofando enquanto não jogo Celeste.

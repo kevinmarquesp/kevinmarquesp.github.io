@@ -8,7 +8,7 @@ description: |
              na minha jornada de "preguiçoso", ou seja, de automatizar tarefas
              tediosas com scripts em shell ou bash
 draft: false
-tags: ["programação", "sysadmin", "linux", "tutorial"]
+tags: ["Programming", "Sysadm", "Linux", "Tutorial"]
 links:
     - title: "4444 Manual Parsing vs Getopts vs Getopt 1"
       website: "https://www.youtube.com/watch?v=ZHRJvNtEX7Y"

@@ -1,13 +1,13 @@
 ---
 title: "Anotações do Enem +SIMULADO | Estudando Interpretação de Texto e Língua Portuguesa"
 date: "2023-05-22T22:55:12-03:00"
-image: "default-thumb.png"
+# image: "default-thumb.png"
 # draft: true
 description: "[DISCLAIMER: Eu escrevi essas anotações para mim mesmo e decidi as
     compartilhar, não espere um tutorial ou guia de estudos aqui] Comecei a estudar
     um pouco sobre linguagens e… Talvez eu esteja indo para o caminho errado nesse
     assunto."
-tags: ["enem", "simulado", "linguagens", "off topic"]
+tags: ["Enem", "Communication", "Off topic"]
 categories: ["Enem Archive"]
 ---
 

@@ -4,7 +4,7 @@ date: "2023-07-19T14:32:53-03:00"
 image: "thumb.png"
 # draft: true
 description: "Talvez você tenha notado que muitos hobbistas evitam usar a função delay que vêm por padrão na biblioteca do Arduino, mas tem uma razão pra isso. Quero tentar explorar uma das inúmeras estratégias abordadas para executar múltiplas atividades ao mesmo tempo apenas com uma placa (supostamente limitada) de Arduino, e tento trazer ao menos um conceito que possa ser relevante no seu dia a dia de programador(a)."
-tags: ["programação", "arduino", "tutorial"]
+tags: ["Programming", "Arduino", "Tutorial"]
 
 links:
     - title: "Semáforo Inteligente"

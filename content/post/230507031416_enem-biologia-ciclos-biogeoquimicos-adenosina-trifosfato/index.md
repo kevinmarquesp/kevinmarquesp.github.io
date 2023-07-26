@@ -1,14 +1,14 @@
 ---
 title: "Enem: Biologia - Ciclos biogeoquímicos, Adenosina trifosfato"
 date: "2023-05-07T03:14:42-03:00"
-image: "default-thumb.png"
+# image: "default-thumb.png"
 # draft: true
 description: |
              Contexto: arquivo com um resumo das minhas anotações sobre esse(s)
              tópico(s) que estudei nessa semana, deve acompar uma redação de
              treino e os meus comentários sobre o meu desenpenho e sobre o sistema
              de sistema de estudo como um todo
-tags: ["enem", "biologia", "note", "study", "off topic"]
+tags: ["Enem", "Biology", "Note", "Study", "Off topic"]
 categories: ["Enem Archive"]
 ---
 
