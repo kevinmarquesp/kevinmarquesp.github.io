@@ -81,7 +81,7 @@ params:
           limit: 6
       - type: 'tag-cloud'
         params:
-          limit: 0
+          limit: 999
 
   comments:
     enabled: true

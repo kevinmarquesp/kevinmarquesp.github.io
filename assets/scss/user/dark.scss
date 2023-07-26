@@ -1,0 +1,35 @@
+:root[data-scheme='dark'] {
+
+    // coloring the post title
+    .article-title a {
+        color: $clr-green !important;
+    }
+
+    // article titles text color
+    .main-article .article-content {
+        h1, h2, h3, h4, h5, h6 {
+            color: $clr-green;
+        }
+    }
+
+    // fixing the category box color to match my colorscheme
+    .article-category a {
+        background-color: $clr-green !important;
+        color: $clr-bg-darker !important;
+    }
+
+    // fixing the color of the <blockquote> tag
+    blockquote {
+        border-inline-start: var(--blockquote-border-size) solid $clr-green !important;
+    }
+
+    // code blocks background color
+    .highlight {
+        background-color: #{$clr-bg-darker} !important;
+
+        pre {
+            background-color: #{$clr-bg-darker} !important;
+        }
+    }
+
+}

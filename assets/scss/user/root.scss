@@ -1,0 +1,16 @@
+@import 'colors.scss';
+
+:root {
+    --body-text-color: gray;
+
+    &[data-scheme='dark'] {
+        --body-background: #{$clr-bg-dark};
+        --accent-color: #{$clr-green};
+        --scrollbar-thumb: #{$clr-bg-darker};
+
+        --card-background: #{$clr-bg-regular};
+
+        --code-background-color: #{$clr-bg-darker};
+        --blockquote-background-color: #{$clr-bg-darker};
+    }
+}

@@ -1,0 +1,30 @@
+:root[data-scheme='light'] {
+
+    // coloring the post title
+    .article-title a {
+        color: var(--accent-color) !important;
+    }
+
+    // article titles text color
+    .main-article .article-content {
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--accent-color);
+        }
+    }
+
+    // fixing the category box color to match my colorscheme
+    .article-category a {
+        background-color: var(--accent-color) !important;
+        color: var(--card-background) !important;
+    }
+    
+    // code blocks background color
+    .highlight {
+        background-color: #272822 !important;
+
+        pre {
+            background-color: #272822 !important;
+        }
+    }
+
+}

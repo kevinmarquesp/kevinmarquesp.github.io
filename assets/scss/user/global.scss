@@ -1,0 +1,15 @@
+// removing the left border and reseting the color of each title on the page
+.main-article .article-content {
+    h1, h2, h3, h4, h5, h6 {
+        border: none;
+
+        * {
+            color: inherit;
+        }
+    }
+}
+
+// removing the dots of the table of contents
+#TableOfContents ul {
+    list-style: none;
+}
