@@ -35,7 +35,7 @@ Ainda assim com esses conhecimentos básico em inglês, e só molhando os meus p
 
 E, só um adendo, eu não sou nenhum linguista de verdade (como havia dito), nem psicólogo, nem nada — tenho 18 anos, mal tirei a fralda ainda. Tudo o que irei dizer aqui é baseado em minhas próprias experiências e em algumas pesquisas que fiz nesse meio tempo que não postei nada. De qualquer forma, acho que esse post ainda será válido de escrita, porque eu realmente acho que é um assunto importante e pouco difundido por ai — pelo menos da forma em que pretendo abordá-lo no artigo de hoje.
 
-## A Rasão Óbvia
+## A Razão Óbvia
 Se você não recebeu esse artigo por recomendação de um amigo, ou você é um amigo meu, ou você veio pelos outros posts, ou você já é um *nerdola* de idiomas. O que significa que é provável que você já tenha uma certa fluência em inglês — caso eu, ou ninguém, tenha dito isso pra você, parabéns pela conquista. Talvez você tenha aprendido inglês da mesma forma que eu: por *necessidade*.
 
 Eu dependo de inglês pra fuçar nas documentações de linguagens de programação ou ferramentas, eu dependo de inglês pra entender a história de um jogo e aproveitá-lo melhor, eu dependo de inglês pra ler um livro sobre um assunto recente que me interessa, etc. Venho observando que inglês está deixando de ser uma habilidade legal e se tornando algo essencial para se tornar um bom profissional, não importa qual área você esteja atuando; ou até só pra consumir uma gama maior de conteúdo (mais músicas e jogos no caso). Tanto é que um irmão de um amigo assiste vídeo no YouTube e pesquisa no Google em inglês desde os 12 aninhos de idade — pois é, meu ego se ferio ao presenciar essa cena porque eu só comecei a estudar inglês a sério com 16 anos.
