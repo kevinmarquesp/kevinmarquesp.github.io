@@ -1,14 +1,16 @@
 ---
+tags: [""]
+description: ""
+
+links:
+    - title: ""
+      website: ""
+      description: ""
+
+image: "thumb.png"
+draft: false
+
 title: "{{ replace .Name "-" " " | title }}"
 date: "{{ .Date }}"
-image: "default-thumb.png"
-# draft: true
-description: |
-             ...
-tags: ["..."]
-links:
-    - title: "..."
-      website: "..."
-      description: |
-                   ...
 ---
+
