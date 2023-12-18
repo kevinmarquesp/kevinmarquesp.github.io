@@ -47,7 +47,10 @@ function publish {
 
     git add content/
     git commit -m "post: $COMMIT_MSG"
-    git push
+
+    read -n1 -r -p ':: Push to Github right now? [Y/n] ' USER
+    [ "$USER" != 'n' ] &&
+        git push
 }
 
 case $1 in
