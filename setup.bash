@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-# reconfigured some env variables
 EDITOR="nvim"
+COMMIT_MSG_FILE=".env/commit.txt"
 
-OPTIONS="n:"
-LONGOPTIONS="new-article:"
+OPTIONS="n:p"
+LONGOPTIONS="new-article:,publish"
 ARGS=$(getopt --options "$OPTIONS" --longoptions "$LONGOPTIONS" --name "$0" -- "$@")
 
 [ $? -ne 0 ] && exit 1
@@ -31,12 +31,27 @@ function new_article {
     echo "$ARTICLE_HEADERS" > "$ARTICLE"
     unset ARTICLE_HEADERS
 
+    [ -e ".env" ] || mkdir ".env"
+    echo "$ARTICLE_NAME" > "$COMMIT_MSG_FILE"
+
     read -n1 -r -p ':: Open the generated file? [Y/n] ' USER
     [ "$USER" != 'n' ] &&
         $EDITOR "$ARTICLE"
 }
 
+function publish {
+    COMMIT_MSG=$(cat "$COMMIT_MSG_FILE" |
+        tr "[:upper:]" "[:lower:]" |
+        tr "[:punct:]" " " |
+        tr -s " " " ")
+
+    git add content/
+    git commit -m "post: $COMMIT_MSG"
+    git push
+}
+
 case $1 in
     '-n'|'--new-article') new_article "$2"; exit ;;
+    '-p'|'--publish') publish; exit ;;
     *) exit 1 ;;
 esac
