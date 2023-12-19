@@ -3,6 +3,9 @@ tags: ["Programming", "Sysadm", "Linux", "Workflow",]
 description: "No post de hoje, compartilho algumas experiências e ideias legais que tive enquanto estava atualizando a minha configuração do Neovim pela… Quinta vez? Pois bem, eu gosto da liberdade que esse editor me dá e acho que esse artigo pode te trazer algumas ideias de como explorar essa liberdade também. De entusiasta pra entusiasta"
 
 links:
+- title: "Meu setup do Neovim"
+  website: "https://github.com/kevinmarquesp/me_Neovim"
+  description: "Aqui está a minha configuração atual do Neovim, caso esteja interessado em ver como apliquei na prática o que trouxe para esse artigo"
 - title: "TJ DeVries"
   website: "https://www.youtube.com/@teej_dv"
   description: "Esse cara é um dos contribuidores do Neovim, e ele realmente leva as funcionalidades do Neovim a outro nível. Teve um dia que ele criou uma função em Lua que rodava os testes de um projeto sempre que ele detectava uma mudança em um dos buffers, e mostra o resultado num buffer também"
