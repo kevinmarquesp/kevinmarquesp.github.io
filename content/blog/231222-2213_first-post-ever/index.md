@@ -19,5 +19,13 @@ if __name__ == '__main__':
     main()
 ```
 
-Some paragraph
+| hello | world |
+| ----- | ----- |
+| hello | world |
+
+`wo ma ga...`
+
+***
+
+Some paragraph <mark>important</mark>
 > Say my name...
