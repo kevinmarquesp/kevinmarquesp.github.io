@@ -2,6 +2,8 @@ baseURL: "https://kevinmarquesp.github.io"
 languageCode: "pt-br"
 title: "Kevin Marques"
 
+copyright: "Kevin Marques (CC BY 4.0)"
+
 theme: ["hugo-bearcub"]
 
 markup:
@@ -11,6 +13,7 @@ markup:
     noClasses: false
 
 params:
+  madeWith: "Made with 🐻 [Bear Cub](https://github.com/clente/hugo-bearcub)"
   description: ""  #todo
   favicon: ""  #todo
   images: [""]  #todo
