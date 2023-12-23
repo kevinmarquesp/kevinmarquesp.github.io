@@ -1,0 +1,215 @@
+:root {
+  /** raw HSL avlues for each color */
+
+  --prim-h: 169; --prim-s: 61%; --prim-l: 46%;  /*primary*/
+  --sec-h:  208; --sec-s:  71%; --sec-l:  45%;  /*secondary*/
+  --bg-h:   213; --bg-s:   96%; --bg-l:   11%;  /*background*/
+  --fg-h:   0;   --fg-s:   0%;  --fg-l:   81%;  /*foreground*/
+
+  /** colections of that values with and without the L value */
+
+  --prim:     var(--prim-h), var(--prim-s), var(--prim-l);
+  --prim-alt: var(--prim-h), var(--prim-s);
+
+  --sec:     var(--sec-h), var(--sec-s), var(--sec-l);
+  --sec-alt: var(--sec-h), var(--sec-s);
+
+  --bg:     var(--bg-h), var(--bg-s), var(--bg-l);
+  --bg-alt: var(--bg-h), var(--bg-s);
+
+  --fg:     var(--fg-h), var(--fg-s), var(--fg-l);
+  --fg-alt: var(--fg-h), var(--fg-s);
+
+  /** base colors to be easy to use */
+
+  --clr-prim: hsl(var(--prim));
+  --clr-sec:  hsl(var(--sec));
+  --clr-bg:   hsl(var(--bg));
+  --clr-fg:   hsl(var(--fg));
+}
+
+/** Estilos customizados pra algumas coisas...
+ * ------------------------------------------------------------------------- */
+
+hr {
+  border-color: var(--clr-prim);
+}
+
+pre, code {
+  background-color: hsl(var(--bg-alt), 7%) !important;
+}
+
+/** Daqui pra baixo segue o estilo do tema original, mas com minhas cores
+ * ------------------------------------------------------------------------- */
+
+body {
+  font-family: Verdana, sans-serif;
+  margin: auto;
+  padding: 20px;
+  max-width: 720px;
+  text-align: left;
+  background-color: var(--clr-bg);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+  color: var(--clr-fg);
+}
+
+h1, h2, h3, h4, h5, h6, strong, b {
+  color: var(--clr-prim);
+}
+
+a {
+  color: var(--clr-sec);
+}
+
+.title {
+  text-decoration: none;
+  border: 0;
+}
+
+.title h1 {
+  color: var(--clr-fg);
+  font-size: 24px;
+  margin: 19.92px 0 19.92px 0;
+}
+
+.title span {
+  font-weight: 400;
+}
+
+nav a {
+  margin-right: 10px;
+}
+
+textarea {
+  background-color: #252525;
+  color: #ddd;
+  width: 100%;
+  font-size: 16px;
+}
+
+input {
+  background-color: #252525;
+  color: #ddd;
+  font-size: 16px;
+}
+
+content {
+  line-height: 1.6;
+}
+
+table {
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid;
+  border-collapse: collapse;
+  border-color: hsla(var(--fg), 25%);
+  padding: 5px;
+}
+
+img {
+  width: 100%;  /*custom*/
+  max-width: 100%;
+}
+
+code {
+  padding: 2px 5px;
+  color: #f8f8f2;
+  background-color: #282a36;
+}
+
+pre code {
+  display: block;
+  padding: 20px;
+  white-space: pre-wrap;
+  font-size: 14px;
+  overflow-x: auto;
+}
+
+blockquote {
+  border-left: 1px solid #999;
+  color: #ccc;
+  padding-left: 20px;
+  font-style: italic;
+}
+
+footer {
+  padding: 25px;
+  text-align: center;
+}
+
+.helptext {
+  color: #aaa;
+  font-size: small;
+}
+
+.errorlist {
+  color: #eba613;
+  font-size: small;
+}
+
+/* blog posts */
+ul.blog-posts {
+  list-style-type: none;
+  padding: unset;
+}
+
+ul.blog-posts li {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+ul.blog-posts li span {
+  flex: 0 0 130px;
+}
+
+ul.blog-posts li a:visited {
+  color: var(--clr-prim);
+}
+
+a.blog-tags {
+  line-height: 2;
+}
+
+h3.blog-filter {
+  margin-bottom: 0;
+}
+
+.disabled {
+  color: currentColor;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+p.byline {
+  font-style: italic;
+}
+
+/* "Skip to main content" link */
+.skip-link {
+  position: absolute;
+  top: 5;
+  transform: translateY(-600%);
+  transition: transform 0.5s;
+  background-color: #1d1f27;
+  padding: 6px;
+}
+
+.skip-link:focus {
+  transform: translateY(0%);
+}
+
+figure {
+  margin-inline-start: 0em;
+  margin-inline-end: 0em;
+}
+
+figcaption > p {
+  margin-block-start: 0px;
+  text-align: center;
+  font-style: italic;
+  color: #ccc;
+}
