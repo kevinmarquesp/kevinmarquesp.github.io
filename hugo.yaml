@@ -12,6 +12,10 @@ markup:
     lineNumbersInTable: false
     noClasses: false
 
+  goldmark:
+    renderer:
+      unsafe: true
+
 params:
   madeWith: "Made with 🐻 [Bear Cub](https://github.com/clente/hugo-bearcub)"
   description: ""  #todo
