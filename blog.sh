@@ -39,7 +39,7 @@ new_article() {
     DIRECOTRY_NAME="${DIRECTORY_PREFIX}_${DIRECTORY_SUFIX}"
     ARTICLE_FILE="content/${TARGET_DIR}/${DIRECOTRY_NAME}/index.md"
 
-    hugo new --kind post "${ARTICLE_FILE}"
+    hugo new "${ARTICLE_FILE}"
 
     # for some reason, the sed command alone makes the target file blank...
     mv "${ARTICLE_FILE}" "${ARTICLE_FILE}.tmp"
