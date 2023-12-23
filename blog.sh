@@ -29,14 +29,15 @@ update_theme() {
 }
 
 new_article() {
-    ARTICLE_NAME="${1}"
+    TARGET_DIR="${1}"
+    ARTICLE_NAME="${2}"
 
     DIRECTORY_PREFIX="$(date '+%y%m%d-%H%M')"
     DIRECTORY_SUFIX="$(iconv -t ASCII//TRANSLIT <<< "${ARTICLE_NAME}" |
         tr "[:punct:]" " " | sed -e 's/\(.*\)/\L\1/;s/ *$//;s/  */-/g')"
 
     DIRECOTRY_NAME="${DIRECTORY_PREFIX}_${DIRECTORY_SUFIX}"
-    ARTICLE_FILE="content/post/${DIRECOTRY_NAME}/index.md"
+    ARTICLE_FILE="content/${TARGET_DIR}/${DIRECOTRY_NAME}/index.md"
 
     hugo new --kind post "${ARTICLE_FILE}"
 
@@ -53,5 +54,5 @@ new_article() {
 case "${1}" in
     "install-theme"|"install") install_theme; exit ;;
     "update-theme"|"update") update_theme; exit ;;
-    "new-article"|"new") new_article "${2}"; exit ;;
+    "new-article"|"new") new_article "${2}" "${3}"; exit ;;
 esac
