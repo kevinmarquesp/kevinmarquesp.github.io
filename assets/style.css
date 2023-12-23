@@ -39,6 +39,18 @@ pre, code {
   background-color: hsl(var(--bg-alt), 7%) !important;
 }
 
+.toc-title {
+  color: var(--clr-prim);
+}
+
+.toc * {
+  color: var(--clr-prim);
+}
+
+.toc {
+  margin: 2rem 0;
+}
+
 /** Daqui pra baixo segue o estilo do tema original, mas com minhas cores
  * ------------------------------------------------------------------------- */
 
@@ -55,7 +67,7 @@ body {
   color: var(--clr-fg);
 }
 
-h1, h2, h3, h4, h5, h6, strong, b {
+h1, h2, h3, h4, h5, h6 {
   color: var(--clr-prim);
 }
 
