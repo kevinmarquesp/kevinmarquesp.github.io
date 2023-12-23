@@ -2,3 +2,17 @@ baseURL: "https://kevinmarquesp.github.io"
 languageCode: "pt-br"
 title: "Kevin Marques"
 
+theme: ["hugo-bearcub"]
+
+markup:
+  highlight:
+    lineNos: true
+    lineNumbersInTable: false
+    noClasses: false
+
+params:
+  description: ""  #todo
+  favicon: ""  #todo
+  images: [""]  #todo
+  dateFormat: "2006, Jan 01"
+  hideUntranslated: true
