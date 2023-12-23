@@ -23,3 +23,4 @@ params:
   images: [""]  #todo
   dateFormat: "2006, Jan 01"
   hideUntranslated: true
+  math: true

@@ -1,0 +1,13 @@
+{{/* -------------------------------------------------------------------------
+**** Layout copiado para importar os scripts e estilos do KaTeX pra eu poder
+**** escrever fórmulas matemáticas nos posts se eu quiser
+**** --------------------------------------------------------------------- */}}
+
+<a class="skip-link" href="#main-content">{{ i18n "skip-link" }}</a>
+
+<a href="{{ relURL .Site.Home.Permalink }}" class="title"><h1>{{ .Site.Title }}</h1></a>
+<nav>{{- partial "nav.html" . -}}</nav>
+
+{{ if or .Params.math .Site.Params.math }}
+  {{ partial "math.html" . }}
+{{ end }}
