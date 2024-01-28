@@ -12,7 +12,7 @@ Hello world!
 
 ```python
 def main() -> None:
-    print('Hello world!')
+    print('Hello world! lorem açlsfj açlsdkfj alçskjdf çlaksdj fajsdfa isdf as df asdf  asdfa sdf a sdf a sd fa sd f asd f asdf a sdf as df asd f asdf as df as dfa sdf as df asdf  asdf')
 
 
 if __name__ == '__main__':
