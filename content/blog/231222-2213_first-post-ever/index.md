@@ -6,6 +6,7 @@ draft: false
 author: "Kevin Marques"
 
 tags: ["test"]
+#toc: true
 ---
 
 Hello world!

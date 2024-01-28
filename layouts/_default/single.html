@@ -1,5 +1,5 @@
-{{/* -------------------------------------------------------------------------
-**** Layout copiado pra implementar a tabela de conteúdos (toc) nos posts.
+{{/* ----------------------------------------------------------------------****
+**** Layout copiado pra implementar a tabela de conteúdos (toc) nos posts  ****
 **** --------------------------------------------------------------------- */}}
 
 {{ define "main" }}
@@ -13,12 +13,14 @@
     </p>
   {{ end }}
 
-  <aside class="toc">
-    <span class="toc-title">
-      <strong>Table Of Contents</strong>
-    </span>
-    {{ .TableOfContents }}
-  </aside>
+	{{ if .Params.toc }}
+		<aside class="toc">
+			<span class="toc-title">
+				<strong>Table Of Contents</strong>
+			</span>
+			{{ .TableOfContents }}
+		</aside>
+	{{ end }}
 
   <content>
     {{ .Content }}
