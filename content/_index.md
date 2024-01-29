@@ -2,7 +2,6 @@
 title: "Home"
 menu: "main"
 weight: 1
-comments: false
 ---
 
 ## Saudações internauta

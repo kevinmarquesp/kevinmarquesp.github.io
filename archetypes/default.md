@@ -1,8 +1,11 @@
 ---
 title: "{% Title %}"
 date: "{{ .Date }}"
-draft: true
+
+draft: false
+comments: true
+math: false
 
 author: "Kevin Marques"
-tags: [""]
+tags: ["programming", "learning"]
 ---

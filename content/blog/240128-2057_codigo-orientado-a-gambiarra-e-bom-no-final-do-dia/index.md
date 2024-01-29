@@ -1,10 +1,13 @@
 ---
 title: "Código Orientado À Gambiarra É Bom No Final Do Dia"
 date: "2024-01-28T20:57:09-03:00"
+
 draft: false
+comments: true
+math: false
 
 author: "Kevin Marques"
-tags: ["gambiarra", "python", "csv", "sql", "learning", "script", "project"]
+tags: ["programming", "gambiarra", "python", "csv", "sql", "learning", "script", "project"]
 ---
 
 Eu amo o termo *gambiarra* porque, na minha percepção ao menos, não significa algo necessariamente mal feito, gambiarra é uma solução prática, rápida e não permanente (essa última é opcional) pra resolver um problema, de qualquer natureza, usando os recursos disponíveis no momento. No mundo da engenharia isso tem de monte – que atire a primeira pedra quem nunca concertou um chinelo com um pedaço de clipe –, mas hoje eu quero trazer esse conceito pro mundo do desenvolvimento de *software*, e como código "orientado à gambiarra" eventualmente será útil pra ti, ou pra sua equipe.
@@ -19,7 +22,7 @@ E eu não tô falando de *clean code* necessariamente não, acho que clean code 
 ### O Motivo Não Tão Óbvio
 Esse é o ponto alto desse pequeno artigo. Tenho essa visão que tem muita coisa no mundo de software que nasce a partir de alguma ideia maluca, e é legal tu ver suas ideias malucas realmente são tão malucas quanto você imagina; e o oposto também vale, talvez uma ideia promissora se prova um lixo depois que tu faz um experimento de leve num projeto privado.
 
-Assim, software é grátis e abre muitas oportunidades de criação, existem varios conselhos, *patterns* e truques pra criar determinado tipo de aplicação ou resolver determinado tipo de problema, mas nada disso é uma solução *de facto* pro que você está passando – contextos variam, problemas são ímpares, pessoas são diferentes $\therefore$ **não existe bala de prata** (em outras palavras: O problema é seu, e só seu).
+Assim, software é grátis e abre muitas oportunidades de criação, existem varios conselhos, *patterns* e truques pra criar determinado tipo de aplicação ou resolver determinado tipo de problema, mas nada disso é uma solução *de facto* pro que você está passando – contextos variam, problemas são ímpares, pessoas são diferentes, portanto, **não existe bala de prata** (em outras palavras: O problema é seu, e só seu).
 
 Sempre vai valer a pena criar um projeto pra fazer alguma parada sem sentido, no mínimo tu vai criar memória muscular na tecnologia que você está usando para desenvolver. Além do que, descobrir que sua ideia é ruim é um avanço, tanto quanto descobrir que sua ideia é boa.
 ### Explicando O Tal Do Projeto
