@@ -41,8 +41,8 @@ pre, code {
 
 /** little work arround to disable word wrap in the code blocks */
 .chroma .line .cl {
-	white-space: nowrap !important;
-	padding-right: 5rem;
+  white-space: nowrap !important;
+  padding-right: 5rem;
 }
 
 .toc-title {
@@ -79,6 +79,10 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   color: var(--clr-sec);
+}
+
+content a {
+  color: var(--clr-prim);
 }
 
 .title {
