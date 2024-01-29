@@ -21,6 +21,7 @@ params:
   dateFormat: "2006, Jan 01"
   hideUntranslated: true
   math: true
+  comments: true
 
   madeWith: "Made with 🐻 [Bear Cub](https://github.com/clente/hugo-bearcub)"
 
@@ -28,3 +29,7 @@ params:
     of the stuff that I'm currently learning and talk about some topics of my
     interest (such as geek culture, languages, technologies, etc.). Hope you'll
     enjoy my content and find it useful in some way!"
+
+services:
+  disqus:
+    shortname: "kevinmarquesp-github-io-blog"

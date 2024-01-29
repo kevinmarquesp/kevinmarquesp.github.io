@@ -32,6 +32,10 @@
     {{ end }}
   </p>
 
+	{{ if or .Params.comments .Site.Params.comments }}
+		{{ partial "disqus.html" . }}
+	{{ end }}
+
   {{ with .Site.Social.email }}
     <p>
       <a href='mailto:{{ . }}?subject={{ i18n "email-subject" }}"{{ default $.Site.Title $.Page.Title }}"'>
