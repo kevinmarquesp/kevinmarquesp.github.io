@@ -22,7 +22,7 @@ E eu não tô falando de *clean code* necessariamente não, acho que clean code 
 ### O Motivo Não Tão Óbvio
 Esse é o ponto alto desse pequeno artigo. Tenho essa visão que tem muita coisa no mundo de software que nasce a partir de alguma ideia maluca, e é legal tu ver suas ideias malucas realmente são tão malucas quanto você imagina; e o oposto também vale, talvez uma ideia promissora se prova um lixo depois que tu faz um experimento de leve num projeto privado.
 
-Assim, software é grátis e abre muitas oportunidades de criação, existem vários conselhos, *patterns* e truques pra criar determinado tipo de aplicação ou resolver determinado tipo de problema, mas nada disso é uma solução *de facto* pro que você está passando – contextos variam, problemas são ímpares, pessoas são diferentes $\therefore$ **não existe bala de prata** (em outras palavras: O problema é seu, e só seu).
+Assim, software é grátis e abre muitas oportunidades de criação, existem varios conselhos, *patterns* e truques pra criar determinado tipo de aplicação ou resolver determinado tipo de problema, mas nada disso é uma solução *de facto* pro que você está passando – contextos variam, problemas são ímpares, pessoas são diferentes $\therefore$ **não existe bala de prata** (em outras palavras: O problema é seu, e só seu).
 
 Sempre vai valer a pena criar um projeto pra fazer alguma parada sem sentido, no mínimo tu vai criar memória muscular na tecnologia que você está usando para desenvolver. Além do que, descobrir que sua ideia é ruim é um avanço, tanto quanto descobrir que sua ideia é boa.
 ### Explicando O Tal Do Projeto
