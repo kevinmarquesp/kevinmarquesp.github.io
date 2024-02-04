@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://kevinmarquesp.github.io/sitemap.xml?redirect=true&start-index=1&max-results=500
