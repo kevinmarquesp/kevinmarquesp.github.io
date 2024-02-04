@@ -32,17 +32,11 @@
  * ------------------------------------------------------------------------- */
 
 hr {
-  border-color: var(--clr-prim);
+  border-top: var(--clr-fg);
 }
 
 pre, code {
   background-color: hsl(var(--bg-alt), 7%) !important;
-}
-
-/** little work arround to disable word wrap in the code blocks */
-.chroma .line .cl {
-  white-space: nowrap !important;
-  padding-right: 5rem;
 }
 
 .toc-title {
