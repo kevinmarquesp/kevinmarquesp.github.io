@@ -10,18 +10,17 @@ author: "Kevin Marques"
 tags: ["programming", "learning", "elixir", "experiment", "first_time", "sql", "sqlite3", "project"]
 ---
 
-# WebCrawlerEx, Just A Silly Elixir Exercise
 Recently I started to study the Elixir programming language – Actually, I've already played with that language in the past, but a friend of mine[^1] inspired me to create a project like this, and I grabbed the opportunity –, but I think I've learned enough to conclude that Elixir is my favorite programming language of all time. I love the syntax, the functional way to do things, the huge amount of features related to multitasking and its performance on all of that.
 
 [^1]: He is known as [KitsuneSemCalda](https://github.com/KitsuneSemCalda), and I think you should check his articles too on the [Fox in the Tech World](http://foxtechworld.github.io/)
 
-My "silly" project is just a web crawler collection of helper modules, witch means that's a program that fetches the body of an HTTP URL and extract all inner URL links inside that response body, saves that URLs in a SQLite database and repeat that same process for each URL that was found on the first acquisition, of course, running that in multiple process to increase performance. Just that. I think that simplicity is good to get used to the Elixir syntax, projects structure, and so on – I think I could do that same project in 35 min in other languages.
+My "silly" project is just a web crawler collection of helper modules, which means that's a program that fetches the body of an HTTP URL and extract all inner URL links inside that response body, saves those URLs in a SQLite database and repeats that same process for each URL that was found on the first acquisition, of course, running that in multiple process to increase performance. Just that. I think that simplicity is good to get used to the Elixir syntax, projects structure, and so on – I think I could do the same project in 35 min in other languages.
 ### Creating A New Project
-Let's start with that, I'll assume that you already know a little bit of the Elixir's lore – also, I don't know too much, I only know that it was created by a Brazilian guy called José Vallin and that's really good handling a ton of process at the same time.
+Let's start with that, I'll assume that you already know a little bit of the Elixir's lore – also, I don't know too much, I only know that it was created by a Brazilian guy called José Vallm and that's really good handling a ton of process at the same time.
 
-Like Rust and Go, you can run a single `.exs` (this *s* means that's a *script*) file with `iex my_script.exs`, this command will open the `iex` prompt and run that script, so if it has a module inside of it, the `iex` will have access to that module. Which is a thing that I see everywhere, looks like every Elixir's project is created to run that shell, maybe it's more than a shell. When you code in other languages, your goal is to create a module/script that you can execute with a simple command, a `python3 __main__.py`, a `npm run start` or just a compiled binary file that some compiled language has generated.
+Like Rust and Go, you can run a single `.exs` (this *s* means that's a *script*) file with `iex my_script.exs`, this command will open the `iex` prompt and run that script, so if it has a module inside of it, the `iex` will have access to that module. This is a thing that I see everywhere, looks like every Elixir's project is created to run that shell, maybe it's more than just a shell. When you code in other languages, your goal is to create a module/script that you can execute with a simple command, a `python3 __main__.py`, a `npm run start` or just a compiled binary file that some compiled language has generated.
 
-But I don't want a simple script for that project, I want a well structured project, with dependency management, unit tests and a easy structure to organize my shitty code. And `mix` soves that problem for me. It's a tool that is integrated to the Elixir package when you install the language, and is similar to `npm` in some senses, so, nothing to comment on that. The other stuff that I liked is Elixir's features related, `mix` looks like a wrapper to handle that features. Here's the base structure of a project created with `mix new hello_world` command (it is not a git repository right away, which can be a little annoying some times):
+But I don't want a simple script for that project, I want a well structured project, with dependency management, unit tests and a easy structure to organize my shitty code. And `mix` solves that problem for me. It's a tool that is integrated to the Elixir package when you install the language, and is similar to `npm` in some senses, so, nothing to comment on that. The other stuff that I liked is Elixir's features related, `mix` looks like a wrapper to handle that features. Here's the base structure of a project created with `mix new hello_world` command (it is not a git repository right away, which can be a little annoying sometimes):
 ```
 hello_world/
 ├── lib/
@@ -34,17 +33,17 @@ hello_world/
 ├── mix.exs
 └── README.md
 ```
-I have no idea what is that `test_helpers.exs` file, it will be there until I find some use to that. Talking in tests, I love how tests is just better in Elixir, *plug n play* in the way I like. You just need to create a module that have some functions created with the test notation and run everything with `mix test` – or, if you're using a script created by hand, you'll need to start the test suit with `ExUnit.start()` before creating the module, and after created your module, you'll need to run everything with `ExUnix.run()`.
+I have no idea what that `test_helpers.exs` file is, it will be there until I find some use to that. Speaking of tests, I love how tests is just better in Elixir, *plug n play* in the way I like. You just need to create a module that have some functions created with the test notation and run everything with `mix test` – or, if you're using a script created by hand, you'll need to start the test suite with `ExUnit.start()` before creating the module, and after creating your module, you'll need to run everything with `ExUnix.run()`.
 
 Ok, that's enough of structure blah blah blah, let's get into the code.
 ### Writing My First Module(s)
-On my first attempt, I was trying to write everything *quick and dirty*. So, my code becomes problematic in no time. I'll use this first code to list my mistakes and comment a thing or another about the syntax.
+On my first attempt, I was trying to write everything *quick and dirty*. So, my code became problematic in no time. I'll use this first code to list my mistakes and comment a thing or another about the syntax.
 
-The first thing that I notice on this *speed run* is that I put everything inside a single file, I separated in different modules, but everything clustered in a single massive file. Result: It becomes difficult to localize yourself in the code. Also, I was thinking too much to solve my little puzzle with a procedural thinking – classical solving a Python problem with a C# solution meme, or something like that.
+The first thing that I notice on this *speed run* is that I put everything inside a single file, I separated it into different modules, but everything was clustered in a single massive file. Result: It became difficult to locate some parts in the code. Also, I was thinking too much to solve my little puzzle with a procedural mindset – classical solving a Python problem with a C# solution meme, or something like that.
 
-My process of thought was: I need to get the URLs in the body content of an URL address, **then** save it to my database and **then** do that operation again for each result. There is nothing wrong having this process of thought, but in elixir it can became very problematic quickly.
+My process of thought was: I need to get the URLs in the body content of an URL address, **then** save it to my database and **then** do that operation again for each result. There is nothing wrong with having this process of thought, but in Elixir it can became very problematic quickly.
 ### Extracting Inner URLs
-Here's my solution to get the inner URLs from a base URL address:
+Here's my solution for getting the inner URLs from a base URL address:
 ```elixir
 defmodule WebCrawlerEx.HandleHttpRequests do
   def get_inner_links(base_url) do
@@ -83,17 +82,16 @@ defmodule WebCrawlerEx.HandleHttpRequests do
   end
 end
 ```
-As you can see, this code fetches the inner links by doing each step at a time. The only thing that annoys me a little bit on Elixir, is that it has no `return` keyword, the final result that the function computes will be the return of your function, no early returns are allowed. Which means that, if you want your function to be readable, you'll need to break it into smaller functions – normally, private ones, because it's related to a function that has a complex logic.
+As you can see, this code fetches the inner links by doing each step at a time. The only thing that annoys me a little bit about on Elixir, is that it has no `return` keyword, the final result that the function computes will be the return of your function, no early returns are allowed. This means that, if you want your function to be readable, you'll need to break it into smaller functions – normally, private ones, because it's related to a function that has a complex logic.
 
-This `case ... do ... end` match statement **is just perfect**, that a feature that I certainty would love if more languages have that – I think JavaScript will implement a similar syntax on the future. Here, I pass a result as a case, where I can put what I'm expecting and what I want to handle in variable names (like the `page_html` or `reason` variables on the `fetch/1` function), then I can return a custom type based on the match placeholder (or variables, if you will).
+This `case ... do ... end` match statement **is just perfect**, it's a feature that I certainly would love if more languages had that – I think JavaScript will implement a similar syntax on the future. Here, I pass a result as a case, where I can specify what I'm expecting and what I want to handle in variable names (like the `page_html` or `reason` variables on the `fetch/1` function), then I can return a custom type based on the match placeholder (or variables, if you will).
 
-Some other comments, I liked how Regex is a builtin feature on the `valid_http_url?/1`[^2] function. Also, I don't know why so many people that is starting with Elixir is so impressed by the pipe operator (`|>`) – this means that the return of the function before that pipe will be the first argument of the function after that operator –, it is really useful and I think more languages should have a similar feature, but that's nothing knew, for at least twenty year, because Bash and PowerShell does that really well too with the `|` operator.
+Some other comments, I liked how Regex is a built-in feature on the `valid_http_url?/1`[^2] function. Also, I don't know why so many people who are starting with Elixir are so impressed by the pipe operator (`|>`) – this means that the return of the function before that pipe will be the first argument of the function after that operator –, it is really useful and I think more languages should have a similar feature, but that's nothing knew, for at least twenty year, because Bash and PowerShell does that really well too with the `|` operator.
 
 [^2]: If you don't know, that `function_name/some_number` is a notation that represents a function and its arity (how many arguments it accepts), here was talking about the function called `valid_http_url?()` that accepts one argument, that's more cooler than you think. Also, function names that ends with a question mark just means that this functions returns a boolean value, it's a naming convention.
 ### Database Helper
-This entire project I built with a little help of Bing's AI Copilot – no copy and paste, trust me, that's gross – and, for some reason, when I asked for doing a SQLite database connection, the code, libraries and solutions that it gave me wasn't working very well, so I searched about some library that has a easy to understand front-end and picked the first one that appeared – now I know I should be using Ecto in some way.
+This entire project I built with a little help from Bing's AI Copilot – no copy and paste, trust me, that's gross – and, for some reason, when I asked for doing a SQLite database connection, the code, libraries and solutions that it gave me weren't working very well, so I searched for some library that has an easy to understand front-end and picked the first one that appeared – now I know I should be using Ecto in some way.
 ```elixir
-
 defmodule WebCrawlerEx.HandleDatabase do
   def insert_link(db_conn, db_table, link), do:
     Exqlite.Basic.exec(db_conn, "INSERT OR IGNORE INTO #{db_table} (url) VALUES ('#{link}')")
@@ -111,7 +109,7 @@ defmodule WebCrawlerEx.HandleDatabase do
 end
 ```
 ### Main Function
-That's a really bad practice, do not do anything like that in Elixir, I'm sorry:
+This is really bad practice, do not do anything like that in Elixir, I'm sorry:
 ```elixir
 defmodule WebCrawlerEx do
   @db_file "results.sqlite3"
@@ -146,17 +144,17 @@ defmodule WebCrawlerEx do
   end
 end
 ```
-Here I try to put everything together and make the `main/1` function do everything to me. That's a bad practice because the user will only have access to that main function, they can't execute the `run_and_write/2` function with a custom database connection. And this code just looks awful.
+Here, I try to put everything together and make the `main/1` function do everything for me. That's a bad practice because the user will only have access to the main function, they can't execute the `run_and_write/2` function with a custom database connection. Also, this code just looks awful.
 
-As you can see, the real main function here is the `run_and_write/2` one, because it creates a task that run in the background to fetch the URLs, and it's a recursive function, witch means that this task will create other children tasks. The `execute_for_each_inner_link/2` also does something similar, but does that for each URL that was given to.
+As you can see, the real main function here is the `run_and_write/2` one, because it creates a task that runs in the background to fetch the URLs, and it's a recursive function, which means that this task will create other children tasks. The `execute_for_each_inner_link/2` also does something similar, but does that for each URL that was given to.
 
-I like the way that Elixir uses that `Task.async_stream/4` function, it has a default timeout span that can throw an error, but it can easily fixed setting the `timeout:` setting. In theory, every task should be trying to use 100% of my CPU, but even setting up the `max_concurrency:` setting it runs smoothly for some reason. 
+I like the way that Elixir uses that `Task.async_stream/4` function, it has a default timeout span that can throw an error, but it can easily fixed setting the `timeout:` setting. In theory, every task should be trying to use 100% of my CPU, but even with setting up the `max_concurrency:` setting it runs smoothly for some reason.
 ### Final Thoughts
-I'm really noob at Elixir. But I think that I'm starting to really get used to the language, this syntax is perfect and easy to understand, before creating this project I thought that I would need some Ruby background to understand it well, but I was wrong on that. Error handling is a little confusing with a dynamic typed language, but I can see that it's possible.
+I'm really a newbie at Elixir. But I think that I'm starting to really get used to the language, this syntax is perfect and easy to understand, before creating this project I thought that I would need some Ruby background to understand it well, but I was wrong about that. Error handling is a little confusing with a dynamic typed language, but I can see that it's possible.
 
-This project is compiling, but it doesn't work for too much time, because some URLs can throw a timeout error or other part of my code can't handle binary files, resulting in a crash in the middle of the execution. I'll continue working with this project, but I'll refactor the code and break everything into smaller modules.
+This project is compiling, but it doesn't work for a long time, because some URLs can throw a timeout error or other part of my code can't handle binary files, resulting in a crash in the middle of the execution. I'll continue working on this project, but I'll refactor the code and break everything into smaller modules.
 
-I'll post my results and solutions on the next part of this series (yeah, it will be a serie), hope you'll enjoy my discoveries. :heart:
+I'll post my results and solutions on the next part of this series (yeah, it will be a series), hope you'll enjoy my discoveries. ❤️
 #### Some Articles That I Should Read To Proceed On This Project
 + [What is Elixir's IEX and how to utilize it](https://marketsplash.com/tutorials/elixir/elixir-iex/)
 + [What Is Error Handling In Elixir: Strategies And Best Practices](https://marketsplash.com/tutorials/elixir/elixir-error-handling/)
