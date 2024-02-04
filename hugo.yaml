@@ -1,9 +1,22 @@
 baseURL: "https://kevinmarquesp.github.io"
-languageCode: "pt-br"
 title:  "Kevin Marques ★"
+
+languageCode: "pt-br"
+defaultContentLanguage: "pt"
 
 copyright: "Kevin Marques (CC BY 4.0)"
 theme: ["hugo-bearcub"]
+
+languages:
+  pt:
+    languageName: "Portuguese 🇧🇷"
+    languageCode: "pt-br"
+    contentDir: "content"
+
+  en:
+    languageName: "English 🇺🇸"
+    languageCode: "en-us"
+    contentDir: "content.en"
 
 markup:
   highlight:
