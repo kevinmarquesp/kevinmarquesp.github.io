@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-EDITOR="nvim"
+#EDITOR="nvim"
+EDITOR="code"
 THEME_REPO_DIRECTORY="themes/hugo-bearcub"
 
 which git > /dev/null || echo "${0} :: git is not installed"
@@ -29,15 +30,23 @@ update_theme() {
 }
 
 new_article() {
-    TARGET_DIR="${1}"
-    ARTICLE_NAME="${2}"
+    if [ "${1}" = "-e" ] || [ "${1}" = "--eng" ]
+    then
+        CONTENT="content.en"
+        TARGET_DIR="${2}"
+        ARTICLE_NAME="${3}"
+    else
+        CONTENT="content"
+        TARGET_DIR="${1}"
+        ARTICLE_NAME="${2}"
+    fi
 
     DIRECTORY_PREFIX="$(date '+%y%m%d-%H%M')"
     DIRECTORY_SUFIX="$(iconv -t ASCII//TRANSLIT <<< "${ARTICLE_NAME}" |
         tr "[:punct:]" " " | sed -e 's/\(.*\)/\L\1/;s/ *$//;s/  */-/g')"
 
     DIRECOTRY_NAME="${DIRECTORY_PREFIX}_${DIRECTORY_SUFIX}"
-    ARTICLE_FILE="content/${TARGET_DIR}/${DIRECOTRY_NAME}/index.md"
+    ARTICLE_FILE="${CONTENT}/${TARGET_DIR}/${DIRECOTRY_NAME}/index.md"
 
     hugo new "${ARTICLE_FILE}"
 
@@ -54,5 +63,5 @@ new_article() {
 case "${1}" in
     "install-theme"|"install") install_theme; exit ;;
     "update-theme"|"update") update_theme; exit ;;
-    "new-article"|"new") new_article "${2}" "${3}"; exit ;;
+    "new-article"|"new") new_article "${2}" "${3}" "${4}"; exit ;;
 esac
