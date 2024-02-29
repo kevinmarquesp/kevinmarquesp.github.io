@@ -1,67 +1,46 @@
 #!/usr/bin/env bash
 
-#EDITOR="nvim"
-EDITOR="code"
-THEME_REPO_DIRECTORY="themes/hugo-bearcub"
+#blog.sh: blog.sh - v2.1.0
+#blog.sh:
+#blog.sh: This script is just a "simple" helper that allows me to setup my blog
+#blog.sh: repository in new machines quickly, add more themes and sutuff like
+#blog.sh: like that (everything that can be automated, shal be automated).
+#blog.sh:
+#blog.sh: Also, this script is useful when I want to create new blog posts or
+#blog.sh: new essays, tweets, or anything that I found cool to put on this
+#blog.sh: web site. Just make things a little more easier to change...
+#blog.sh:
+#blog.sh: Arguments:
+#blog.sh:   -h --help   Show this help message.
+#blog.sh:
+#blog.sh: Examples:
+#blog.sh:   $ ./blog.sh -- setup --help
+#blog.sh:   $ ./blog.sh -- new --eng "Writing Complex Script Apps With Bash"
 
-which git > /dev/null || echo "${0} :: git is not installed"
+ARGS=$(getopt --name $(basename $0)\
+              --options "h"\
+              --longoptions "help"\
+              -- "${@}")
 
-install_theme() {
-    read -p "${0} :: <read> Enter the git repo link: " r_gitrepo
+[ $? -ne 0 ] && exit $?
+eval "set -- ${ARGS}"
+unset ARGS
 
-    git submodule add --depth=1 "${r_gitrepo}" "${THEME_REPO_DIRECTORY}"
-    git submodule update --init --recursive
+while true
+do
+    case "${1}" in
+        "-h" | "--help")
+            grep --color=never "^#$(basename $0):" "${BASH_SOURCE}" |
+                sed "s/^#$(basename $0): \?//"
+            exit
+        ;;
+        "--") shift;  break ;;
+    esac
+done
 
-}
-
-update_theme() {
-    if [ ! -e "${THEME_REPO_DIRECTORY}" ]; then
-        echo "${0} :: theme ${THEME_REPO_DIRECTORY} file doesn't exist"
-
-        read -n1 -r -p "${0} :: <read> Install theme? [Y/n] " r_user
-        [ "${r_user}" != 'n' ] &&
-            install_theme
-
-        exit
-    fi
-
-    cd "${THEME_REPO_DIRECTORY}"
-    git submodule update --remote --merge
-}
-
-new_article() {
-    if [ "${1}" = "-e" ] || [ "${1}" = "--eng" ]
-    then
-        CONTENT="content.en"
-        TARGET_DIR="${2}"
-        ARTICLE_NAME="${3}"
-    else
-        CONTENT="content"
-        TARGET_DIR="${1}"
-        ARTICLE_NAME="${2}"
-    fi
-
-    DIRECTORY_PREFIX="$(date '+%y%m%d-%H%M')"
-    DIRECTORY_SUFIX="$(iconv -t ASCII//TRANSLIT <<< "${ARTICLE_NAME}" |
-        tr "[:punct:]" " " | sed -e 's/\(.*\)/\L\1/;s/ *$//;s/  */-/g')"
-
-    DIRECOTRY_NAME="${DIRECTORY_PREFIX}_${DIRECTORY_SUFIX}"
-    ARTICLE_FILE="${CONTENT}/${TARGET_DIR}/${DIRECOTRY_NAME}/index.md"
-
-    hugo new "${ARTICLE_FILE}"
-
-    # for some reason, the sed command alone makes the target file blank...
-    mv "${ARTICLE_FILE}" "${ARTICLE_FILE}.tmp"
-    sed -e "s/{% *[Tt]itle *%}/${ARTICLE_NAME}/" "${ARTICLE_FILE}.tmp" > "${ARTICLE_FILE}"
-    rm "${ARTICLE_FILE}.tmp"
-
-    read -n1 -r -p "${0} :: <read> Open generated file? [Y/n] " r_user
-    [ "${r_user}" != 'n' ] &&
-        ${EDITOR} "${ARTICLE_FILE}"
-}
-
-case "${1}" in
-    "install-theme"|"install") install_theme; exit ;;
-    "update-theme"|"update") update_theme; exit ;;
-    "new-article"|"new") new_article "${2}" "${3}" "${4}"; exit ;;
-esac
+while true
+do
+    case "${1}" in
+        "s" | "setup") echo "setup ${@}"; break ;;
+    esac
+done
