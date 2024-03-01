@@ -37,7 +37,7 @@ function setup {
 }
 
 
-#new: new - v0.1.0
+#new: new - v1.2.0
 #new:
 #new: Creates a new publication on this website, usually a blog post. It will
 #new: also format the title string to include only `[a-z0-9_-]` characters and
@@ -101,7 +101,61 @@ function new {
 }
 
 
-#blog.sh: blog.sh - v2.2.0
+#publish: publish - v0.1.0
+#publish:
+#publish: After writing an article, I'd like to just run a command to commit its
+#publish: files and push them to Github, after that, the HUGO Github Action will
+#publish: do the rest for me. But writing a commit message is just too tedius...
+#publish:
+#publish: Arguments:
+#publish:   -h --help   Show this help message.
+#publish:
+#publish: Examples:
+#publish:   $ publish -h
+#publish:   $ publish
+
+function publish {
+    FUNCNAME="publish"
+    ARGS=$(getopt --name ${FUNCNAME}\
+                --options "h"\
+                --longoptions "help"\
+                -- "${@}")
+
+    [ $? -ne 0 ] && exit $?
+    eval "set -- ${ARGS}"
+    unset ARGS
+
+    local dir="blog"
+    local content="content"
+
+    while true
+    do
+        case "${1}" in
+            "-h" | "--help")
+                grep --color=never "^#${FUNCNAME}:" "${BASH_SOURCE}" |
+                    sed "s/^#${FUNCNAME}: \?//"
+                exit
+            ;;
+            "--") shift; break ;;
+        esac
+    done
+
+    git status -sv --porcelain content* |
+        sed 's/^\(.\+ content\.\?.*\/.*\/[0-9].*\/\).*$/\1/' |
+        awk '{ print $2 }' |
+        sort |
+        uniq |
+        xargs -I{} -- bash -c "[ ! -f \"{}index.md\" ] && exit
+            [ -z \"\$(git status -sv --porcelain {})\" ] && exit
+            TITLE=\$(sed '2!d; s/^title: \"\?//; s/\"\?\$//' {}index.md)
+            git add {}
+            git commit -m \":tada: article: \${TITLE}\""
+
+    git push
+}
+
+
+#blog.sh: blog.sh - v3.2.0
 #blog.sh:
 #blog.sh: This script is just a "simple" helper that allows me to setup my blog
 #blog.sh: repository in new machines quickly, add more themes and sutuff like
@@ -129,8 +183,9 @@ do
                 sed "s/^#$(basename $0): \?//"
             exit
         ;;
-        "s" | "setup")  shift;  setup "${@}";  break ;;
-        "n" | "new")    shift;  new "${@}";    break ;;
+        "s" | "setup")    shift;  setup "${@}";    break ;;
+        "n" | "new")      shift;  new "${@}";      break ;;
+        "p" | "publish")  shift;  publish "${@}";  break ;;
         *)
             printf "\nError: The '%s' string doesn't match to any valid command!\n\n" "$1"
             exit 1
