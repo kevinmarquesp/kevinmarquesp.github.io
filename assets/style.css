@@ -183,11 +183,13 @@ ul.blog-posts li span {
 }
 
 ul.blog-posts li a:visited {
-  color: var(--clr-prim);
+  color: hsl(var(--prim-h), var(--prim-s),
+    calc(var(--prim-l) / 1.4));  /*visited links is a little more transparent*/
 }
 
 a.blog-tags {
   line-height: 2;
+  color: var(--clr-sec);
 }
 
 h3.blog-filter {
