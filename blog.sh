@@ -70,7 +70,7 @@ function new {
     while true
     do
         case "${1}" in
-            "-d" | "--dir")  content="${2}";        shift 2 ;;
+            "-d" | "--dir")  dir="${2}";            shift 2 ;;
             "-e" | "--eng")  content="content.en";  shift   ;;
             "-h" | "--help")
                 grep --color=never "^#${FUNCNAME}:" "${BASH_SOURCE}" |
