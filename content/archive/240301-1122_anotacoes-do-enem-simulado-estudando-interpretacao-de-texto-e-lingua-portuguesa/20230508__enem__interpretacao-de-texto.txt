@@ -1,0 +1,37 @@
+#note_fleeting 
+*2023-05-08 at 07:20*
+
++ Interpretar significa ==determinar ou descobrir o significado de um texto==
++ A interpretação está associada à ==compreensão== do texto
++ Compreender é ler, ==interpretar é ir além==
+
++ Leia o texto ==duas vezes== se for necessário para ↓
++ Na segunda leitura, investigue as bases e ==estratégias== do texto
++ Preste atenção nas ==conexões de cada parágrafo== **(importante)**
++ Identifique as ==principais ideias== do texto para interpretá-lo pela compreensão
++ <span style="background-color:#5b78ed;color:#0b0e14;font-weight:bolder;padding:0 .3rem;border-radius: 4px;">&star;</span> Todo texto tem um ==significado== e um ==propósito==
++ O ==enunciador== é o autor e o ==interlocutor== é o público
+
++ Problemas e erros: *extrapolação, redução e contradição*
++ ==Extrapolar é fugir== do tópico do texto
++ ==Redução é focar em uma única== ideia, ignorando as outras
++ E a ==contradição é entender o oposto==
+
++ Leitura → entender → compreender (==dentro==) → inferência (==fora==)
++ Palavras chaves: ==Representa o parágrafo==, são substantivos e verbos
++ As conjunções ajudam a entender a linha de raciocínio do texto
++ O estudo de gramática e análise sintática vai ajudar na **compreensão**
+	+ **Classe de palavras**: ==substantivo==, verbo, conjunção, ==adjetivo, adverbio, preposição, pronome, interjeição, numeral== e artigo;
+	+ **Análise sintática**: Sujeito, ==predicado==, ==adjunto== binomial, adjunto adverbial, ==aposto==, ==vocativo==, predicativo do sujeito/objeto, complemento nominal, agente da passiva e transitividade verbal;
+	+ **Período composto**: ==coordenação== (aditiva, adversativa, alternativa, conclusiva e explicativa), ==subordinação== (substantiva, adjetiva e adverbial), pontuação;
++ E na **interpretação**: ==**semântica**== (sentido), ==extrapolar, deduzir e concluir==;
+
++ ==Elementos anafóricos e catafóricos==
+	+ ana = antes, cata = apos;
++ São elementos que ==estão relacionados==, antes ou depois, numa sentença (pronome)
+
+---
+
+### References and related
+- https://querobolsa.com.br/enem/portugues/interpretacao-de-texto
+- https://www.youtube.com/watch?v=XsN0e_xPyNI

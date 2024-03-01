@@ -1,0 +1,53 @@
+#TRASH #note_fleeting 
+*2023-05-08 at 17:43*
+
++ Analisar uma sentença com sua relação de sentido.
++ Semântica → sentido da oração
++ A analise precisa ocorrer com o ==verbo como base de observação==
+
++ Frase é um conjunto de palavras que faça sentido (verbal ou nominal)
++ ==Oração== é uma sentença que o ==sentido dela gira em torno do verbo==
+	+ Não só tem, mas gira em torno do verbo
++ ==Período, uma ideia==, com uma (simples) ou várias (composto) orações — *period point in the end*
+
+## Sujeito
++ É pra onde o verbo está apontando
++ **Simples**: ==Possui um único núcleo== (não começa com preposição) —> a palavra que dá sentido ao sujeito
+	+ <span style="background-color:#5b78ed;color:#0b0e14;font-weight:bolder;padding:0 .3rem;border-radius: 4px;">note</span> Um ==sujeito pode ser composto por várias== palavras, o núcleo do sujeito é a palavras mais importante dele: <i>“<b>O <u>gato</u> bonitinho</b> miou para mim!”</i>;
++ **Composto**: Pode ter um ==*“e”*== no sujeito que represente dois centros que o verbo está apontando
++ **Oculto** (ou indeterminado, se tiver o contexto): ==Tá lá mas não tá escrito==, dá pra imaginar que ele existe
+	+ O ==indeterminado pode aparecer com o pronome *-se*== e uma preposição
+
+%%` Erro meu, isso é o pré requisito para começar a estudar a análise sintática, mas decidi dar um passo maior que a perna no assunto e acabei ficando ansioso atoa... `%%
+
+```ad-seealso
+### Pesquisar depois
++ O que é adjetivo
++ O que é pronome
++ O que é pronome adjetivado
++ O que é preposição
++ O que é tempo transcorrido
+```
+
+## Sintaxe do Verbo
++ Verbo de ligação
+	+ São verbos que apontam para o sujeito mas ==descrevem uma característica dele==: *“Programar **é** bom”*
++ ==Verbo significativo==
+	+ Ação ou ==fenômeno da natureza==
+
+## Predicado
++ ==O que não é o sujeito==, o restante da frase
++ Predicado ==nominal==, precisa dar uma ==característica== ao sujeito
+	+ Precisa ter verbo de ligação
++ Predicado verbal, ==verbo significativo dentro== dele
++ Predicado verbo-nominal, ==verbo de ação + uma característica do sujeito==/objeto (???)
+	+ *“Joseph ==andou triste== pela praça”*
+
+---
+
+### References and related
+- https://www.youtube.com/watch?v=ZR_Ou01WsK0
+- `:(` https://www.youtube.com/playlist?list=PLVyIxkvuIqxrbG7evU6XiKoHdlz-NhaAI
+
+%%` Essa playlist de análise sintática é densa, é muito importante se preocupar com os pré requisitos antes de começar a estudar esses vídeos. Preciso criar bases sólidas para dar início a essa parte avançada [do básico] da língua portuguesa `%%
+
