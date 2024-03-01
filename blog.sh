@@ -77,7 +77,7 @@ function new {
                     sed "s/^#${FUNCNAME}: \?//"
                 exit
             ;;
-            "--") shift;  break ;;
+            "--") shift; break ;;
         esac
     done
 
@@ -88,12 +88,12 @@ function new {
     local PREFIX=$(date "+%y%m%d-%H%M")
     local NAME=$(iconv -t "ASCII//TRANSLIT" <<< "${TITLE}" |
         tr "[:punct:]" " " | sed 's/\(.*\)/\L\1/;s/ *$//;s/  */-/g')
-    local TARGET="${content}/${dir}/${NAME}"
+    local TARGET="${content}/${dir}/${PREFIX}_${NAME}"
 
     hugo new "${TARGET}/index.md"
 
     mv "${TARGET}/index.md" "${TARGET}/index.md.tmp"
-    sed "s/{% *[Tt][Ii][Tt][Ll][Ee] *%}}/${TITLE}/" "${TARGET}/index.md.tmp" > "${TARGET}/index.md"
+    sed "s/{% *[Tt][Ii][Tt][Ll][Ee] *%}/${TITLE}/" "${TARGET}/index.md.tmp" > "${TARGET}/index.md"
     rm "${TARGET}/index.md.tmp"
 
     read -rn1 -p "Open file with ${EDITOR}? [Y/n] " r_user
