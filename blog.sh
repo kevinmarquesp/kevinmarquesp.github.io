@@ -168,6 +168,11 @@ function publish {
 #blog.sh: Dependencies:
 #blog.sh:   git, hugo
 #blog.sh:
+#blog.sh: Commands:
+#blog.sh:   s setup     Quick clone git submodules and start the HUGO server.
+#blog.sh:   n new       Create a new article of any kind.
+#blog.sh:   p publish   Push to Github every content(.en) file modified/created.
+#blog.sh:
 #blog.sh: Arguments:
 #blog.sh:   -h --help   Show this help message.
 #blog.sh:
