@@ -1,6 +1,43 @@
 #!/usr/bin/env bash
 
-#blog.sh: blog.sh - v2.1.0
+#setup: setup - v0.2.0
+#setup:
+#setup: After you've clonned this repo, run this script to clone all the themes
+#setup: submodules and start the server. It's used to see if everything is
+#setup: working just fine.
+#setup:
+#setup: Arguments:
+#setup:     -h --help   Show this help message.
+
+function setup {
+    FUNCNAME="setup"
+    ARGS=$(getopt --name ${FUNCNAME}\
+                --options "h"\
+                --longoptions "help"\
+                -- "${@}")
+
+    [ $? -ne 0 ] && exit $?
+    eval "set -- ${ARGS}"
+    unset ARGS
+
+    while true
+    do
+        case "${1}" in
+            "-h" | "--help")
+                grep --color=never "^#${FUNCNAME}:" "${BASH_SOURCE}" |
+                    sed "s/^#${FUNCNAME}: \?//"
+                exit
+            ;;
+            "--") shift;  break ;;
+        esac
+    done
+
+    git submodule update --init --recursive
+    hugo server --noHTTPCache
+}
+
+
+#blog.sh: blog.sh - v2.2.0
 #blog.sh:
 #blog.sh: This script is just a "simple" helper that allows me to setup my blog
 #blog.sh: repository in new machines quickly, add more themes and sutuff like
@@ -9,6 +46,9 @@
 #blog.sh: Also, this script is useful when I want to create new blog posts or
 #blog.sh: new essays, tweets, or anything that I found cool to put on this
 #blog.sh: web site. Just make things a little more easier to change...
+#blog.sh:
+#blog.sh: Dependencies:
+#blog.sh:   git, hugo
 #blog.sh:
 #blog.sh: Arguments:
 #blog.sh:   -h --help   Show this help message.
@@ -41,6 +81,6 @@ done
 while true
 do
     case "${1}" in
-        "s" | "setup") echo "setup ${@}"; break ;;
+        "s" | "setup")  setup "${@}";  break ;;
     esac
 done
