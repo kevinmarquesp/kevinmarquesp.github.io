@@ -82,6 +82,9 @@ function new {
     done
 
     local TITLE="${@}"
+
+    [ -z "${TITLE}" ] && return 1
+
     local PREFIX=$(date "+%y%m%d-%H%M")
     local NAME=$(iconv -t "ASCII//TRANSLIT" <<< "${TITLE}" |
         tr "[:punct:]" " " | sed 's/\(.*\)/\L\1/;s/ *$//;s/  */-/g')
@@ -142,7 +145,7 @@ done
 while true
 do
     case "${1}" in
-        "s" | "setup")  setup "${@}";  break ;;
-        "n" | "new")    new "${@}";    break ;;
+        "s" | "setup")  shift;  setup "${@}";  break ;;
+        "n" | "new")    shift;  new "${@}";    break ;;
     esac
 done
