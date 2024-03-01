@@ -118,17 +118,8 @@ function new {
 #blog.sh:   -h --help   Show this help message.
 #blog.sh:
 #blog.sh: Examples:
-#blog.sh:   $ ./blog.sh -- setup --help
-#blog.sh:   $ ./blog.sh -- new --eng "Writing Complex Script Apps With Bash"
-
-ARGS=$(getopt --name $(basename $0)\
-              --options "h"\
-              --longoptions "help"\
-              -- "${@}")
-
-[ $? -ne 0 ] && exit $?
-eval "set -- ${ARGS}"
-unset ARGS
+#blog.sh:   $ ./blog.sh setup --help
+#blog.sh:   $ ./blog.sh new --eng "Writing Complex Script Apps With Bash"
 
 while true
 do
@@ -138,14 +129,11 @@ do
                 sed "s/^#$(basename $0): \?//"
             exit
         ;;
-        "--") shift;  break ;;
-    esac
-done
-
-while true
-do
-    case "${1}" in
         "s" | "setup")  shift;  setup "${@}";  break ;;
         "n" | "new")    shift;  new "${@}";    break ;;
+        *)
+            printf "\nError: The '%s' string doesn't match to any valid command!\n\n" "$1"
+            exit 1
+        ;;
     esac
 done
