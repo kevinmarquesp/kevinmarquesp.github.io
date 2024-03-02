@@ -100,7 +100,6 @@ function setup {
     hugo server --noHTTPCache
 }
 
-
 #new: new - v1.4.0
 #new:
 #new: Creates a new publication on this website, usually a blog post. It will
@@ -153,7 +152,6 @@ function new {
     [ "${r_user}" != "n" ] && $EDITOR "${TARGET}/index.md"
 }
 
-
 #publish: publish - v0.3.0
 #publish:
 #publish: After writing an article, I'd like to just run a command to commit its
@@ -162,10 +160,6 @@ function new {
 #publish:
 #publish: Arguments:
 #publish:   -h --help   Show this help message.
-#publish:
-#publish: Examples:
-#publish:   $ publish -h
-#publish:   $ publish
 
 function publish {
     local FUNC="publish"
