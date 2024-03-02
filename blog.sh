@@ -27,7 +27,7 @@ function help {
     exit
 }
 
-#arg_parser: arg_parser - v0.1.0
+#arg_parser: arg_parser - v0.2.0
 #arg_parser:
 #arg_parser: Yet another `getopt` wrapper, this function will return a string
 #arg_parser: `set -- [PARSED_ARGS]` where `[PARSED_ARGS]` will be the parsed
@@ -51,12 +51,8 @@ function help {
 #arg_parser:    $ eval $(arg_parser "${FUNC}" "h" "help" "${@}")
 
 function arg_parser {
-    if [ "${1}" = "-h" ] || [ "${1}" = "--help" ]
-    then
-        grep --color=never "^#arg_parser:" "${BASH_SOURCE}" |
-            sed "s/^#arg_parser: \?//"
-        exit
-    fi
+    [ "${1}" = "-h" ] || [ "${1}" = "--help" ] &&
+        help "arg_parser"
 
     local FUNC="${1}"
     local OPTIONS="${2}"
@@ -78,7 +74,7 @@ function arg_parser {
     echo "set -- ${ARGS}"
 }
 
-#setup: setup - v0.3.0
+#setup: setup - v0.4.0
 #setup:
 #setup: After you've clonned this repo, run this script to clone all the themes
 #setup: submodules and start the server. It's used to see if everything is
@@ -89,16 +85,13 @@ function arg_parser {
 
 function setup {
     local FUNC="setup"
+
     eval $(arg_parser "${FUNC}" "h" "help" "${@}")
 
     while true
     do
         case "${1}" in
-            "-h" | "--help")
-                grep --color=never "^#${FUNC}:" "${BASH_SOURCE}" |
-                    sed "s/^#${FUNC}: \?//"
-                exit
-            ;;
+            "-h" | "--help") help "${FUNC}" ;;
             "--") shift;  break ;;
         esac
     done
@@ -108,7 +101,7 @@ function setup {
 }
 
 
-#new: new - v1.3.0
+#new: new - v1.4.0
 #new:
 #new: Creates a new publication on this website, usually a blog post. It will
 #new: also format the title string to include only `[a-z0-9_-]` characters and
@@ -136,12 +129,8 @@ function new {
         case "${1}" in
             "-d" | "--dir")  dir="${2}";            shift 2 ;;
             "-e" | "--eng")  content="content.en";  shift   ;;
-            "-h" | "--help")
-                grep --color=never "^#${FUNC}:" "${BASH_SOURCE}" |
-                    sed "s/^#${FUNC}: \?//"
-                exit
-            ;;
-            "--") shift; break ;;
+            "-h" | "--help") help "${FUNC}" ;;
+            "--") shift;  break ;;
         esac
     done
 
@@ -165,7 +154,7 @@ function new {
 }
 
 
-#publish: publish - v0.2.0
+#publish: publish - v0.3.0
 #publish:
 #publish: After writing an article, I'd like to just run a command to commit its
 #publish: files and push them to Github, after that, the HUGO Github Action will
@@ -188,11 +177,7 @@ function publish {
     while true
     do
         case "${1}" in
-            "-h" | "--help")
-                grep --color=never "^#${FUNC}:" "${BASH_SOURCE}" |
-                    sed "s/^#${FUNC}: \?//"
-                exit
-            ;;
+            "-h" | "--help") help "${FUNC}" ;;
             "--") shift; break ;;
         esac
     done
@@ -239,14 +224,10 @@ function publish {
 while true
 do
     case "${1}" in
-        "-h" | "--help")
-            grep --color=never "^#$(basename $0):" "${BASH_SOURCE}" |
-                sed "s/^#$(basename $0): \?//"
-            exit
-        ;;
         "s" | "setup")    shift;  setup "${@}";    break ;;
         "n" | "new")      shift;  new "${@}";      break ;;
         "p" | "publish")  shift;  publish "${@}";  break ;;
+        "-h" | "--help") help "blog.sh" ;;
         *)
             printf "\nError: The '%s' string doesn't match to any valid command!\n\n" "$1"
             exit 1
