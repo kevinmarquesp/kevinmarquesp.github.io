@@ -1,5 +1,32 @@
 #!/usr/bin/env bash
 
+#help: help - v0.1.0
+#help:
+#help: Given a function name, this command will use `sed` and `grep` to filter
+#help: the comments that documents the help message of the specified function.
+#help: It was created to decrease code repetition because every function has a
+#help: `-h` and a `--help` option available.
+#help:
+#help: Arguments:
+#help:  -h --help   Show this help message.
+#help:
+#help: Paramters:
+#help:  $1  Function name, will give an error if there is no help comments available.
+#help:
+#help: Examples:
+#help:  $ help "blog.sh"
+#help:  $ help "arg_parser"
+#help:  $ help "new"
+
+function help {
+    [ "${1}" = "-h" ] || [ "${1}" = "--help" ] &&
+        help "help"
+
+    grep --color=never "^#${1}:" "${BASH_SOURCE}" |
+        sed "s/^#${1}: \?//"
+    exit
+}
+
 #arg_parser: arg_parser - v0.1.0
 #arg_parser:
 #arg_parser: Yet another `getopt` wrapper, this function will return a string
