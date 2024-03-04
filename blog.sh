@@ -64,7 +64,7 @@ function version {
     exit
 }
 
-#arg_parser: arg_parser - v0.3.0
+#arg_parser: arg_parser - v0.3.1
 #arg_parser:
 #arg_parser: Yet another `getopt` wrapper, this function will return a string
 #arg_parser: `set -- [PARSED_ARGS]` where `[PARSED_ARGS]` will be the parsed
@@ -101,18 +101,14 @@ function arg_parser {
 
     shift 3
 
-    local ARGS=$(getopt --name ${FUNC}\
-                --options "${OPTIONS}"\
-                --longoptions "${LONG_OPTIONS}"\
-                -- "${@}")
+    printf "set -- "
+    getopt --name ${FUNC}\
+           --options "${OPTIONS}"\
+           --longoptions "${LONG_OPTIONS}"\
+           -- "${@}"
 
-    if [ $? -ne 0 ]
-    then
-        printf "\nError: Argument parser error!\n\n"
-        exit $?
-    fi
-
-    echo "set -- ${ARGS}"
+    [ $? -ne 0 ] &&  #append an exit command if the getopt returns an error in THIS function
+        echo "; exit $?"
 }
 
 #setup: setup - v0.5.0
