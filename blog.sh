@@ -115,25 +115,28 @@ function arg_parser {
     echo "set -- ${ARGS}"
 }
 
-#setup: setup - v0.4.0
+#setup: setup - v0.5.0
 #setup:
 #setup: After you've clonned this repo, run this script to clone all the themes
 #setup: submodules and start the server. It's used to see if everything is
 #setup: working just fine.
 #setup:
 #setup: Arguments:
-#setup:     -h --help   Show this help message.
+#setup:     -v --version    Display the version of this function.
+#setup:     -h --help       Show this help message.
 
 function setup {
     local FUNC="setup"
 
-    eval $(arg_parser "${FUNC}" "h" "help" "${@}")
+    eval $(arg_parser "${FUNC}" "vh" "version,help" "${@}")
 
     while true
     do
         case "${1}" in
-            "-h" | "--help") help "${FUNC}" ;;
-            "--") shift;  break ;;
+            "-v" | "--version")  version "${FUNC}" ;;
+            "-h" | "--help")     help "${FUNC}" ;;
+
+            "--")  shift;  break ;;
         esac
     done
 
@@ -141,16 +144,17 @@ function setup {
     hugo server --noHTTPCache
 }
 
-#new: new - v1.4.0
+#new: new - v1.5.0
 #new:
 #new: Creates a new publication on this website, usually a blog post. It will
 #new: also format the title string to include only `[a-z0-9_-]` characters and
 #new: will be concatenated with the current date and time.
 #new:
 #new: Arguments:
-#new:   -h --help   Show this help message.
-#new:   -d --dir    Directory that the publication folder will be created, default is "blog".
-#new:   -e --eng    Use the english content directory instead of the portuguese (default) one.
+#new:   -v --version    Display the version of this function.
+#new:   -h --help       Show this help message.
+#new:   -d --dir        Directory that the publication folder will be created, default is "blog".
+#new:   -e --eng        Use the english content directory instead of the portuguese (default) one.
 #new:
 #new: Examples:
 #new:   $ new --eng "My First Impression About This New Language"
@@ -159,7 +163,7 @@ function setup {
 
 function new {
     FUNC="new"
-    eval $(arg_parser "${FUNC}" "hd:e" "help,dir:,eng" "${@}")
+    eval $(arg_parser "${FUNC}" "vhd:e" "version,help,dir:,eng" "${@}")
 
     local dir="blog"
     local content="content"
@@ -169,8 +173,11 @@ function new {
         case "${1}" in
             "-d" | "--dir")  dir="${2}";            shift 2 ;;
             "-e" | "--eng")  content="content.en";  shift   ;;
-            "-h" | "--help") help "${FUNC}" ;;
-            "--") shift;  break ;;
+
+            "-v" | "--version")  version "${FUNC}" ;;
+            "-h" | "--help")     help "${FUNC}" ;;
+
+            "--")  shift;  break ;;
         esac
     done
 
@@ -200,11 +207,12 @@ function new {
 #publish: do the rest for me. But writing a commit message is just too tedius...
 #publish:
 #publish: Arguments:
-#publish:   -h --help   Show this help message.
+#publish:   -v --version    Display the version of this function.
+#publish:   -h --help       Show this help message.
 
 function publish {
     local FUNC="publish"
-    eval $(arg_parser "${FUNC}" "h" "help" "$@")
+    eval $(arg_parser "${FUNC}" "vh" "version,help" "$@")
 
     local dir="blog"
     local content="content"
@@ -212,8 +220,10 @@ function publish {
     while true
     do
         case "${1}" in
-            "-h" | "--help") help "${FUNC}" ;;
-            "--") shift; break ;;
+            "-v" | "--version")  version "${FUNC}" ;;
+            "-h" | "--help")     help "${FUNC}" ;;
+
+            "--")  shift;  break ;;
         esac
     done
 
