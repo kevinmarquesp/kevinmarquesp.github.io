@@ -165,7 +165,7 @@ Depois de todo esse esforço, anos de tentaiva e erro, eu decidi jogar tudo pela
 janela e parar de vez com esses portifolios pessoais. Brincadeira, você ainda
 pode ver o meu "fracaço" com front-end nesses links se tiver interesse:
 
-+ [https://codeberg.org/kevinmarquesp/old-portfolio-vuejs](https://codeberg.org/kevinmarquesp/old-portfolio-astrojs)
++ [https://codeberg.org/kevinmarquesp/old-portfolio-astrojs](https://codeberg.org/kevinmarquesp/old-portfolio-astrojs)
 + [https://codeberg.org/kevinmarquesp/old-portfolio-vuejs](https://codeberg.org/kevinmarquesp/old-portfolio-vuejs)
 
 Mas o verdadeiro motivo de eu só não querer ter um portifolio só meu, é por que
