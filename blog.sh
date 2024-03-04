@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#help: help - v0.2.0
+#help: help - v0.3.0
 #help:
 #help: Given a function name, this command will use `sed` and `grep` to filter
 #help: the comments that documents the help message of the specified function.
@@ -25,8 +25,8 @@ function help {
 
     if [ "${1}" = "-v" ] || [ "${1}" = "--version" ]  #ciclic dependency, the version option was implemented by hand
     then
-        grep --color=never "^#${1}: *${1} *- *v[0-9]\+.[0-9]\+.[0-9]\+ *$" "${BASH_SOURCE}" |
-            sed "s/^#${1}: \?//"
+        grep --color=never "^#help: *help *- *v[0-9]\+.[0-9]\+.[0-9]\+ *$" "${BASH_SOURCE}" |
+            sed "s/^#help: \?//"
         exit
     fi
 
