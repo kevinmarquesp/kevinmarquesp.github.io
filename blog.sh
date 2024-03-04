@@ -27,6 +27,35 @@ function help {
     exit
 }
 
+#version: version - v0.1.0
+#version:
+#version: Given a command or script name, it will display only the version line
+#version: in the comment documentation. This function will only work in this
+#version: script file tho...
+#version:
+#version: Arguments:
+#version:   -v --version    Display the version of this function.
+#version:   -h  --help      Show this help message.
+#version:
+#version: Paramters:
+#version:   $1 Function name, will give an error if there is no help comments available.
+#version:
+#version: Examples:
+#version:   $ version "new"
+#version:   $ version "blog.sh"
+
+function version {
+    [ "${1}" = "-h" ] || [ "${1}" = "--help" ] &&
+        help "version"
+
+    [ "${1}" = "-v" ] || [ "${1}" = "--version" ] &&
+        version "version"
+
+    grep --color=never "^#${1}: *${1} *- *v[0-9]\+.[0-9]\+.[0-9]\+ *$" "${BASH_SOURCE}" |
+        sed "s/^#${1}: \?//"
+    exit
+}
+
 #arg_parser: arg_parser - v0.2.0
 #arg_parser:
 #arg_parser: Yet another `getopt` wrapper, this function will return a string
@@ -190,7 +219,7 @@ function publish {
     git push
 }
 
-#blog.sh: blog.sh - v3.3.0
+#blog.sh: blog.sh - v3.5.0
 #blog.sh:
 #blog.sh: This script is just a "simple" helper that allows me to setup my blog
 #blog.sh: repository in new machines quickly, add more themes and sutuff like
@@ -209,7 +238,8 @@ function publish {
 #blog.sh:   p publish   Push to Github every content(.en) file modified/created.
 #blog.sh:
 #blog.sh: Arguments:
-#blog.sh:   -h --help   Show this help message.
+#blog.sh:   -v --version    Display the version of this script.
+#blog.sh:   -h --help       Show this help message.
 #blog.sh:
 #blog.sh: Examples:
 #blog.sh:   $ ./blog.sh setup --help
@@ -221,6 +251,7 @@ do
         "s" | "setup")    shift;  setup "${@}";    break ;;
         "n" | "new")      shift;  new "${@}";      break ;;
         "p" | "publish")  shift;  publish "${@}";  break ;;
+        "-v" | "--version") version "blog.sh" ;;
         "-h" | "--help") help "blog.sh" ;;
         *)
             printf "\nError: The '%s' string doesn't match to any valid command!\n\n" "$1"
