@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#help: help - v0.1.0
+#help: help - v0.2.0
 #help:
 #help: Given a function name, this command will use `sed` and `grep` to filter
 #help: the comments that documents the help message of the specified function.
@@ -8,7 +8,8 @@
 #help: `-h` and a `--help` option available.
 #help:
 #help: Arguments:
-#help:  -h --help   Show this help message.
+#help:  -v --version    Display the version of this function.
+#help:  -h --help       Show this help message.
 #help:
 #help: Paramters:
 #help:  $1  Function name, will give an error if there is no help comments available.
@@ -21,6 +22,13 @@
 function help {
     [ "${1}" = "-h" ] || [ "${1}" = "--help" ] &&
         help "help"
+
+    if [ "${1}" = "-v" ] || [ "${1}" = "--version" ]  #ciclic dependency, the version option was implemented by hand
+    then
+        grep --color=never "^#${1}: *${1} *- *v[0-9]\+.[0-9]\+.[0-9]\+ *$" "${BASH_SOURCE}" |
+            sed "s/^#${1}: \?//"
+        exit
+    fi
 
     grep --color=never "^#${1}:" "${BASH_SOURCE}" |
         sed "s/^#${1}: \?//"
@@ -219,7 +227,7 @@ function publish {
     git push
 }
 
-#blog.sh: blog.sh - v3.5.0
+#blog.sh: blog.sh - v3.6.0
 #blog.sh:
 #blog.sh: This script is just a "simple" helper that allows me to setup my blog
 #blog.sh: repository in new machines quickly, add more themes and sutuff like
@@ -251,11 +259,11 @@ do
         "s" | "setup")    shift;  setup "${@}";    break ;;
         "n" | "new")      shift;  new "${@}";      break ;;
         "p" | "publish")  shift;  publish "${@}";  break ;;
-        "-v" | "--version") version "blog.sh" ;;
-        "-h" | "--help") help "blog.sh" ;;
-        *)
-            printf "\nError: The '%s' string doesn't match to any valid command!\n\n" "$1"
-            exit 1
-        ;;
+
+        "-v" | "--version")  version "blog.sh" ;;
+        "-h" | "--help")     help "blog.sh" ;;
+
+        *)  printf "\nError: The '%s' string doesn't match to any valid command!\n\n" "$1"
+            exit 1 ;;
     esac
 done
