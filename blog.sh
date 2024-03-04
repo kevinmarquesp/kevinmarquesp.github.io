@@ -64,7 +64,7 @@ function version {
     exit
 }
 
-#arg_parser: arg_parser - v0.2.0
+#arg_parser: arg_parser - v0.3.0
 #arg_parser:
 #arg_parser: Yet another `getopt` wrapper, this function will return a string
 #arg_parser: `set -- [PARSED_ARGS]` where `[PARSED_ARGS]` will be the parsed
@@ -75,7 +75,8 @@ function version {
 #arg_parser: function or command.
 #arg_parser:
 #arg_parser: Arguments:
-#arg_parser:    -h --help   Show this help message.
+#arg_parser:    -v --version    Display the version of this function.
+#arg_parser:    -h --help       Show this help message.
 #arg_parser:
 #arg_parser: Paramters:
 #arg_parser:    $1  Name of the command/function, useful for debug.
@@ -90,6 +91,9 @@ function version {
 function arg_parser {
     [ "${1}" = "-h" ] || [ "${1}" = "--help" ] &&
         help "arg_parser"
+
+    [ "${1}" = "-v" ] || [ "${1}" = "--version" ] &&
+        version "arg_parser"
 
     local FUNC="${1}"
     local OPTIONS="${2}"
