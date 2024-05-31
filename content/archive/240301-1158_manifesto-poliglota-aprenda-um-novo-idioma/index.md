@@ -7,7 +7,7 @@ comments: true
 math: false
 
 author: "Kevin Marques"
-tags: ["english", "latim", "language", "linguistics", "learning", "off_topic", "personal"]
+tags: ["language", "linguistics", "learning", "off_topic", "personal"]
 ---
 
 > O artigo de hoje é um pequeno incentivo para todas as pessoas gastarem um tempinho pra aprender um idioma novo, não importa quantos você já saiba, nunca é demais. Mesmo não tendo nenhuma bagagem técnica, tento discutir as vantagens de se expor a uma forma de pensar diferente da habitual e como esse tipo de exercício é benéfico para o desenvolvimento pessoal e profissional

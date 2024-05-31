@@ -7,7 +7,7 @@ comments: true
 math: false
 
 author: "Kevin Marques"
-tags: ["programming", "learning", "elixir", "experiment", "first_time", "sql", "sqlite3", "project"]
+tags: ["english", "programming", "learning", "elixir", "experiment", "first_time", "sql", "sqlite3", "project"]
 ---
 
 Recently I started to study the Elixir programming language – Actually, I've already played with that language in the past, but a friend of mine[^1] inspired me to create a project like this, and I grabbed the opportunity –, but I think I've learned enough to conclude that Elixir is my favorite programming language of all time. I love the syntax, the functional way to do things, the huge amount of features related to multitasking and its performance on all of that.

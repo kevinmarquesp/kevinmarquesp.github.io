@@ -7,7 +7,7 @@ comments: true
 math: false
 
 author: "Kevin Marques"
-tags: ["backup", "organizing", "linux", "windows", "mistake", "personal"]
+tags: ["english", "backup", "organizing", "linux", "windows", "mistake", "personal"]
 ---
 
 Hello again, long time no see. So, today I want to share some lessons that I've learned a while ago, my HDD started to fail and I almost lose all my 2023 data that I didn't backup. I know, an amateur mistake, trusting my `@home` subvolume (I use [BTRFS](https://wiki.archlinux.org/title/Btrfs)) into a 10yo laptop HDD. At least, I've learned my lesson and I'm currently saving some money to buy a good, or two, 1 TB SSD to setup my new development environment.
