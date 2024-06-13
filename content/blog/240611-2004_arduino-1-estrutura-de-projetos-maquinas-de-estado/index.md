@@ -14,12 +14,12 @@ tags: ["programming", "learning"]
 Hoje a ideia desse artigo é ser curto mesmo, isso porque eu só quero
 compartilhar uma coisa que aconteceu comigo hoje e me deixou até que bem
 feliz. Eu estive arrumando o meu quarto e me deparei com o meu Arduino *Xing
-Ling* acumulando poeira na minha gaveta de eletrônicos, ai lembrei de um
+Ling* acumulando poeira na minha gaveta de eletrônicos, aí lembrei de um
 projeto antigo que já cheguei a fazer nele -- um relógio Pomodoro[^pomodoro]
 -- e pensei: "Meh... Por que não tento fazer direito dessa vez?".
 
 [^pomodoro]: A essa altura você deve saber, mas caso não saiba, é só um
-    relgógio que conta 25 min pra trabalho/estudo e 5 min de descanço, o que
+    relgógio que conta 25 min pra trabalho/estudo e 5 min pra descanço, o que
     ajuda muito quem sofre com problemas de concentração como eu. Mais
     informações [aqui](https://en.wikipedia.org/wiki/Pomodoro_Technique), se
     precisar.
@@ -27,7 +27,7 @@ projeto antigo que já cheguei a fazer nele -- um relógio Pomodoro[^pomodoro]
 Daí, nessa brincadeira, caiu a ficha do que realmente é uma máquina de estado,
 e percebi que meio que sempre usei, ao menos em projetos Arduino, onde tudo
 é meio *bare metal*, mesmo sem perceber. Lógico que pensei algo como "Putz!
-cheguei a mesma conclusão de Turing sozinho!", mas minha animação desapareceu
+cheguei à mesma conclusão de Turing sozinho!", mas minha animação desapareceu
 quando percebi que eu só era mais um *nerdola* num quarto vazio com acesso à
 internet, jamais pensaria nisso por conta própria no século 19. Enfim.
 
@@ -38,12 +38,12 @@ Eu tenho pelo menos uns dois posts nesse site que comento sobre um dos
 "problemas" que o Arduino têm: ele é muito limitado (sem surpresas, eu sei).
 
 Mas, apesar de relacionado, o problema que eu quero abordar aqui é outro.
-Quase nenhum projeto que vejo por ai é padronizado de alguma forma; se
+Quase nenhum projeto que vejo por aí é padronizado de alguma forma; se
 o projeto não for simplesmente um arquivo `.ino` gigante, é quase certo que
 ele será super complicado de acompanhar.
 
 Enquanto estava escrevendo o `Makefile` (sim, sou usuário de [arduino-cli](https://github.com/arduino/arduino-cli)),
-pensei um pouco como eu iria organizar o projeto, a principio tava querendo
+pensei um pouco como eu iria organizar o projeto, a princípio tava querendo
 fazer uma parada mais rápida, mas decidi organizar tudo de um jeito fácil de
 testar no futuro ou de mudar o comportamento geral do código. Mas com intenção
 nenhuma, só queria tentar acertar dessa vez.
@@ -51,7 +51,7 @@ nenhuma, só queria tentar acertar dessa vez.
 
 ## Soluções
 
-Bem, acho que o meu primeiro estinto foi que mesmo que muitos teriam com esse
+Bem, acho que o meu primeiro instinto foi o mesmo que muitos teriam com esse
 problema: tornar o código super modular.
 
 Comecei com o código que controla o que o meu Arduino deve fazer quando um
@@ -98,7 +98,7 @@ dessa **máquina de estado**, de atualizar o estado dessa máquina e ler
 o estado dela, e baseado nesse estado o programa vai executar *X* ou *Y*.
 
 E o bônus: toda lógica complicada de tornar todo o código
-asíncrono[^asincrono] também é delegado dos arquivos principais.
+assíncrono[^asincrono] também é delegada aos arquivos principais.
 
 [^asincrono]: Veja esse [post](https://kevinmarquesp.github.io/archive/240301-1148_multitasking-com-um-arduino-uno/)
     antigo que fiz, ainda acredito que ele seja útil até hoje.
@@ -147,7 +147,7 @@ máquina, que pode só assumir os estados nas constantes acima.
 
 E o `_is_on`? Essa é a variável que vai ficar acesa (`true`) quando a máquina
 estiver em `FLICKER_STATE_ON`, desligada (`false`) quando estiver em
-`FLICKER_STATE_ON` e ocilando entre ligado e desligado quando estiver no
+`FLICKER_STATE_ON` e oscilando entre ligado e desligado quando estiver no
 estado `FLICKER_STATE_FLICK`. Ai esse último estado vai depender do timer da
 placa -- o que explica o `unsigned long` em `refresh()` -- e de uma
 frequência -- o que explica o `_frequency`.
@@ -198,7 +198,7 @@ void flicker_o::turn_flick(void) {
 }
 ```
 
-E caso esteja se porguntando, você usaria essa máquina de estado assim:
+E caso esteja se perguntado, você usaria essa máquina de estado assim:
 
 ```c++
 flicker_o flicker(250);
@@ -217,7 +217,7 @@ void loop(void) {
 ```
 
 Note que o *snippet* acima é o único que usa funções da `Arduino.h`, a máquina
-de estado é feita com C++ puro, e fácilmente testável só com o ferramental da
+de estado é feita com C++ puro, e facilmente testável só com o ferramental da
 própria linguagem.
 
 Esse código já inicia a máquina de estado no modo *flick*, que faz o valor
@@ -225,23 +225,23 @@ do `_is_on` ficar oscilando entre `true` ou `false`, mas a ideia é que o
 código principal faria mais coisas, e dependendo das condições ele mudaria
 o estado dessa máquina.
 
-> Agora que parei pra pensar, o próprio código original poderia ser fácilmente
-um máquina de estado também! Acredito que o código ficaria muito mais fácil de
-acompanhar com essa estratégia ai também.
+> Agora que parei pra pensar, o próprio código original poderia ser facilmente
+uma máquina de estado também! Acredito que o código ficaria muito mais fácil de
+acompanhar com essa estratégia aí também.
 
 
 ## O que Aprendi
 
-Assim que comecei a ter uns *flash backs* dos vídeos do Fábio Akita, perguntei
+Assim que comecei a ter uns *flashbacks* dos vídeos do Fábio Akita, perguntei
 pra alguns amigos se isso era realmente uma máquina de estado, depois pesquisei
-certinho o que era quando confirmaram minha teoria. Pra ser mais específico,
+certinho o que era, quando confirmaram minha teoria. Pra ser mais específico,
 o que eu criei foi uma máquina de estado finita determinística, também chamado
-de automato finito deterministico (DFA).
+de autômato finito determinístico (DFA).
 
-Não me apronfundei muito nos detalhes do assunto, mas acho que agora eu
-finalmente entendi o que torna um sistema *turing complete*.
+Não me aprofundei muito nos detalhes do assunto, mas acho que agora eu
+finalmente entendi o que torna um sistema *turing complete* de fato.
 
-Se eu fosse fazer denovo, concerteza faria diferente, usaria um `enum class`,
+Se eu fosse fazer de novo, com certeza faria diferente, usaria um `enum class`,
 usaria um simples `set_state()` ao invés de ter métodos separados, etc.. Mas
 pra um projeto de meia hora acho que dá pro gasto.
 
@@ -252,19 +252,20 @@ Depois que finalizei o projeto e comecei a usar de fato esse alarme caseiro,
 lembrei de uma ideia antiga que rendeu alguns repositórios no meu perfil do
 Github.
 
-A um tempo atrás, eu tava estava querendo muito dar um jeito de fazer alguma
+Há um tempo atrás, eu tava estava querendo muito dar um jeito de fazer alguma
 coisa, biblioteca, ou o que for, pra manipular múltiplos servo motores ao mesmo
-tempo. Não só isso, mas manipular vários servos motores de forma simples.
+tempo. Não só isso, mas manipular vários servomotores de forma simples.
 
 Até cheguei a criar uma biblioteca (coberta de testes, aliás) que realmente
-funciona, mas ainda sim ela parece super estranha, e a sintaxe pra escrever
-o "script" -- meio que essa bibliotca cria uma linguagem própria pra resolver
+funciona, mas ainda assim ela parece super estranha, e a sintaxe pra escrever
+o "script" -- meio que essa biblioteca cria uma linguagem própria pra resolver
 o problema em específico -- não está muito amigável. O meu maior erro foi tentar
-fazer a biblioteca depender da `Servo.h`, agora me ocorreu que não preciso dela.
+fazer a biblioteca depender da `Servo.h`, agora me ocorreu que não precisava
+dela.
 
-Não comecei nada sério ainda, estou apenas idealizando. Arduino é uma cosia que
-saiu do meu *hyper foco* faz um tempo já, duvido que vou voltar a me interessar
-tão cedo pelo assunto. Mas pra não disperdiçar o *hype*, eu escrevi, mais ou
+Não comecei nada sério ainda, estou apenas idealizando. Arduino é uma coisa que
+saiu do meu hiperfoco faz um tempo já, duvido que vou voltar a me interessar
+tão cedo pelo assunto. Mas pra não desperdiçar o *hype*, eu escrevi, mais ou
 menos, a API que essa minha biblioteca vai ter:
 
 ```c++
@@ -342,12 +343,12 @@ namespace pservo {
 ```
 
 Não quero gastar muito tempo explicando, mas -- de forma resumida -- o usuário
-iria definir o padrão de movimento do servo dentro do `loop()` já, ai o primeiro
+iria definir o padrão de movimento do servo dentro do `loop()`, ai o primeiro
 loop seria pra setar a quantidade de movimentos/pausas e os outros seria pra
 atualizar o estado da máquina.
 
 Assim essa máquina guardaria o estado de movimento e qual a posição atual que
-o servo deve estar por movimento. Assim o usuário teria uma interface super
+o servo deve estar a cada movimento. Assim o usuário teria uma interface super
 simples de usar.
 
 Certo que é mais fácil falar do que fazer, mas eu tenho certeza que o que eu
@@ -360,24 +361,24 @@ a implementar o corpo desses métodos que a solução vem.
 Isso tudo me fez pensar em como eu iria organizar qualquer tipo de projeto. As
 conclusões que cheguei foram bem simples até.
 
-Primeiro de tudo, não acho que seja uma boa depender de uma pastas `src/` como
+Primeiro de tudo, não acho que seja uma boa depender de uma pasta `src/` como
 fiz com o meu projeto. Quem usa o Arduino IDE não vai conseguir abrir esses
-arquivos com facilidade. Mas de vez em quando vem acalhar. Enfim, o mais
+arquivos com facilidade. Mas de vez em quando vem a calhar. Enfim, o mais
 importante é que o código dessa pasta não dependa da biblioteca `Arduino.h`, pra
 facilitar os testes e pra isolar a lógica bruta do sketch.
 
-Já os arquivos `.ino` ficam na raíz do sketch. na minha cabeça faz sentido usar
+Já os arquivos `.ino` ficam na raiz do sketch. na minha cabeça faz sentido usar
 o nome do sketch como prefixo pros nomes dos outros arquivos de *helpers*, onde
 eu imagino que ficaria as funções que interagem com a placa. A ideia é deixar
 o arquivo principal só com o `setup()` e `loop()`.
 
-Aí a raíz, a raíz mesmo, do projeto ficaria com as informações do repositório
+Aí a raiz, a raiz mesmo, do projeto ficaria com as informações do repositório
 (com `README.md` pra documentações, `Makefile` pra *buildar* o projeto, etc.).
-A pasta com o sketch ficaria dentro dessa raíz.
+A pasta com o sketch ficaria dentro dessa raiz.
 
-No caso de bibliotecas, a pasta `src/` poderia ficar na raíz do projeto mesmo,
+No caso de bibliotecas, a pasta `src/` poderia ficar na raiz do projeto mesmo,
 e haveria uma pasta chamada `examples/` com vários sketches que usam
-a biblioteca. Também acho que seria bom se a biblioteca não dependence
+a biblioteca. Também acho que seria bom se a biblioteca não dependesse
 interamente do Arduino, pra ficar fácil de testar na máquina do desenvolvedor
 sem depender da placa.
 
@@ -405,7 +406,7 @@ Por exemplo, esse semáforo "inteligente" que criei pra um projeto da escola:
   scrolling="no"
 ></iframe>
 
-As bibliotecas que criei pra constrolar os servos de forma asíncrona:
+As bibliotecas que criei pra controlar os servos de forma assíncrona:
 *   [ParallelServo](https://github.com/kevinmarquesp/ParallelServo)
 *   [PreciseServo](https://github.com/kevinmarquesp/PreciseServo)
 
