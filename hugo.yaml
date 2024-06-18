@@ -12,6 +12,9 @@ markup:
     lineNumbersInTable: false
     noClasses: false
 
+  tableOfContents:
+    endLevel: 6
+
   goldmark:
     renderer:
       unsafe: true
