@@ -35,9 +35,7 @@ Esse conteúdo não é total de autoria minha, a
 [palestra](https://youtu.be/8Ng6TfAj7Sk) do Fábio Akita também explica as 
 coisas nessa ordem, mas eu achei meio confuso por ter muita informação 
 condensada em uma hora só. O artigo que me ajudou muito a entender esse 
-conceito foi o [Elixir: Understanding 
-GenServers](https://manzanit0.github.io/elixir/2019/05/21/understanding-genserve
-rs.html), escrito por Javier García em 2019.
+conceito foi o [Elixir: Understanding GenServers](https://manzanit0.github.io/elixir/2019/05/21/understanding-genservers.html), escrito por Javier García em 2019.
 
 ### Como Novos Processo são Criados
 
