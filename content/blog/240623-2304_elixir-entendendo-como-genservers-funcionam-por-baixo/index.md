@@ -116,8 +116,8 @@ responder, ou fazer, algo diferente dependendo do que eu envio pra ele usando o
 ```elixir
 pid = self()
 
- Dependendo do que estiver comentado, o receive vai imprimir
- uma mensagem diferente na tela.
+# Dependendo do que estiver comentado, o receive vai imprimir
+# uma mensagem diferente na tela.
 send(pid, :tobey)
 send(pid, :andrew)
 send(pid, :tom)
@@ -153,7 +153,7 @@ send(pid, :steve)
 send(pid, :thor)
 send(pid, :tony)
 
- Eu preciso copiar esse trecho 3 vezes pra esvaziar a inbox.
+# Eu preciso copiar esse trecho 3 vezes pra esvaziar a inbox.
 receive do
   :steve ->
     IO.puts("I can do that the whole day.")
@@ -220,8 +220,8 @@ defmodule Counter do
   end
 end
 
- Como o usuário interagiria com o sistema desse servidor?
- Assim.
+# Como o usuário interagiria com o sistema desse servidor?
+# Assim.
 
 counter = Counter.new(0)
 
