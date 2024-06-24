@@ -88,8 +88,8 @@ pid = self()
 
 send(pid, "Hello, I'm myself!")
 
- Ou, use o Process.send_after/3 pra ver como o receive impede
- o usuário de fazer qualquer coisa no IEX.
+# Ou, use o Process.send_after/3 pra ver como o receive impede
+# o usuário de fazer qualquer coisa no IEX.
 Process.send_after(pid, "Hello, I'm myself!", 5_000)
 
 receive do
