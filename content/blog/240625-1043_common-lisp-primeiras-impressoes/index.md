@@ -83,8 +83,6 @@ Então agora é só abrir o tal REPL com `rlwrap sbcl` e começar a digitar. Ima
 
 A única coisa que não entendo é o que fazer depois que terminei a minha aplicação, supondo que seja uma aplicação web. Eu devo usar um compilador pra gerar um binário estático? Ou devo só subir o app do mesmo jeito que fiz localmente com o SBCL? A linguagem é tão extensível que não duvido que não haja uma solução definitiva, deve valer até transpilar o código pra Javascript e usar esse Javascript em produção. Depois eu pesquiso com detalhes sobre isso, vou tentar focar mais na parte de desenvolvimento.
 
-> Retirado de: [[common-lisp-com-sbcl]] 
-
 ### Instalando E Utilizando O Quicklisp
 
 O Quicklisp é só o gerenciador de pacotes da linguagem, não se existem outros, mas parece ser o mais popular. A instalação é super simples, basta clonar o [instalador](https://beta.quicklisp.org/quicklisp.lisp) – um script em Common Lisp – com `(load "caminho/pro/quicklisp.lisp")` e carregar ele no SBCL, daí, já que ele é meio que um pacote por si só, é questão de rodar a função `(quicklisp-quickstart:install)`. Realmente não é nada complicado, achei super intuitivo, mesmo sabendo um total de zero (0) coisas sobre lisp.
