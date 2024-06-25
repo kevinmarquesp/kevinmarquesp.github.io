@@ -4,7 +4,7 @@ date: "2024-06-25T10:43:07-03:00"
 
 draft: false
 comments: true
-math: false
+math: true
 toc: true
 
 author: "Kevin Marques"
