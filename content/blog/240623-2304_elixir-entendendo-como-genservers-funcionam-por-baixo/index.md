@@ -8,7 +8,7 @@ math: false
 toc: true
 
 author: "Kevin Marques"
-tags: ["programming", "learning"]
+tags: ["programming", "learning", "elixir", "studying"]
 ---
 
 Já que eu achei meio complicado entender o que são esses GenServers de Elixir 
