@@ -1,31 +1,43 @@
 :root {
   /** raw HSL avlues for each color */
 
-  --prim-h: 169; --prim-s: 61%; --prim-l: 46%;  /*primary*/
-  --sec-h:  208; --sec-s:  71%; --sec-l:  45%;  /*secondary*/
-  --bg-h:   213; --bg-s:   96%; --bg-l:   11%;  /*background*/
-  --fg-h:   0;   --fg-s:   0%;  --fg-l:   81%;  /*foreground*/
+  --prim-h: 169;
+  --prim-s: 61%;
+  --prim-l: 46%;
+  /*primary*/
+  --sec-h: 208;
+  --sec-s: 71%;
+  --sec-l: 45%;
+  /*secondary*/
+  --bg-h: 213;
+  --bg-s: 96%;
+  --bg-l: 11%;
+  /*background*/
+  --fg-h: 0;
+  --fg-s: 0%;
+  --fg-l: 81%;
+  /*foreground*/
 
   /** colections of that values with and without the L value */
 
-  --prim:     var(--prim-h), var(--prim-s), var(--prim-l);
+  --prim: var(--prim-h), var(--prim-s), var(--prim-l);
   --prim-alt: var(--prim-h), var(--prim-s);
 
-  --sec:     var(--sec-h), var(--sec-s), var(--sec-l);
+  --sec: var(--sec-h), var(--sec-s), var(--sec-l);
   --sec-alt: var(--sec-h), var(--sec-s);
 
-  --bg:     var(--bg-h), var(--bg-s), var(--bg-l);
+  --bg: var(--bg-h), var(--bg-s), var(--bg-l);
   --bg-alt: var(--bg-h), var(--bg-s);
 
-  --fg:     var(--fg-h), var(--fg-s), var(--fg-l);
+  --fg: var(--fg-h), var(--fg-s), var(--fg-l);
   --fg-alt: var(--fg-h), var(--fg-s);
 
   /** base colors to be easy to use */
 
   --clr-prim: hsl(var(--prim));
-  --clr-sec:  hsl(var(--sec));
-  --clr-bg:   hsl(var(--bg));
-  --clr-fg:   hsl(var(--fg));
+  --clr-sec: hsl(var(--sec));
+  --clr-bg: hsl(var(--bg));
+  --clr-fg: hsl(var(--fg));
 }
 
 /** Estilos customizados pra algumas coisas...
@@ -35,7 +47,8 @@ hr {
   border-top: var(--clr-fg);
 }
 
-pre, code {
+pre,
+code {
   background-color: hsl(var(--bg-alt), 7%) !important;
 }
 
@@ -67,7 +80,12 @@ body {
   color: var(--clr-fg);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--clr-prim);
 }
 
@@ -119,7 +137,9 @@ table {
   width: 100%;
 }
 
-table, th, td {
+table,
+th,
+td {
   border: 1px solid;
   border-collapse: collapse;
   border-color: hsla(var(--fg), 25%);
@@ -127,7 +147,8 @@ table, th, td {
 }
 
 img {
-  width: 100%;  /*custom*/
+  width: 100%;
+  /*custom*/
   max-width: 100%;
 }
 
@@ -184,7 +205,8 @@ ul.blog-posts li span {
 
 ul.blog-posts li a:visited {
   color: hsl(var(--prim-h), var(--prim-s),
-    calc(var(--prim-l) / 1.4));  /*visited links is a little more transparent*/
+      calc(var(--prim-l) / 1.4));
+  /*visited links is a little more transparent*/
 }
 
 a.blog-tags {
@@ -225,7 +247,7 @@ figure {
   margin-inline-end: 0em;
 }
 
-figcaption > p {
+figcaption>p {
   margin-block-start: 0px;
   text-align: center;
   font-style: italic;
