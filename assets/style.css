@@ -114,6 +114,12 @@ content a {
 
 nav a {
   margin-right: 10px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  margin-right: 10px;
+  text-decoration: underline;
 }
 
 textarea {
