@@ -7,7 +7,7 @@ comments: true
 math: false
 
 author: "Kevin Marques"
-tags: ["programming", "learning", "journaling", "front_end", "personal"]
+tags: ["programming", "learning", "journaling", "front_end", "personal", "archived"]
 ---
 
 > Como eu me frustrei com front-end e porque desisti de ter uma página

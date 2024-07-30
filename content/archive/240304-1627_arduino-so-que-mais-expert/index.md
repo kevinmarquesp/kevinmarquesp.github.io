@@ -7,7 +7,7 @@ comments: true
 math: false
 
 author: "Kevin Marques"
-tags: ["programming", "arduino", "school"]
+tags: ["programming", "arduino", "school", "archived"]
 ---
 
 > Apenas uma pequena coletânea de algumas coisas que aprendi brincando

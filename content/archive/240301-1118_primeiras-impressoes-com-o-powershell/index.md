@@ -7,7 +7,7 @@ comments: true
 math: false
 
 author: "Kevin Marques"
-tags: ["programming", "windows", "programming"]
+tags: ["programming", "windows", "programming", "archived"]
 ---
 
 > Minhas primeiras impressões em usar o PowerShell pela primeira vez.  A linguagem de script moderna da Microsoft criada para o desenvolvedor moderno. Aqui eu discuto algumas diferenças entre a syntax da linguagem e comparo com o Bash, no final concluo qual deles é melhor para cada situação e por que.

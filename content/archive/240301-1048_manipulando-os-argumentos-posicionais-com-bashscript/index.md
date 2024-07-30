@@ -7,7 +7,7 @@ comments: true
 math: false
 
 author: "Kevin Marques"
-tags: ["programming", "sysadmin", "linux", "tutorial"]
+tags: ["programming", "sysadmin", "linux", "tutorial", "archived"]
 ---
 
 > Como é possível criar scripts com suporte à opções longas e abreviadas de forma fácil. Esse artigo representa uma parte pequena na minha jornada de "preguiçoso", ou seja, de automatizar tarefas tediosas com scripts em shell ou bash

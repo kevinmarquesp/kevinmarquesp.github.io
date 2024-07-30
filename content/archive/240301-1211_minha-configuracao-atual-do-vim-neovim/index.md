@@ -7,7 +7,7 @@ comments: true
 math: false
 
 author: "Kevin Marques"
-tags: ["programming", "sysadmin", "linux", "workflow"]
+tags: ["programming", "sysadmin", "linux", "workflow", "archived"]
 ---
 
 > No post de hoje, compartilho algumas experiências e ideias legais que tive enquanto estava atualizando a minha configuração do Neovim pela… Quinta vez? Pois bem, eu gosto da liberdade que esse editor me dá e acho que esse artigo pode te trazer algumas ideias de como explorar essa liberdade também. De entusiasta pra entusiasta

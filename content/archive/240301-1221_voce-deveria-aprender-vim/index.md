@@ -7,7 +7,7 @@ comments: true
 math: false
 
 author: "Kevin Marques"
-tags: ["programming", "automation", "vim", "linux"]
+tags: ["programming", "automation", "vim", "linux", "archived"]
 ---
 
 > Porquê você deveria dedicar um tempo para aprender a usar o Vim

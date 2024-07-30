@@ -7,7 +7,7 @@ comments: true
 math: false
 
 author: "Kevin Marques"
-tags: ["programming", "learning", "python", "automation"]
+tags: ["programming", "learning", "python", "automation", "archived"]
 ---
 
 > Escrevi um script para extrair o áudio de vídeos do YouTube para eu baixar músicas usando o Termux roando um único arquivo.

@@ -7,7 +7,7 @@ comments: true
 math: true
 
 author: "Kevin Marques"
-tags: ["off_topic", "personal", "philosophy", "sociology", "teaching", "studying", "learning"]
+tags: ["off_topic", "personal", "philosophy", "sociology", "teaching", "studying", "learning", "archived"]
 ---
 
 > Devido à alguns eventos canônicos da minha vida escolar, decidi estudar um pouco de pedagogia pra tentar entender melhor o lado dos meus professores e parar de reclamar tanto ou, quem sabe, continuar reclamando, mas com fundamentos. Enfim, mais um post não relacionado com tecnologia mas que eu ainda acho importante comentar sobre

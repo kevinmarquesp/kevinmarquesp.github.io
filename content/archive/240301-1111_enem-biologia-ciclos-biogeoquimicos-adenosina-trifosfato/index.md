@@ -7,7 +7,7 @@ comments: true
 math: true
 
 author: "Kevin Marques"
-tags: ["enem", "biology", "note", "study", "off_topic"]
+tags: ["enem", "biology", "note", "study", "off_topic", "archived"]
 ---
 
 > Contexto: arquivo com um resumo das minhas anotações sobre esse(s) tópico(s) que estudei nessa semana, deve acompar uma redação de treino e os meus comentários sobre o meu desenpenho e sobre o sistema de sistema de estudo como um todo

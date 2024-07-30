@@ -7,7 +7,7 @@ comments: true
 math: false
 
 author: "Kevin Marques"
-tags: ["operating_systems", "windows", "linux", "personal"]
+tags: ["operating_systems", "windows", "linux", "personal", "archived"]
 ---
 
 A alguns dias, um amigo meu fez um [post](https://vinicgobbi.github.io/blog/posts/linux-ou-windows-na-minha-opiniao/) justamente sobre o tema em questão e, no geral, eu concordo com a perspectiva dele sobre o assunto. O que me inspirou a escrever o artigo de hoje. No entanto, os comentários das pessoas que fazem questão de mencionar que a ferramenta, ou o que for, que elas usam é **a melhor escolha** em certas conversas também me influenciaram.

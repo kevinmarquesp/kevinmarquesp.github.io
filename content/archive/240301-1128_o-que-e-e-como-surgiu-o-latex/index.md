@@ -7,7 +7,7 @@ comments: true
 math: true
 
 author: "Kevin Marques"
-tags: ["note", "history", "latex", "workflow"]
+tags: ["note", "history", "latex", "workflow", "archived"]
 ---
 
 > Estou usando LaTeX a um tempo, neste post eu dou um breve contexto histórico de como essa tecnologia surgiu e comento um pouco sobre como eu a utilizo no meu dia a dia de estudante/curioso. O objetivo desse post é dar uma breve introdução de conceitos para quem pretende estudar essa linguagem, seja pra ser mais eficiente nos estudos ou só pra saber que isso existe mesmo, o que é legal também.

@@ -7,7 +7,7 @@ comments: true
 math: true
 
 author: "Kevin Marques"
-tags: ["enem", "language", "off_topic", "exam"]
+tags: ["enem", "language", "off_topic", "exam", "archived"]
 ---
 
 > [DISCLAIMER: Eu escrevi essas anotações para mim mesmo e decidi as compartilhar, não espere um tutorial ou guia de estudos aqui] Comecei a estudar um pouco sobre linguagens e… Talvez eu esteja indo para o caminho errado nesse assunto.

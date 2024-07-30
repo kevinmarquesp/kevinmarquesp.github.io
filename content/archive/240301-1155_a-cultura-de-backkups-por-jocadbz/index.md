@@ -7,7 +7,7 @@ comments: true
 math: false
 
 author: "Jocadbz"
-tags: ["backup", "guest", "sysadmin", "workflow"]
+tags: ["backup", "guest", "sysadmin", "workflow", "archived"]
 ---
 
 > Você provavelmente conhece ou já conheceu, alguém que perdeu dados. Fotos, vídeos, arquivos importantes, tudo perdido por apenas um descuido, uma queda, uma falha no aparelho, entre diversas outras razões. Isso não só afeta pessoas comuns, claro.  Perdas de dados geram milhões em perdas para muitas empresas.  Obviamente, existe um jeito de se prevenir contra tais infortúnios: O Backup. Mas mesmo sendo tão simples de se realizar, muitas acabam não o fazendo.

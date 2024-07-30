@@ -7,7 +7,7 @@ comments: true
 math: false
 
 author: "Kevin Marques"
-tags: ["programming", "learning", "personal", "typescript", "oop", "rant"]
+tags: ["programming", "learning", "personal", "typescript", "oop", "rant", "archived"]
 ---
 
 > Em resumo, amos os paradigmas funcional e OO podem resolver vários problemas

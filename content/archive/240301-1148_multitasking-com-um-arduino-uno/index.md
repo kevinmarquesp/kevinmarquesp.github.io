@@ -7,7 +7,7 @@ comments: true
 math: false
 
 author: "Kevin Marques"
-tags: ["programming", "arduino", "tutorial"]
+tags: ["programming", "arduino", "tutorial", "archived"]
 ---
 
 > Talvez você tenha notado que muitos hobbistas evitam usar a função delay que vêm por padrão na biblioteca do Arduino, mas tem uma razão pra isso. Quero tentar explorar uma das inúmeras estratégias abordadas para executar múltiplas atividades ao mesmo tempo apenas com uma placa (supostamente limitada) de Arduino, e tento trazer ao menos um conceito que possa ser relevante no seu dia a dia de programador(a).

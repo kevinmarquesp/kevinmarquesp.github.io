@@ -7,7 +7,7 @@ comments: true
 math: false
 
 author: "Kevin Marques"
-tags: ["programming", "python", "idea", "personal"]
+tags: ["programming", "python", "idea", "personal", "archived"]
 ---
 
 > Tecnica inspirada em Go para manipular erros em Python (ou em qualquer outra
