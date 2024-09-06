@@ -2,6 +2,10 @@
 title: "Home"
 menu: "main"
 weight: 1
+highlight:
+  lineNos: true
+  lineNumbersInTable: false
+  noClasses: false
 ---
 
 ## Saudações Internauta
@@ -41,7 +45,7 @@ desse meu blogzinho no seu site.
 <a href="https://kevinmarquesp.github.io">
   <img
     alt="Kevin's Blog"
-    src="https://kevinmarquesp.github.io/88x33/kevins-blog.png"
+    src="https://kevinmarquesp.github.io/88x31/kevins-blog.png"
   />
 </a>
 ```
