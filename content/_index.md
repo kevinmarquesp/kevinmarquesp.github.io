@@ -41,15 +41,6 @@ Se você poder fazer a gentileza e quiser participar de um *webring* de criadore
 de conteúdo brasieliros na *indie web*, considere colocar o botão **88x31**
 desse meu blogzinho no seu site.
 
-```html
-<a href="https://kevinmarquesp.github.io">
-  <img
-    alt="Kevin's Blog"
-    src="https://kevinmarquesp.github.io/88x31/kevins-blog.png"
-  />
-</a>
-```
-
 <br>
 
 <a href="https://kevinmarquesp.github.io">
