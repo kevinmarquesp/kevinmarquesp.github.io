@@ -37,6 +37,7 @@ toc: true
 +   [Hill House](https://hillhouse.neocities.org/)
 +   [maya.land](https://maya.land/)
 +   [Getimiskon's space](https://getimiskon.xyz/)
++   [BeckyLabs](https://rrodriguess20.github.io/beckylabs/) ✨
 
 
 ### Blogs (Mostly About Programming)
@@ -48,7 +49,7 @@ useful/entertaining for me in the past in some way.
     +   [Welcome to My “New” Website](https://ericmurphy.xyz/blog/new-website/)
     +   [Why I Will Never Join Mastodon (or the rest of the Fediverse)](https://ericmurphy.xyz/blog/mastodon/)
     +   [Obsessing Over Optimizing Web Images](https://ericmurphy.xyz/blog/images/)
-+   [FoxTechWorld](https://foxtechworld.github.io/) (Portuguese)
++   [FoxTechWorld](https://foxtechworld.github.io/) (Portuguese) ✨
     +   [Como Substituir O Hamachi No Linux Para Jogar Minecraft Lan De ...](https://foxtechworld.github.io/posts/tutorial/como-substituir-o-hamachi-no-linux-para-jogar-minecraft-lan-de-forma-facilitada/) (Portuguese)
     +   [Improve Your Code](https://foxtechworld.github.io/posts/tips/improve-your-code/) (Portuguese)
 +   [Jon Black](https://jonblack.me/articles/)
