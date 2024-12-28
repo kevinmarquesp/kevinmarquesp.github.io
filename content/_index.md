@@ -22,29 +22,37 @@ te ajude de alguma forma. 😊
 
 <br>
 
-{{< 88x31 "best_viewd_with_eyes.png" >}}
-{{< 88x31 "i_made_my_own_website.gif" >}}
-{{< 88x31 "magic.gif" >}}
-{{< 88x31 "powerd_by_firefox.gif" >}}
-{{< 88x31 "powerd_by_linux.gif" >}}
-{{< 88x31 "free_ware.gif" >}}
-{{< 88x31 "any-browser.png" >}}
+{{< 88x31 "/88x31/best_viewd_with_eyes.png" >}}
+{{< 88x31 "/88x31/i_made_my_own_website.gif" >}}
+{{< 88x31 "/88x31/magic.gif" >}}
+{{< 88x31 "/88x31/powerd_by_firefox.gif" >}}
+{{< 88x31 "/88x31/powerd_by_linux.gif" >}}
+{{< 88x31 "/88x31/free_ware.gif" >}}
+{{< 88x31 "/88x31/any-browser.png" >}}
+{{< 88x31 "/88x31/powerd_by_vim.png" >}}
+{{< 88x31 "/88x31/edited_with_vim.gif" >}}
 
-{{< 88x31 "powerd_by_vim.png" >}}
-{{< 88x31 "edited_with_vim.gif" >}}
+{{< 88x31 "https://files.catbox.moe/vltthb.png" "https://velvetblue.neocities.org/" >}}
+{{< 88x31 "https://i.imgur.com/MVPOi3k.gif" "https://pomelo.lol/" >}}
 
 <br>
 
-### Botão 88x31 daqui
+### Botão 88x31 Daqui
 
 Se você poder fazer a gentileza e quiser participar de um *webring* de criadores
 de conteúdo brasieliros na *indie web*, considere colocar o botão **88x31**
 desse meu blogzinho no seu site.
 
+{{< 88x31 "/88x31/kevins-blog.png" "https://kevinmarquesp.github.io" >}}
+
 <br>
 
-<a href="https://kevinmarquesp.github.io">
-  {{< 88x31 "kevins-blog.png" >}}
+## Outras Boberas Interessantes
+
+<a href="https://theotaku.com/quizzes/view/2570/what_neon_genesis_evangelion_character_are_you%3F">
+  <img
+    border="0"
+    src="http://www.theotaku.com/guru_results/2570_Shinji.jpg"
+    alt="What Neon Genesis Evangelion Character Are You?"
+  />
 </a>
-
-<br>
