@@ -38,6 +38,7 @@ toc: true
 +   [maya.land](https://maya.land/)
 +   [Getimiskon's space](https://getimiskon.xyz/)
 +   [BeckyLabs](https://rrodriguess20.github.io/beckylabs/) ✨
++   [Osk](https://osk.sh/)
 
 
 ### Blogs (Mostly About Programming)
@@ -45,6 +46,8 @@ toc: true
 From my favorite creators, each of them has, at least, one article that was
 useful/entertaining for me in the past in some way.
 
++   [Khepu](https://www.khepu.com/) ✨
+    +   [Crafting a JSON parser with SIMD: Descent into madness](https://www.khepu.com/posts/2024-04-21)
 +   [Blog | Eric Murphy](https://ericmurphy.xyz/blog/)
     +   [Welcome to My “New” Website](https://ericmurphy.xyz/blog/new-website/)
     +   [Why I Will Never Join Mastodon (or the rest of the Fediverse)](https://ericmurphy.xyz/blog/mastodon/)
@@ -81,12 +84,15 @@ contents there too, so it could be interesting to you.
 +   [Manu](https://manuelmoreale.com/)
 +   [Koos Looijesteijn](https://www.kooslooijesteijn.net/)
 +   [The Cheapskate's Guide](https://cheapskatesguide.org/)
++   [DZHG](https://dzhg.dev/)
++   [Wiscaksono](https://wiscaksono.com/articles)
 
 This ones is more focused in being useful in some specific area, it can be good
 if you're a student in the topic.
 
 +   [Code Corner](https://www.troubleshooters.com/codecorn/index.htm)
     +   [Lua OOP (With Snippets)](https://www.troubleshooters.com/codecorn/lua/luaoop.htm)
++   [Thomas' Language Playground](https://tmh.conlang.org/about/)
 
 
 ### Manifests
