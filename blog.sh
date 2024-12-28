@@ -140,7 +140,7 @@ function setup {
     hugo server --noHTTPCache
 }
 
-#new: new - v1.5.0
+#new: new - v2.5.0
 #new:
 #new: Creates a new publication on this website, usually a blog post. It will
 #new: also format the title string to include only `[a-z0-9_-]` characters and
@@ -181,10 +181,12 @@ function new {
 
     [ -z "${TITLE}" ] && return 1
 
-    local PREFIX=$(date "+%y%m%d-%H%M")
+    # local PREFIX=$(date "+%y%m%d-%H%M")
+    local PREFIX=
     local NAME=$(iconv -t "ASCII//TRANSLIT" <<< "${TITLE}" |
         tr "[:punct:]" " " | sed 's/\(.*\)/\L\1/;s/ *$//;s/  */-/g')
-    local TARGET="${content}/${dir}/${PREFIX}_${NAME}"
+    # local TARGET="${content}/${dir}/${PREFIX}_${NAME}"
+    local TARGET="${content}/${dir}/${NAME}"
 
     hugo new "${TARGET}/index.md"
 
