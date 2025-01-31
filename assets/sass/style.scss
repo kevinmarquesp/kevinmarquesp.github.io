@@ -1,0 +1,125 @@
+@import "reset";
+@import "colors";
+@import "article";
+
+body {
+  background-color: var(--sea-800);
+  color: var(--text-500);
+  font-family: Arial, Helvetica, sans-serif;
+
+  #root {
+    max-width: 80ch;
+    margin: 0 auto;
+
+    &:first-child {
+      margin-top: 3rem;
+    }
+
+    &>* {
+      margin-bottom: 2.25rem;
+    }
+  }
+}
+
+[ui-box] {
+  --space: 6pt;
+
+  background-color: var(--dark-700);
+  box-shadow:
+    0 0 0 var(--space) var(--dark-700),
+    calc(var(--space) * 1.25) calc(var(--space) * 1.25) 0 var(--space) rgba(0, 0, 0, .8);
+  margin: 0 var(--space);
+  border: solid 4px var(--sea-800);
+  padding: 1rem;
+
+  h1 {
+    color: var(--green-500);
+  }
+}
+
+[ui-navbar] ul {
+  margin-top: 1rem;
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+
+  li a {
+    text-decoration: none;
+    background-color: var(--sea-800);
+    color: var(--green-400);
+    padding: .25rem;
+    font-family: 'Courier New', Courier, monospace;
+
+    &:hover {
+      background-color: var(--sea-500);
+      color: white;
+    }
+
+    &.active {
+      opacity: 30%;
+      cursor: default;
+
+      &:hover {
+        background-color: var(--sea-800);
+        color: var(--green-400);
+      }
+    }
+
+    &:before {
+      content: "[";
+      margin-right: 1rem;
+    }
+
+    &:after {
+      content: "]";
+      margin-left: 1rem;
+    }
+  }
+}
+
+[ui-article] {
+  @for $i from 1 through 6 {
+    h#{$i} {
+      font-size: 1.5rem;
+      color: var(--green-500);
+      position: relative;
+      margin: 1.5rem 0 1rem 0;
+
+      &:before {
+        content: "#{$i - 1}. ";
+      }
+    }
+  }
+
+  .highlight {
+    --bg: var(--dark-800);
+
+    background-color: var(--bg);
+    border: 2px solid var(--sea-800);
+    padding: .5rem 0;
+
+    div table tbody tr td pre {
+      background-color: var(--bg) !important;
+    }
+
+    max-width: 80ch !important;
+
+    div table tbody tr {
+      display: flex;
+    }
+
+    div table {
+      width: 100%;
+      overflow: scroll;
+      display: block;
+
+      tbody tr td:nth-child(1) pre {
+        padding: 0 1rem;
+      }
+
+      tbody tr td:nth-child(2) pre {
+        padding-right: 2rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+baseURL = "https://kevinmarquesp.github.io/"
+languageCode = "en-us"
+title = "Kevin Marques"
+
+pygmentsOptions = "linenos=table"
+pygmentsStyle = "github-dark"
+
+[[menus.main]]
+name = 'Home'
+pageRef = '/'
+weight = 10
+
+[[menus.main]]
+name = 'Blog'
+pageRef = '/blog'
+weight = 20
+
+[[menus.main]]
+name = 'Tags'
+pageRef = '/tags'
+weight = 30

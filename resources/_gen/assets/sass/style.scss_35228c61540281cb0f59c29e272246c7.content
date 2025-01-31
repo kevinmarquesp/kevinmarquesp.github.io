@@ -1,0 +1,222 @@
+/* Adapted from: https://www.joshwcomeau.com/css/custom-css-reset */
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  /* 2. Remove default margin */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased; }
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%; }
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit; }
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word; }
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance; }
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate; }
+
+:root {
+  --green-50: hsl(169, 61%, 95%);
+  --green-100: hsl(169, 61%, 90%);
+  --green-200: hsl(169, 61%, 80%);
+  --green-300: hsl(169, 61%, 70%);
+  --green-400: hsl(169, 61%, 60%);
+  --green-500: hsl(169, 61%, 46%);
+  --green-600: hsl(169, 61%, 36%);
+  --green-700: hsl(169, 61%, 26%);
+  --green-800: hsl(169, 61%, 16%);
+  --green-900: hsl(169, 61%, 10%);
+  --green-950: hsl(169, 61%, 5%);
+  --sea-50: hsl(208, 71%, 95%);
+  --sea-100: hsl(208, 71%, 90%);
+  --sea-200: hsl(208, 71%, 80%);
+  --sea-300: hsl(208, 71%, 70%);
+  --sea-400: hsl(208, 71%, 60%);
+  --sea-500: hsl(208, 71%, 45%);
+  --sea-600: hsl(208, 71%, 35%);
+  --sea-700: hsl(208, 71%, 25%);
+  --sea-800: hsl(208, 71%, 15%);
+  --sea-900: hsl(208, 71%, 10%);
+  --sea-950: hsl(208, 71%, 5%);
+  --dark-50: hsl(213, 96%, 95%);
+  --dark-100: hsl(213, 96%, 90%);
+  --dark-200: hsl(213, 96%, 80%);
+  --dark-300: hsl(213, 96%, 70%);
+  --dark-400: hsl(213, 96%, 60%);
+  --dark-500: hsl(213, 96%, 11%);
+  --dark-600: hsl(213, 96%, 9%);
+  --dark-700: hsl(213, 96%, 7%);
+  --dark-800: hsl(213, 96%, 5%);
+  --dark-900: hsl(213, 96%, 3%);
+  --dark-950: hsl(213, 96%, 2%);
+  --text-50: hsl(0, 0%, 98%);
+  --text-100: hsl(0, 0%, 95%);
+  --text-200: hsl(0, 0%, 90%);
+  --text-300: hsl(0, 0%, 85%);
+  --text-400: hsl(0, 0%, 81%);
+  --text-500: hsl(0, 0%, 70%);
+  --text-600: hsl(0, 0%, 60%);
+  --text-700: hsl(0, 0%, 50%);
+  --text-800: hsl(0, 0%, 40%);
+  --text-900: hsl(0, 0%, 30%);
+  --text-950: hsl(0, 0%, 20%); }
+
+body {
+  background-color: var(--sea-800);
+  color: var(--text-500);
+  font-family: Arial, Helvetica, sans-serif; }
+  body #root {
+    max-width: 80ch;
+    margin: 0 auto; }
+    body #root:first-child {
+      margin-top: 3rem; }
+    body #root > * {
+      margin-bottom: 2.25rem; }
+
+[ui-box] {
+  --space: 6pt;
+  background-color: var(--dark-700);
+  box-shadow: 0 0 0 var(--space) var(--dark-700), calc(var(--space) * 1.25) calc(var(--space) * 1.25) 0 var(--space) rgba(0, 0, 0, 0.8);
+  margin: 0 var(--space);
+  border: solid 4px var(--sea-800);
+  padding: 1rem; }
+  [ui-box] h1 {
+    color: var(--green-500); }
+
+[ui-navbar] ul {
+  margin-top: 1rem;
+  display: flex;
+  list-style: none;
+  gap: 1rem; }
+  [ui-navbar] ul li a {
+    text-decoration: none;
+    background-color: var(--sea-800);
+    color: var(--green-400);
+    padding: .25rem;
+    font-family: 'Courier New', Courier, monospace; }
+    [ui-navbar] ul li a:hover {
+      background-color: var(--sea-500);
+      color: white; }
+    [ui-navbar] ul li a.active {
+      opacity: 30%;
+      cursor: default; }
+      [ui-navbar] ul li a.active:hover {
+        background-color: var(--sea-800);
+        color: var(--green-400); }
+    [ui-navbar] ul li a:before {
+      content: "[";
+      margin-right: 1rem; }
+    [ui-navbar] ul li a:after {
+      content: "]";
+      margin-left: 1rem; }
+
+[ui-article] h1 {
+  font-size: 1.5rem;
+  color: var(--green-500);
+  position: relative;
+  margin: 1.5rem 0 1rem 0; }
+  [ui-article] h1:before {
+    content: "0. "; }
+
+[ui-article] h2 {
+  font-size: 1.5rem;
+  color: var(--green-500);
+  position: relative;
+  margin: 1.5rem 0 1rem 0; }
+  [ui-article] h2:before {
+    content: "1. "; }
+
+[ui-article] h3 {
+  font-size: 1.5rem;
+  color: var(--green-500);
+  position: relative;
+  margin: 1.5rem 0 1rem 0; }
+  [ui-article] h3:before {
+    content: "2. "; }
+
+[ui-article] h4 {
+  font-size: 1.5rem;
+  color: var(--green-500);
+  position: relative;
+  margin: 1.5rem 0 1rem 0; }
+  [ui-article] h4:before {
+    content: "3. "; }
+
+[ui-article] h5 {
+  font-size: 1.5rem;
+  color: var(--green-500);
+  position: relative;
+  margin: 1.5rem 0 1rem 0; }
+  [ui-article] h5:before {
+    content: "4. "; }
+
+[ui-article] h6 {
+  font-size: 1.5rem;
+  color: var(--green-500);
+  position: relative;
+  margin: 1.5rem 0 1rem 0; }
+  [ui-article] h6:before {
+    content: "5. "; }
+
+[ui-article] .highlight {
+  --bg: var(--dark-800);
+  background-color: var(--bg);
+  border: 2px solid var(--sea-800);
+  padding: .5rem 0;
+  max-width: 80ch !important; }
+  [ui-article] .highlight div table tbody tr td pre {
+    background-color: var(--bg) !important; }
+  [ui-article] .highlight div table tbody tr {
+    display: flex; }
+  [ui-article] .highlight div table {
+    width: 100%;
+    overflow: scroll;
+    display: block; }
+    [ui-article] .highlight div table tbody tr td:nth-child(1) pre {
+      padding: 0 1rem; }
+    [ui-article] .highlight div table tbody tr td:nth-child(2) pre {
+      padding-right: 2rem; }

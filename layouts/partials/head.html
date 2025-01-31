@@ -1,0 +1,17 @@
+{{ with resources.Get "sass/style.scss" }}
+  {{ $style := .
+    | toCSS (dict "transpiler" "libsass"
+                  "targetPath" "css/style.css") }}
+  {{ if eq hugo.Environment "development" }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  {{ else }}
+    {{ $style = $style
+      | minify
+      | fingerprint
+      | resources.PostCSS }}
+    <link rel="stylesheet"
+          href="{{ $style.RelPermalink }}"
+          integrity="{{ $style.Data.Integraty }}"
+          crossorigin="anonymous">
+  {{ end }}
+{{ end }}

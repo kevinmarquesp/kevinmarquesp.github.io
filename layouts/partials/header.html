@@ -1,0 +1,26 @@
+<header ui-box>
+  <h1>
+    {{ .Site.Title }} &Star;
+  </h1>
+  <nav ui-navbar>
+    <ul>
+      {{ partial "_walk.comp" . }}
+    </ul>
+  </nav>
+</header>
+
+{{ define "partials/_walk.comp" }}
+  {{ $page := . }}
+  {{ range site.Menus.main }}
+    {{ $attrs := dict "href" .URL }}
+    {{ if $page.IsMenuCurrent .Menu . }}
+      {{ $attrs = merge $attrs (dict "class"        "active"
+                                     "aria-current" true) }}
+    {{ end }}
+    <li>
+      <a {{ range $k, $v := $attrs }}
+           {{ printf " %s=%q" $k $v | safeHTMLAttr }}
+         {{ end }}>{{ .Name }}</a>
+    </li>
+  {{ end }}
+{{ end }}
