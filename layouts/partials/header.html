@@ -1,0 +1,29 @@
+<header class="container">
+  <h1>{{ .Site.Title }}</h1>
+  <div class="menus">
+    {{ partial "header.Menu" (dict "page" . "menu" site.Menus.main) }}
+    {{ partial "header.Menu" (dict "page" . "menu" site.Menus.meta) }}
+  </div>
+</header>
+
+{{/*
+  TODO.
+*/}}
+{{ define "partials/header.Menu" }}
+  <ul class="menu">
+    {{ $page := index . "page" }}
+    {{ range index . "menu" }}
+      <li>
+      {{ if $page.IsMenuCurrent .Menu . }}
+        <span class="current">
+          <i style="margin-right: 4px" class="icon {{ .Params.icon }}"></i>{{ .Name }}
+        </span>
+      {{ else }}
+        <a href="{{ .URL }}">
+          <i style="margin-right: 4px" class="icon {{ .Params.icon }}"></i>{{ .Name }}
+        </a>
+      {{ end }}
+      </li>
+    {{ end }}
+  </ul>
+{{ end }}
