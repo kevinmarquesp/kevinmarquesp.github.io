@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800');
 
 /*
   CSS reset.
@@ -36,7 +36,7 @@ $container-max-w: 80ch;
 body {
   background-color: $bg;
   color: $fg;
-  font-family: "Funnel Sans", serif;
+  font-family: 'Funnel Sans', serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
@@ -44,6 +44,20 @@ body {
 #root {
   width: 100vw;
   height: 100dvh;
+
+  &> :first-child {
+    margin: 32px auto;
+    padding-bottom: 32px;
+  }
+}
+
+a {
+  color: $prim;
+  text-decoration: underline;
+
+  &:hover {
+    text-underline-offset: 4px;
+  }
 }
 
 /*
@@ -56,4 +70,63 @@ footer.container {
   max-width: var(--container-max-w, $container-max-w);
   margin: 0 auto;
   padding: 0 12pt;
+}
+
+header.container {
+  border-bottom: 2px dotted fade-out(white, .75);
+
+  h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: $prim;
+  }
+
+  .menus {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .25rem 1.5rem
+  }
+
+  ul.menu {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+
+    li span.current {
+      color: $fg;
+      cursor: default;
+    }
+
+    li {
+      display: flex;
+      gap: .5rem;
+
+      span,
+      a {
+        text-wrap: nowrap;
+      }
+
+      a:hover .icon {
+        color: $fg;
+      }
+
+      &:before,
+      &:after {
+        color: fade-out($color: $sec, $amount: .85);
+      }
+
+      &:after {
+        content: '/';
+      }
+
+      &:first-child:before {
+        content: '[';
+      }
+
+      &:last-child::after {
+        content: ']';
+      }
+    }
+  }
 }
