@@ -60,6 +60,10 @@ a {
   }
 }
 
+.icon {
+  margin-bottom: -2px;
+}
+
 /*
   Page components.
 */
@@ -94,8 +98,13 @@ header.container {
     gap: .5rem;
 
     li span.current {
-      color: $fg;
+      color: $prim;
       cursor: default;
+      opacity: .75;
+
+      span {
+        text-decoration: underline dotted;
+      }
     }
 
     li {
@@ -107,13 +116,21 @@ header.container {
         text-wrap: nowrap;
       }
 
-      a:hover .icon {
-        color: $fg;
+      a {
+        text-decoration: none;
+
+        &:hover .icon {
+          color: $fg;
+        }
+
+        span {
+          text-decoration: underline;
+        }
       }
 
       &:before,
       &:after {
-        color: fade-out($color: $sec, $amount: .85);
+        color: fade-out($fg, .5);
       }
 
       &:after {

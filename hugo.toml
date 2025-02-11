@@ -6,34 +6,34 @@ title = 'Kevin Marques'
 name = 'Home'
 pageRef = '/'
 weight = 10
-params = { icon = 'bi bi-house-fill' }
+params = { icon = 'bi-house-fill' }
 
 [[menus.main]]
 name = 'Tags'
 pageRef = '/tags'
 weight = 20
-params = { icon = 'bi bi-bookmarks-fill' }
+params = { icon = 'bi-bookmarks-fill' }
 
 [[menus.main]]
 name = 'Blog'
 pageRef = '/blog'
 weight = 30
-params = { icon = 'bi bi-pen-fill' }
+params = { icon = 'bi-pen-fill' }
 
 [[menus.main]]
 name = 'Archived'
 pageRef = '/arch'
 weight = 40
-params = { icon = 'bi bi-archive-fill' }
+params = { icon = 'bi-archive-fill' }
 
 [[menus.meta]]
 name = ''
 url = '/index.xml'
 weight = 20
-params = { icon = 'bi bi-rss-fill' }
+params = { icon = 'bi-rss-fill' }
 
 [[menus.meta]]
 name = ' '
 url = 'https://github.com/kevinmarquesp/kevinmarquesp.github.io'
 weight = 10
-params = { icon = 'bi bi-github' }
+params = { icon = 'bi-github' }

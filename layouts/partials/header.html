@@ -16,11 +16,17 @@
       <li>
       {{ if $page.IsMenuCurrent .Menu . }}
         <span class="current">
-          <i style="margin-right: 4px" class="icon {{ .Params.icon }}"></i>{{ .Name }}
+          {{ partial "icons.html" .Params.icon }}
+          <span>
+            {{ .Name }}
+          </span>
         </span>
       {{ else }}
         <a href="{{ .URL }}">
-          <i style="margin-right: 4px" class="icon {{ .Params.icon }}"></i>{{ .Name }}
+          {{ partial "icons.html" .Params.icon }}
+          <span>
+            {{ .Name }}
+          </span>
         </a>
       {{ end }}
       </li>
