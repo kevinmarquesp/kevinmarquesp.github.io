@@ -1,0 +1,27 @@
+{{ define "main" }}
+  {{ $isTags := and .Data.Singular (eq (lower .Title) "tags") }}
+  {{ if and .Data.Singular (not $isTags) }}
+    <h2>Filtering for: "{{ .Title }}"</h2>
+  {{ end }}
+  <article id="article">
+    {{ .Content }}
+  </article>
+  <section id="posts" {{ if $isTags }} class="tags" {{ end }}>
+    <ul>
+      {{ range .Pages }}
+        <li>
+          <div class="title">
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+          </div>
+          {{ if not $isTags }}
+            <div class="timestamp">
+              <time datetime="{{ .Date.Format "2006-01-02" }}">
+                {{ .Date.Format (default "2006, Jan 01" .Site.Params.dateFormat) }}
+              </time>
+            </div>
+          {{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+{{ end }}

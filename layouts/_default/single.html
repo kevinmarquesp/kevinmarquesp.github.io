@@ -1,0 +1,32 @@
+{{ define "main" }}
+  <section id="header">
+    <h1>{{ .Title }}</h1>
+    <ul>
+      <li>
+        {{ partial "icons.html" "bi-calendar-fill" }}
+        <time pubdate datetime="{{ .Date.Format "2006-01-02" }}">
+          {{ .Date.Format (default "2006.01.02" .Site.Params.dateFormat) }}
+        </time>
+      </li>
+      <li>
+        {{ partial "icons.html" "bi-clock-fill" }}
+        {{ .ReadingTime }}m
+      </li>
+      {{ with .Params.author }}
+        <li>
+          {{ partial "icons.html" "bi-person-fill" }}
+          by <em>{{ . }}</em>
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ if (default .Params.toc true) }}
+    <section id="toc">
+      <h2>Table of Contents</h2>
+      {{ .TableOfContents }}
+    </section>
+  {{ end }}
+  <article id="article">
+    {{ .Content }}
+  </article>
+{{ end }}
