@@ -1,6 +1,11 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'Kevin Marques'
+copyright = 'Kevin Marques (CC BY 4.0) | Made with ❤️ from scratch 💪'
+
+[markup.highlight]
+lineNos = true
+style = 'nord'
 
 [[menus.main]]
 name = 'Home'
@@ -20,20 +25,14 @@ pageRef = '/blog'
 weight = 30
 params = { icon = 'bi-pen-fill' }
 
-[[menus.main]]
-name = 'Archived'
-pageRef = '/arch'
-weight = 40
-params = { icon = 'bi-archive-fill' }
-
 [[menus.meta]]
 name = ''
-url = '/index.xml'
-weight = 20
-params = { icon = 'bi-rss-fill' }
-
-[[menus.meta]]
-name = ' '
 url = 'https://github.com/kevinmarquesp/kevinmarquesp.github.io'
 weight = 10
 params = { icon = 'bi-github' }
+
+[[menus.meta]]
+name = ' '
+url = '/index.xml'
+weight = 20
+params = { icon = 'bi-rss-fill' }
