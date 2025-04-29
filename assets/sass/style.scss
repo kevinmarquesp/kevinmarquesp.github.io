@@ -176,15 +176,37 @@ footer.container {
   Content components.
 */
 
-#posts ul li {
-  margin-bottom: .75rem;
-  padding: 0 .75rem;
-
-  .timestamp {
-    margin: .15rem 0;
-    font-size: .85rem;
+#posts {
+  h2 {
+    margin: 1rem 0;
     font-style: italic;
-    opacity: .75;
+
+    &:before,
+    &:after {
+      color: fade-out($fg, .5);
+    }
+
+    &:before {
+      content: '[';
+      margin-right: .5rem;
+    }
+
+    &:after {
+      content: ']';
+      margin-left: .5rem;
+    }
+  }
+
+  ul li {
+    margin-bottom: .75rem;
+    padding: 0 .75rem;
+
+    .timestamp {
+      margin: .15rem 0;
+      font-size: .85rem;
+      font-style: italic;
+      opacity: .75;
+    }
   }
 }
 

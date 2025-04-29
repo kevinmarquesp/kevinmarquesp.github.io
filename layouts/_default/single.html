@@ -29,4 +29,29 @@
   <article id="article">
     {{ .Content }}
   </article>
+  <section id="comments">
+    {{ if or .Params.comments .Site.Params.comments }}
+      {{ partial "disqus.html" . }}
+    {{ end }}
+  </section>
+  <section id="posts">
+    {{ with site.RegularPages.Related . | first 5 }}
+      <h2>Related Articles</h2>
+
+      <ul>
+        {{ range . }}
+          <li>
+            <div class="title">
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </div>
+            <div class="timestamp">
+              <time datetime="{{ .Date.Format "2006-01-02" }}">
+                {{ .Date.Format (default "2006, Jan 01" .Site.Params.dateFormat) }}
+              </time>
+            </div>
+          </li>
+        {{ end }}
+      </ul>
+    {{ end }}
+  </section>
 {{ end }}

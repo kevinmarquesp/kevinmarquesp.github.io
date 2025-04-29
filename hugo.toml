@@ -36,3 +36,6 @@ name = ' '
 url = '/index.xml'
 weight = 20
 params = { icon = 'bi-rss-fill' }
+
+[services.disqus]
+shortname = 'kevinmarquesp-github-io-blog'
