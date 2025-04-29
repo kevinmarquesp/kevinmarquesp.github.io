@@ -16,3 +16,18 @@
           crossorigin="anonymous">
   {{ end }}
 {{ end }}
+
+{{/*
+  Uses MathJaX CDN to render the LaTeX syntax with SVG gliphs.
+*/}}
+{{ if .Params.math | default true }}
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+      },
+    };
+  </script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+{{ end }}

@@ -39,3 +39,6 @@ params = { icon = 'bi-rss-fill' }
 
 [services.disqus]
 shortname = 'kevinmarquesp-github-io-blog'
+
+[params]
+math = true
