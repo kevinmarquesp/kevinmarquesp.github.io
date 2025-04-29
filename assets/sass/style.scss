@@ -267,6 +267,10 @@ footer.container {
 
 #article {
 
+  img {
+    max-width: 100%;
+  }
+
   h1,
   h2,
   h3,
@@ -302,10 +306,14 @@ footer.container {
   h6 {
     padding-top: 16px;
     color: $fg;
+    display: flex;
+    gap: .75rem;
+    align-items: center;
 
     &:before {
       content: '⦿ ';
       color: $prim;
+      height: fit-content;
     }
   }
 
