@@ -9,7 +9,7 @@
     {{ $style = $style
       | minify
       | fingerprint
-      | resources.PostCSS }}
+      | css.PostCSS }}
     <link rel="stylesheet"
           href="{{ $style.RelPermalink }}"
           integrity="{{ $style.Data.Integraty }}"
