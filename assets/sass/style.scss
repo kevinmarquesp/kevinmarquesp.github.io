@@ -284,6 +284,11 @@ footer.container {
 
 #article {
 
+  del {
+    text-decoration: line-through;
+    opacity: 50%;
+  }
+
   img {
     width: 100%;
   }

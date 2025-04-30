@@ -6,8 +6,12 @@ title = 'Home'
 math = true
 +++
 
-Welcome to my website!
+Hello everyone this is **my** special corner of the internet. I'm just an
+avarage guy with some dreams and special interrests and here's the place where
+I blab about technology or just random thoughs about those said interrests.
 
-When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are
+I'm really glad that you found this place, enjoy your stay! Maybe you learn
+something new, or just watch me growing to be ~~a better/worse person~~
+something as I write by.
 
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+$\neg \exists h \mid L(h) \land H(h)$
