@@ -21,6 +21,7 @@
   Uses MathJaX CDN to render the LaTeX syntax with SVG gliphs.
 */}}
 {{ if .Params.math | default true }}
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script>
     window.MathJax = {
       tex: {
@@ -29,5 +30,25 @@
       },
     };
   </script>
-  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+{{ end }}
+
+{{/*
+  Allows each page to use the Tailwind CSS CDN or not.
+*/}}
+{{ if .Params.tailwindcss | default false }}
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: {
+        preflight: false,
+      }
+    };
+  </script>
+{{ end }}
+
+{{/*
+  Allows each page to use the Alpine.js CDN or not.
+*/}}
+{{ if .Params.alpinejs | default false }}
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 {{ end }}
