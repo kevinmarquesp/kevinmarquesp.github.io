@@ -1,15 +1,13 @@
 {{/*
-  Converts the SASS files in `assets/sass` to CSS during the build.
+  Converts the SASS files in `assets/css` to CSS during the build.
 */}}
-{{ with resources.Get "sass/style.scss" }}
-  {{ $style := . | toCSS (dict "transpiler" "libsass" "targetPath" "css/style.css") }}
+{{ with resources.Get "css/style.css" }}
   {{ if eq hugo.Environment "development" }}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    <link rel="stylesheet" href="{{ .RelPermalink }}">
   {{ else }}
-    {{ $style = $style
+    {{ $style := .
       | minify
-      | fingerprint
-      | css.PostCSS }}
+      | fingerprint }}
     <link rel="stylesheet"
           href="{{ $style.RelPermalink }}"
           integrity="{{ $style.Data.Integraty }}"

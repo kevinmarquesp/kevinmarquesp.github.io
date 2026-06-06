@@ -1,0 +1,404 @@
+/* css reset */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* app's color scheme and other variables */
+
+:root {
+  --prim: #2ebfa5;
+  --sec: #2179c6;
+  --bg: #011936;
+  --fg: #cecece;
+  --container-max-w: 80ch;
+}
+
+/* main page settings */
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: 'Funnel Sans', serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+#root {
+  width: 100vw;
+  height: 100dvh;
+}
+
+#root > :first-child {
+  margin: 32px auto;
+  padding-bottom: 32px;
+}
+
+a {
+  color: var(--prim);
+  text-decoration: underline;
+}
+
+a:hover {
+  text-underline-offset: 4px;
+}
+
+.icon {
+  margin-bottom: -2px;
+}
+
+/* page components */
+
+header.container,
+main.container,
+footer.container {
+  max-width: var(--container-max-w);
+  margin: 0 auto;
+  padding: 0 12pt;
+}
+
+header.container {
+  border-bottom: 2px dotted rgba(255, 255, 255, 0.25);
+}
+
+header.container h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--prim);
+}
+
+header.container .menus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem 1.5rem;
+}
+
+header.container ul.menu {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+header.container ul.menu li span.current {
+  color: var(--prim);
+  cursor: default;
+  opacity: .75;
+}
+
+header.container ul.menu li span.current span {
+  text-decoration: underline dotted;
+}
+
+header.container ul.menu li {
+  display: flex;
+  gap: .5rem;
+}
+
+header.container ul.menu li span,
+header.container ul.menu li a {
+  text-wrap: nowrap;
+}
+
+header.container ul.menu li a {
+  text-decoration: none;
+}
+
+header.container ul.menu li a:hover .icon {
+  color: var(--fg);
+}
+
+header.container ul.menu li a span {
+  text-decoration: underline;
+}
+
+header.container ul.menu li::before,
+header.container ul.menu li::after {
+  color: rgba(206, 206, 206, 0.5);
+}
+
+header.container ul.menu li::after {
+  content: '/';
+}
+
+header.container ul.menu li:first-child::before {
+  content: '[';
+}
+
+header.container ul.menu li:last-child::after {
+  content: ']';
+}
+
+main.container {
+  margin-bottom: 32px;
+}
+
+main.container > * {
+  margin-bottom: 32px;
+}
+
+main.container > :last-child {
+  margin-bottom: 0;
+}
+
+footer.container {
+  border-top: 2px dotted rgba(255, 255, 255, 0.25);
+  padding-top: 32px;
+}
+
+footer.container p {
+  font-size: .75rem;
+  color: rgba(206, 206, 206, 0.7);
+  padding-bottom: 64px;
+  margin-left: 1rem;
+}
+
+/* content components */
+
+#posts h2 {
+  margin: 1rem 0;
+  font-style: italic;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+}
+
+#posts h2::before {
+  content: '☞';
+  margin: -1rem 0;
+  margin-right: 1rem;
+  font-size: 3rem;
+}
+
+#posts ul li {
+  margin-bottom: .75rem;
+  padding: 0 .75rem;
+}
+
+#posts ul li .timestamp {
+  margin: .15rem 0;
+  font-size: .85rem;
+  font-style: italic;
+  opacity: .75;
+}
+
+#posts.tags ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20ch, 1fr));
+  gap: 4px;
+}
+
+#posts.tags ul li {
+  margin-bottom: 0;
+}
+
+#posts.tags ul li .title a::before {
+  content: '#';
+}
+
+/* article components */
+
+#header h1 {
+  color: var(--prim);
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  margin-bottom: 8px;
+}
+
+#header ul {
+  display: flex;
+  column-gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+#header ul li {
+  color: rgba(206, 206, 206, 0.4);
+}
+
+#toc h2 {
+  color: var(--prim);
+  font-size: 1.25rem;
+}
+
+#toc ul li {
+  margin-left: .5rem;
+  padding-left: 1.25rem;
+  border-left: 1px solid var(--prim);
+  width: max-content;
+  position: relative;
+  padding-top: 8px;
+}
+
+#toc ul li::before {
+  content: '';
+  top: 0;
+  left: -1px;
+  width: 1rem;
+  height: 1.2rem;
+  position: absolute;
+  border-bottom: 1px solid var(--prim);
+}
+
+#toc ul li:last-child {
+  border-left: 1px solid transparent;
+}
+
+#toc ul li:last-child::before {
+  border-left: 1px solid var(--prim);
+}
+
+#toc ul,
+#toc li {
+  max-width: 100%;
+  padding-right: 1rem;
+}
+
+/* article body */
+
+#article del {
+  text-decoration: line-through;
+  opacity: 50%;
+}
+
+#article img {
+  width: 100%;
+}
+
+#article h1,
+#article h2,
+#article h3,
+#article h4,
+#article h5,
+#article h6,
+#article p,
+#article blockquote,
+#article ul,
+#article ol {
+  margin-bottom: 16px;
+}
+
+#article p {
+  line-height: 1.5rem;
+}
+
+#article blockquote {
+  background-color: rgba(0, 0, 0, 0.35);
+  padding: 8px 0 8px 1.25rem;
+  border-left: 4pt solid var(--prim);
+}
+
+#article blockquote :last-child {
+  margin-bottom: 0;
+}
+
+#article h1,
+#article h2,
+#article h3,
+#article h4,
+#article h5,
+#article h6 {
+  padding-top: 16px;
+  color: var(--fg);
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+}
+
+#article h1::before,
+#article h2::before,
+#article h3::before,
+#article h4::before,
+#article h5::before,
+#article h6::before {
+  content: '⦿ ';
+  color: var(--prim);
+  height: fit-content;
+}
+
+#article h1 { font-size: 2rem; }
+#article h2 { font-size: 1.75rem; }
+#article h3 { font-size: 1.45rem; }
+#article h4 { font-size: 1.3rem; }
+#article h5 { font-size: 1.3rem; }
+#article h6 { font-size: 1.25rem; }
+
+#article hr {
+  margin: 32px 0;
+  border: 1px solid rgba(206, 206, 206, 0.2);
+}
+
+#article code {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+#article ol li,
+#article ul li {
+  margin-left: 2rem;
+  padding-left: .5rem;
+}
+
+#article ul {
+  list-style: disc;
+}
+
+/* code block style */
+
+#article .highlight {
+  display: flex;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+#article .highlight * {
+  background-color: transparent !important;
+}
+
+#article .highlight div {
+  overflow-x: hidden;
+}
+
+#article .highlight div table,
+#article .highlight div tbody {
+  display: block;
+}
+
+#article .highlight tr {
+  display: flex;
+}
+
+#article .highlight tr td {
+  display: block;
+}
+
+#article .highlight tr td:last-child {
+  overflow-x: scroll;
+}
+
+#article .highlight tr td:last-child code > span > span {
+  padding-right: 3.5rem;
+}
+
+#article .highlight pre {
+  margin: 0;
+  padding: 8px;
+  flex-grow: 1;
+  white-space: pre;
+}
+
+#article .highlight .ln {
+  user-select: none;
+}
+
